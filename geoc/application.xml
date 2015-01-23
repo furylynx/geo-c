@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Application>
+    <Entry>geoc</Entry>
+    <Name>
+        <English>Geoc</English>
+        <eng-GB>Geoc</eng-GB>
+    </Name>
+    <Vendor/>
+    <Description>geo'c - geo caching app for WVGA bada devices. </Description>
+    <Icons>
+        <MainMenu>geoc_type4.png<Type1/>
+            <Type2/>
+            <Type3>geoc_type3.png</Type3>
+            <Type4>geoc_type4.png</Type4>
+            <Type5>geoc_type5.png</Type5>
+        </MainMenu>
+        <Setting/>
+        <Ticker/>
+        <QuickPanel/>
+        <LaunchImage>Splash_type4.png<Type1/>
+            <Type2/>
+            <Type3>Splash_type3.png</Type3>
+            <Type4>Splash_type4.png</Type4>
+            <Type5>Splash_type5.png</Type5>
+        </LaunchImage>
+    </Icons>
+    <AutoScaling>
+        <Enabled>true</Enabled>
+        <BaseResolution>NormalSize</BaseResolution>
+    </AutoScaling>
+</Application>
