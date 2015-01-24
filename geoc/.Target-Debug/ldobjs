@@ -1,0 +1,1 @@
+./src/model/Entry.o ./src/MainForm.o ./src/geoc.o ./src/geocEntry.o ./src/controller/CompassController.o ./src/controller/EntryController.o ./src/controller/SensorController.o 

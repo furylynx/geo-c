@@ -1,0 +1,1 @@
+-L"C:/bada/2.0.6/Model/WaveWVGA/Target" -L"C:/Users/John/Documents/git_workspace/geo-c/geoc/lib" -shared -march=armv7-a -mthumb -mthumb-interwork -mfpu=vfpv3 -mfloat-abi=hard -o"geoc.exe"

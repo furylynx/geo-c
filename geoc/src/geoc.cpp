@@ -23,15 +23,13 @@ geoc::~geoc()
 {
 }
 
-Application*
-geoc::CreateInstance(void)
+Application* geoc::CreateInstance(void)
 {
 	// Create the instance through the constructor.
 	return new geoc();
 }
 
-bool
-geoc::OnAppInitializing(AppRegistry& appRegistry)
+bool geoc::OnAppInitializing(AppRegistry& appRegistry)
 {
 	// TODO:
 	// Initialize UI resources and application specific data.
@@ -61,8 +59,7 @@ geoc::OnAppInitializing(AppRegistry& appRegistry)
 	return true;
 }
 
-bool
-geoc::OnAppTerminating(AppRegistry& appRegistry, bool forcedTermination)
+bool geoc::OnAppTerminating(AppRegistry& appRegistry, bool forcedTermination)
 {
 	// TODO:
 	// Deallocate resources allocated by this application for termination.
@@ -70,44 +67,38 @@ geoc::OnAppTerminating(AppRegistry& appRegistry, bool forcedTermination)
 	return true;
 }
 
-void
-geoc::OnForeground(void)
+void geoc::OnForeground(void)
 {
 	// TODO:
 	// Start or resume drawing when the application is moved to the foreground.
 }
 
-void
-geoc::OnBackground(void)
+void geoc::OnBackground(void)
 {
 	// TODO:
 	// Stop drawing when the application is moved to the background.
 }
 
-void
-geoc::OnLowMemory(void)
+void geoc::OnLowMemory(void)
 {
 	// TODO:
 	// Free unused resources or close the application.
 }
 
-void
-geoc::OnBatteryLevelChanged(BatteryLevel batteryLevel)
+void geoc::OnBatteryLevelChanged(BatteryLevel batteryLevel)
 {
 	// TODO:
 	// Handle any changes in battery level here.
 	// Stop using multimedia features(camera, mp3 etc.) if the battery level is CRITICAL.
 }
 
-void
-geoc::OnScreenOn (void)
+void geoc::OnScreenOn (void)
 {
 	// TODO:
 	// Get the released resources or resume the operations that were paused or stopped in OnScreenOff().
 }
 
-void
-geoc::OnScreenOff (void)
+void geoc::OnScreenOff (void)
 {
 	// TODO:
 	//  Unless there is a strong reason to do otherwise, release resources (such as 3D, media, and sensors) to allow the device to enter the sleep mode to save the battery.
