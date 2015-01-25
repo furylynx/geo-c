@@ -35,12 +35,12 @@ MainForm::OnInitializing(void)
 	AddTouchEventListener(*this);
 
 	// Get a button via resource ID
-	pButtonOk_ = static_cast<Button *>(GetControl(L"IDC_BUTTON_OK"));
-	if (pButtonOk_ != null)
-	{
-		pButtonOk_->SetActionId(ID_BUTTON_OK);
-		pButtonOk_->AddActionEventListener(*this);
-	}
+//	pButtonOk_ = static_cast<Button *>(GetControl(L"IDC_BUTTON_OK"));
+//	if (pButtonOk_ != null)
+//	{
+//		pButtonOk_->SetActionId(ID_BUTTON_OK);
+//		pButtonOk_->AddActionEventListener(*this);
+//	}
 
 	pLabelLatitude_ = static_cast<Label *>(GetControl(L"IDC_LABEL_LATITUDE"));
 	pLabelLongitude_ = static_cast<Label *>(GetControl(L"IDC_LABEL_LONGITUDE"));
@@ -72,6 +72,10 @@ void MainForm::OnActionPerformed(const Osp::Ui::Control& source, int actionId)
 		case SOFTKEY_0:
 		{
 			AppLog("OVERVIEW Button is clicked! \n");
+
+			Osp::App::Application::GetInstance()->GetAppFrame()->GetFrame()->SetCurrentForm(*pOverviewForm_);
+			pOverviewForm_->Draw();
+			pOverviewForm_->Show();
 		}
 		break;
 		case SOFTKEY_1:
@@ -130,4 +134,24 @@ void MainForm::OnTouchReleased(const Osp::Ui::Control &source, const Osp::Graphi
 {
 	// TODO: Add your implementation codes here
 
+}
+
+void MainForm::OnLocationUpdate(Osp::Locations::Location& location)
+{
+	//TODO
+}
+
+void MainForm::OnLocatorStateChanged(Osp::Locations::LocProviderState newState)
+{
+	//TODO
+}
+
+void MainForm::OnTiltUpdate(float azimuth, float pitch, float roll)
+{
+	//TODO
+}
+
+void MainForm::OnMagneticUpdate(float degreesToNorth, float x, float y, float z)
+{
+	//TODO
 }

@@ -1,5 +1,6 @@
 src/view/CachesForm.d src/view/CachesForm.o: ../src/view/CachesForm.cpp \
- ../src/view/CachesForm.h C:/bada/2.0.6/Include/FBase.h \
+ ../src/view/CachesForm.h ../src/view/../controller/EntryController.h \
+ ../src/view/../controller/../model/Entry.h C:/bada/2.0.6/Include/FBase.h \
  C:/bada/2.0.6/Include/FBaseTypes.h C:/bada/2.0.6/Include/FBaseSys.h \
  C:/bada/2.0.6/Include/FBaseConfig.h \
  C:/bada/2.0.6/Include/FBaseDataType.h \
@@ -87,6 +88,7 @@ src/view/CachesForm.d src/view/CachesForm.o: ../src/view/CachesForm.cpp \
  C:/bada/2.0.6/Include/FBaseUtilFileUnzipper.h \
  C:/bada/2.0.6/Include/FBaseUtilZipEntry.h \
  C:/bada/2.0.6/Include/FBaseUtilRegularExpression.h \
+ ../src/view/CacheDetailsForm.h ../src/view/../model/Entry.h \
  C:/bada/2.0.6/Include/FUi.h C:/bada/2.0.6/Include/FUiFocusManager.h \
  C:/bada/2.0.6/Include/FUiConfig.h C:/bada/2.0.6/Include/FUiKeyboardMap.h \
  C:/bada/2.0.6/Include/FUiIKeyEventListener.h \
@@ -251,9 +253,36 @@ src/view/CachesForm.d src/view/CachesForm.o: ../src/view/CachesForm.cpp \
  C:/bada/2.0.6/Include/FUiHorizontalBoxLayout.h \
  C:/bada/2.0.6/Include/FUiRelativeLayout.h \
  C:/bada/2.0.6/Include/FUiGridLayout.h \
- C:/bada/2.0.6/Include/FUiCustomControlBase.h
+ C:/bada/2.0.6/Include/FUiCustomControlBase.h \
+ C:/bada/2.0.6/Include/FApp.h C:/bada/2.0.6/Include/FAppApplication.h \
+ C:/bada/2.0.6/Include/FSysBattery.h C:/bada/2.0.6/Include/FSysPower.h \
+ C:/bada/2.0.6/Include/FAppConfig.h C:/bada/2.0.6/Include/FAppTypes.h \
+ C:/bada/2.0.6/Include/FAppAppManager.h \
+ C:/bada/2.0.6/Include/FAppAppControl.h \
+ C:/bada/2.0.6/Include/FAppIAppControlEventListener.h \
+ C:/bada/2.0.6/Include/FAppIPackageEventListener.h \
+ C:/bada/2.0.6/Include/FAppPackageManager.h \
+ C:/bada/2.0.6/Include/FAppAppRegistry.h \
+ C:/bada/2.0.6/Include/FAppAppResource.h \
+ C:/bada/2.0.6/Include/FAppIAppFrame.h \
+ C:/bada/2.0.6/Include/FAppNotificationManager.h \
+ C:/bada/2.0.6/Include/FAppPackageInfo.h \
+ C:/bada/2.0.6/Include/FBaseObject.h \
+ C:/bada/2.0.6/Include/FAppDownloadUIManager.h \
+ C:/bada/2.0.6/Include/FAppGuestPackageManager.h \
+ C:/bada/2.0.6/Include/FAppPackageManager.h \
+ C:/bada/2.0.6/Include/FAppIPackageEventListener.h \
+ C:/bada/2.0.6/Include/FAppIGuestPackageEventListener.h \
+ C:/bada/2.0.6/Include/FAppGuestPackageInfo.h \
+ C:/bada/2.0.6/Include/FAppJavaAppManager.h \
+ C:/bada/2.0.6/Include/FAppJarInfo.h \
+ C:/bada/2.0.6/Include/FAppIAppControlListener.h
 
 ../src/view/CachesForm.h:
+
+../src/view/../controller/EntryController.h:
+
+../src/view/../controller/../model/Entry.h:
 
 C:/bada/2.0.6/Include/FBase.h:
 
@@ -450,6 +479,10 @@ C:/bada/2.0.6/Include/FBaseUtilFileUnzipper.h:
 C:/bada/2.0.6/Include/FBaseUtilZipEntry.h:
 
 C:/bada/2.0.6/Include/FBaseUtilRegularExpression.h:
+
+../src/view/CacheDetailsForm.h:
+
+../src/view/../model/Entry.h:
 
 C:/bada/2.0.6/Include/FUi.h:
 
@@ -804,3 +837,55 @@ C:/bada/2.0.6/Include/FUiRelativeLayout.h:
 C:/bada/2.0.6/Include/FUiGridLayout.h:
 
 C:/bada/2.0.6/Include/FUiCustomControlBase.h:
+
+C:/bada/2.0.6/Include/FApp.h:
+
+C:/bada/2.0.6/Include/FAppApplication.h:
+
+C:/bada/2.0.6/Include/FSysBattery.h:
+
+C:/bada/2.0.6/Include/FSysPower.h:
+
+C:/bada/2.0.6/Include/FAppConfig.h:
+
+C:/bada/2.0.6/Include/FAppTypes.h:
+
+C:/bada/2.0.6/Include/FAppAppManager.h:
+
+C:/bada/2.0.6/Include/FAppAppControl.h:
+
+C:/bada/2.0.6/Include/FAppIAppControlEventListener.h:
+
+C:/bada/2.0.6/Include/FAppIPackageEventListener.h:
+
+C:/bada/2.0.6/Include/FAppPackageManager.h:
+
+C:/bada/2.0.6/Include/FAppAppRegistry.h:
+
+C:/bada/2.0.6/Include/FAppAppResource.h:
+
+C:/bada/2.0.6/Include/FAppIAppFrame.h:
+
+C:/bada/2.0.6/Include/FAppNotificationManager.h:
+
+C:/bada/2.0.6/Include/FAppPackageInfo.h:
+
+C:/bada/2.0.6/Include/FBaseObject.h:
+
+C:/bada/2.0.6/Include/FAppDownloadUIManager.h:
+
+C:/bada/2.0.6/Include/FAppGuestPackageManager.h:
+
+C:/bada/2.0.6/Include/FAppPackageManager.h:
+
+C:/bada/2.0.6/Include/FAppIPackageEventListener.h:
+
+C:/bada/2.0.6/Include/FAppIGuestPackageEventListener.h:
+
+C:/bada/2.0.6/Include/FAppGuestPackageInfo.h:
+
+C:/bada/2.0.6/Include/FAppJavaAppManager.h:
+
+C:/bada/2.0.6/Include/FAppJarInfo.h:
+
+C:/bada/2.0.6/Include/FAppIAppControlListener.h:

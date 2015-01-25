@@ -6,6 +6,8 @@
 #include "OverviewForm.h"
 #include "CachesForm.h"
 
+#include "../model/ISensorUpdateListener.h"
+
 //global includes
 #include <FApp.h>
 #include <FBase.h>
@@ -15,7 +17,8 @@
 class MainForm :
 	public Osp::Ui::Controls::Form,
 	public Osp::Ui::IActionEventListener,
- 	public Osp::Ui::ITouchEventListener
+ 	public Osp::Ui::ITouchEventListener,
+ 	public geo::ISensorUpdateListener
 {
 
 // Construction
@@ -52,6 +55,13 @@ public:
 	virtual void OnTouchMoved(const Osp::Ui::Control &source, const Osp::Graphics::Point &currentPosition, const Osp::Ui::TouchEventInfo &touchInfo);
 	virtual void OnTouchPressed(const Osp::Ui::Control &source, const Osp::Graphics::Point &currentPosition, const Osp::Ui::TouchEventInfo &touchInfo);
 	virtual void OnTouchReleased(const Osp::Ui::Control &source, const Osp::Graphics::Point &currentPosition, const Osp::Ui::TouchEventInfo &touchInfo);
+
+	//sensor updates
+	virtual void OnLocationUpdate(Osp::Locations::Location& location);
+	virtual void OnLocatorStateChanged(Osp::Locations::LocProviderState newState);
+	virtual void OnTiltUpdate(float azimuth, float pitch, float roll);
+	virtual void OnMagneticUpdate(float degreesToNorth, float x, float y, float z);
+
 };
 
 #endif	//_MAINFORM_H_

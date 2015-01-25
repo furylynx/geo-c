@@ -19,6 +19,12 @@ Entry::~Entry()
 
 }
 
+void Entry::Construct()
+{
+	Construct("Unnamed", 0.0f, 0.0f);
+	custom_ = true;
+}
+
 void Entry::Construct(Osp::Base::String title, float longitude, float latitude)
 {
 	title_ = title;
@@ -31,6 +37,11 @@ Osp::Base::String Entry::Title() const
 	return title_;
 }
 
+void Entry::SetName(Osp::Base::String title)
+{
+	title_ = title;
+}
+
 float Entry::Longitude() const
 {
 	return longitude_;
@@ -41,10 +52,17 @@ float Entry::Latitude() const
 	return latitude_;
 }
 
+bool Entry::IsCustom() const
+{
+	return custom_;
+}
+
+
 void Entry::Export(Osp::Base::String filename) const
 {
 	//TODO export to gpx file
 	//other formats?
 }
+
 
 }

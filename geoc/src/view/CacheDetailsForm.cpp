@@ -23,7 +23,7 @@ bool CacheDetailsForm::Initialize()
 
 void CacheDetailsForm::Update(geo::Entry* entry)
 {
-	entry_ = entry;
+	pEntry_ = entry;
 
 	//TODO update input fields...
 	//updates are directly written to the entry, no invokation of any controller required!
@@ -32,6 +32,10 @@ void CacheDetailsForm::Update(geo::Entry* entry)
 result CacheDetailsForm::OnInitializing(void)
 {
 	result r = E_SUCCESS;
+
+	GetFooter()->AddActionEventListener(*this);
+
+	pScrollPanel_ = static_cast<ScrollPanel *>(GetControl(L"IDC_SCROLLPANEL"));
 
 	return r;
 }
@@ -43,6 +47,25 @@ result CacheDetailsForm::OnTerminating(void)
 	// TODO: Add your termination code here
 
 	return r;
+}
+
+void CacheDetailsForm::OnActionPerformed(const Osp::Ui::Control& source, int actionId)
+{
+	switch(actionId)
+	{
+		case ID_FOOTER_BUTTON_SAVE:
+		{
+			AppLog("Save Button is clicked! \n");
+
+
+			//TODO apply changes to the entry
+			pEntry_->SetName("Unknown");
+
+		}
+		break;
+		default:
+		break;
+	}
 }
 
 

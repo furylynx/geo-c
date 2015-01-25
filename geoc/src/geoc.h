@@ -75,6 +75,8 @@ public:
 
 private:
 	geo::SensorController* pSensorController_;
+	geo::EntryController* pEntryController_;
+
 	Osp::Ui::Controls::Frame* pFrame_;
 
 	MainForm* pMainForm_;

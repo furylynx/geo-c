@@ -39,4 +39,24 @@ result OverviewForm::OnTerminating(void)
 	return r;
 }
 
+void OverviewForm::OnLocationUpdate(Osp::Locations::Location& location)
+{
+	//TODO
+}
+
+void OverviewForm::OnLocatorStateChanged(Osp::Locations::LocProviderState newState)
+{
+	//TODO
+}
+
+void OverviewForm::OnTiltUpdate(float azimuth, float pitch, float roll)
+{
+	//TODO
+}
+
+void OverviewForm::OnMagneticUpdate(float degreesToNorth, float x, float y, float z)
+{
+	//TODO
+}
+
 

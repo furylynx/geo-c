@@ -9,7 +9,7 @@
 #define SENSORCONTROLLER_H_
 
 //custom includes
-//...
+#include "../model/ISensorUpdateListener.h"
 
 
 //global includes
@@ -19,6 +19,7 @@
 
 #include <sstream>
 #include <cmath>
+#include <list>
 
 namespace geo
 {
@@ -33,7 +34,6 @@ public:
 
 	virtual void Construct();
 
-	virtual void OnDataReceived(Osp::Uix::SensorType sensor_type, Osp::Uix::SensorData& sensor_data, result r);
 
 	virtual float CalculateAngle(float f1, float f2) const;
 
@@ -45,9 +45,19 @@ public:
 
 	virtual float ToRad(float angleInDegree) const;
 
+	virtual void RegisterSensorUpdateListener(ISensorUpdateListener* listener);
+
+
+
+	//callbacks
+
+	virtual void OnDataReceived(Osp::Uix::SensorType sensor_type, Osp::Uix::SensorData& sensor_data, result r);
+
 	virtual void OnLocationUpdated(Osp::Locations::Location& location);
 
 	virtual void OnProviderStateChanged(Osp::Locations::LocProviderState  newState);
+
+
 
 
 protected:
@@ -60,6 +70,8 @@ private:
 	Osp::Locations::LocationProvider locationProvider_;
 
 	bool paused_;
+
+	std::list<geo::ISensorUpdateListener*> sensorUpdateListeners_;
 
 };
 

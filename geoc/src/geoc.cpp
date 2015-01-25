@@ -50,13 +50,17 @@ bool GeoC::OnAppInitializing(AppRegistry& appRegistry)
 	pSensorController_ = new geo::SensorController();
 	pSensorController_->Construct();
 
+	//initialize the entry controller
+	pEntryController_ = new geo::EntryController();
+	pEntryController_->Construct();
+
 	// Initialize all forms
 	pCacheDetailsForm_ = new CacheDetailsForm();
 	pCacheDetailsForm_->Initialize();
 	pCacheDetailsForm_->SetFormBackEventListener(this);
 
 	pCachesForm_ = new CachesForm();
-	pCachesForm_->Initialize();//TODO pass entrycontroller to this; pass cachedetails
+	pCachesForm_->Initialize(pCacheDetailsForm_, pEntryController_);
 	pCachesForm_->SetFormBackEventListener(this);
 
 	pPreferencesForm_ = new PreferencesForm();
@@ -65,12 +69,12 @@ bool GeoC::OnAppInitializing(AppRegistry& appRegistry)
 
 	pOverviewForm_ = new OverviewForm();
 	pOverviewForm_->Initialize();
-	//TODO register overview as listener to the sensorcontroller
 	pOverviewForm_->SetFormBackEventListener(this);
+	pSensorController_->RegisterSensorUpdateListener(pOverviewForm_);
 
 	pMainForm_ = new MainForm();
 	pMainForm_->Initialize(pPreferencesForm_, pOverviewForm_, pCachesForm_);
-	//TODO register main as listener to the sensorcontroller
+	pSensorController_->RegisterSensorUpdateListener(pMainForm_);
 
 
 

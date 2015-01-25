@@ -12,7 +12,8 @@
 
 
 class CacheDetailsForm :
-	public Osp::Ui::Controls::Form
+	public Osp::Ui::Controls::Form,
+	public Osp::Ui::IActionEventListener
 {
 
 // Construction
@@ -24,14 +25,21 @@ public:
 	virtual void Update(geo::Entry* entry);
 
 	virtual result OnInitializing(void);
+
 	virtual result OnTerminating(void);
+
+	virtual void OnActionPerformed(const Osp::Ui::Control& source, int actionId);
 
 
 protected:
 
 
-public:
-	geo::Entry* entry_;
+private:
+	static const int ID_FOOTER_BUTTON_SAVE = 201;
+
+	geo::Entry* pEntry_;
+
+	Osp::Ui::Controls::ScrollPanel* pScrollPanel_;
 
 };
 

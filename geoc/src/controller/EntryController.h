@@ -27,14 +27,19 @@ public:
 	EntryController();
 	virtual ~EntryController();
 
+	virtual void Construct();
+
+	virtual void AddEntry(Entry* entry);
 	virtual void AddEntry(Osp::Base::String title, float longitude, float latitude);
 
-	virtual std::vector<geo::Entry> GetEntries() const;
+	virtual std::vector<geo::Entry*> GetEntries() const;
+
+	virtual unsigned int Size() const;
 
 protected:
 
 private:
-	std::vector<geo::Entry> entries_;
+	std::vector<geo::Entry*> entries_;
 
 };
 

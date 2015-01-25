@@ -50,6 +50,11 @@ void SensorController::OnDataReceived(Osp::Uix::SensorType sensor_type, Osp::Uix
 		sstr << "OnDataReceived: " << pitch << " " << azimuth << " " << roll << std::endl;
 
 		AppLog(sstr.str().c_str());
+
+		for (std::list<geo::ISensorUpdateListener*>::iterator it = sensorUpdateListeners_.begin(); it != sensorUpdateListeners_.end(); it++)
+		{
+			(*it)->OnTiltUpdate(azimuth, pitch, roll);
+		}
 	}
 	else if (sensor_type == Osp::Uix::SENSOR_TYPE_MAGNETIC)
 	{
@@ -66,6 +71,15 @@ void SensorController::OnDataReceived(Osp::Uix::SensorType sensor_type, Osp::Uix
 		sstr << "OnDataReceived[mag_field]: " << mag_field << std::endl;
 
 		AppLog(sstr.str().c_str());
+
+		float degreesToNorth = 0.0f;
+
+		//TODO calculate the degree to north direction!
+
+		for (std::list<geo::ISensorUpdateListener*>::iterator it = sensorUpdateListeners_.begin(); it != sensorUpdateListeners_.end(); it++)
+		{
+			(*it)->OnMagneticUpdate(degreesToNorth, x, y, z);
+		}
 	}
 
 	//TODO notify forms
@@ -74,6 +88,10 @@ void SensorController::OnDataReceived(Osp::Uix::SensorType sensor_type, Osp::Uix
 
 void SensorController::OnLocationUpdated(Osp::Locations::Location& location)
 {
+	for (std::list<geo::ISensorUpdateListener*>::iterator it = sensorUpdateListeners_.begin(); it != sensorUpdateListeners_.end(); it++)
+	{
+		(*it)->OnLocationUpdate(location);
+	}
 	//location.GetQualifiedCoordinates()->GetLongitude();
 	//location.GetQualifiedCoordinates()->GetLatitude();
 	//location.GetQualifiedCoordinates()->Distance(ToPosition)
@@ -81,7 +99,10 @@ void SensorController::OnLocationUpdated(Osp::Locations::Location& location)
 
 void SensorController::OnProviderStateChanged(Osp::Locations::LocProviderState  newState)
 {
-	//TODO do nothing?
+	for (std::list<geo::ISensorUpdateListener*>::iterator it = sensorUpdateListeners_.begin(); it != sensorUpdateListeners_.end(); it++)
+	{
+		(*it)->OnLocatorStateChanged(newState);
+	}
 }
 
 float SensorController::CalculateAngle(float f1, float f2) const
@@ -193,6 +214,11 @@ float SensorController::ToRad(float angleInDegree) const
 	const float PI = 3.14159265;
 
 	return angleInDegree * PI/180;
+}
+
+void SensorController::RegisterSensorUpdateListener(ISensorUpdateListener* listener)
+{
+	sensorUpdateListeners_.push_back(listener);
 }
 
 }//namespace geo
