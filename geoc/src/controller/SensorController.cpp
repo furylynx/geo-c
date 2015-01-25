@@ -7,6 +7,9 @@
 
 #include "SensorController.h"
 
+namespace geo
+{
+
 SensorController::SensorController()
 {
 
@@ -74,6 +77,11 @@ void SensorController::OnLocationUpdated(Osp::Locations::Location& location)
 	//location.GetQualifiedCoordinates()->GetLongitude();
 	//location.GetQualifiedCoordinates()->GetLatitude();
 	//location.GetQualifiedCoordinates()->Distance(ToPosition)
+}
+
+void SensorController::OnProviderStateChanged(Osp::Locations::LocProviderState  newState)
+{
+	//TODO do nothing?
 }
 
 float SensorController::CalculateAngle(float f1, float f2) const
@@ -186,3 +194,5 @@ float SensorController::ToRad(float angleInDegree) const
 
 	return angleInDegree * PI/180;
 }
+
+}//namespace geo

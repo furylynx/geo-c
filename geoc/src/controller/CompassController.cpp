@@ -7,6 +7,9 @@
 
 #include "CompassController.h"
 
+namespace geo
+{
+
 CompassController::CompassController()
 {
 
@@ -28,3 +31,5 @@ float CompassController::CalculateCompassDegree(float magX, float magY, float ma
 
 	return 0;
 }
+
+}//namespace geo

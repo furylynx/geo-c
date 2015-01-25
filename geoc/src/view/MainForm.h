@@ -2,11 +2,15 @@
 #define _MAINFORM_H_
 
 //custom includes
-//...
+#include "PreferencesForm.h"
+#include "OverviewForm.h"
+#include "CachesForm.h"
 
 //global includes
+#include <FApp.h>
 #include <FBase.h>
 #include <FUi.h>
+
 
 class MainForm :
 	public Osp::Ui::Controls::Form,
@@ -18,10 +22,10 @@ class MainForm :
 public:
 	MainForm(void);
 	virtual ~MainForm(void);
-	bool Initialize(void);
+	bool Initialize(PreferencesForm* pPreferencesForm, OverviewForm* pOverviewForm, CachesForm* pCachesForm);
 
 // Implementation
-protected:
+private:
 	static const int ID_BUTTON_OK = 101;
 	Osp::Ui::Controls::Button *pButtonOk_;
 
@@ -29,6 +33,11 @@ protected:
 	Osp::Ui::Controls::Label *pLabelLongitude_;
 
 	Osp::Ui::Controls::Label *pLabelDistance_;
+
+	//forms
+	PreferencesForm* pPreferencesForm_;
+	OverviewForm* pOverviewForm_;
+	CachesForm* pCachesForm_;
 
 
 public:

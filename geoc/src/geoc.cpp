@@ -1,13 +1,11 @@
 /**
  * Name        : geoc
  * Version     : 
- * Vendor      : 
- * Description : 
+ * Vendor      : furylynx
+ * Description : geo'c - geo caching app for WVGA bada devices.
  */
 
-
-#include "geoc.h"
-#include "view/MainForm.h"
+#include "GeoC.h"
 
 using namespace Osp::App;
 using namespace Osp::Base;
@@ -15,21 +13,28 @@ using namespace Osp::System;
 using namespace Osp::Ui;
 using namespace Osp::Ui::Controls;
 
-geoc::geoc()
+GeoC::GeoC()
 {
 }
 
-geoc::~geoc()
+GeoC::~GeoC()
 {
+	delete pMainForm_;
+	delete pPreferencesForm_;
+	delete pOverviewForm_;
+	delete pCachesForm_;
+	delete pCacheDetailsForm_;
+
+	delete pSensorController_;
 }
 
-Application* geoc::CreateInstance(void)
+Application* GeoC::CreateInstance(void)
 {
 	// Create the instance through the constructor.
-	return new geoc();
+	return new GeoC();
 }
 
-bool geoc::OnAppInitializing(AppRegistry& appRegistry)
+bool GeoC::OnAppInitializing(AppRegistry& appRegistry)
 {
 	// TODO:
 	// Initialize UI resources and application specific data.
@@ -41,25 +46,60 @@ bool geoc::OnAppInitializing(AppRegistry& appRegistry)
 	// Uncomment the following statement to listen to the screen on/off events.
 	//PowerManager::SetScreenEventListener(*this);
 
-	// Create a form
-	MainForm *pMainForm = new MainForm();
-	pMainForm->Initialize();
+	//initialize the sensor controller
+	pSensorController_ = new geo::SensorController();
+	pSensorController_->Construct();
+
+	// Initialize all forms
+	pCacheDetailsForm_ = new CacheDetailsForm();
+	pCacheDetailsForm_->Initialize();
+	pCacheDetailsForm_->SetFormBackEventListener(this);
+
+	pCachesForm_ = new CachesForm();
+	pCachesForm_->Initialize();//TODO pass entrycontroller to this; pass cachedetails
+	pCachesForm_->SetFormBackEventListener(this);
+
+	pPreferencesForm_ = new PreferencesForm();
+	pPreferencesForm_->Initialize();//TODO pass options controller, so that options are directly written to the controller, pass sensor controller in order to pause sensor work
+	pPreferencesForm_->SetFormBackEventListener(this);
+
+	pOverviewForm_ = new OverviewForm();
+	pOverviewForm_->Initialize();
+	//TODO register overview as listener to the sensorcontroller
+	pOverviewForm_->SetFormBackEventListener(this);
+
+	pMainForm_ = new MainForm();
+	pMainForm_->Initialize(pPreferencesForm_, pOverviewForm_, pCachesForm_);
+	//TODO register main as listener to the sensorcontroller
+
+
 
 	// Add the form to the frame
-	Frame *pFrame = GetAppFrame()->GetFrame();
-	pFrame->AddControl(*pMainForm);
+	pFrame_ = GetAppFrame()->GetFrame();
+	pFrame_->AddControl(*pMainForm_);
+	pFrame_->AddControl(*pPreferencesForm_);
+	pFrame_->AddControl(*pOverviewForm_);
+	pFrame_->AddControl(*pCachesForm_);
+	pFrame_->AddControl(*pCacheDetailsForm_);
+
+
+	//intialize the sensor controller
+	pSensorController_ = new geo::SensorController();
+	pSensorController_->Construct();
+	//TODO register MainForm as SensorDataListener!
+
 
 	// Set the current form
-	pFrame->SetCurrentForm(*pMainForm);
+	pFrame_->SetCurrentForm(*pMainForm_);
 
 	// Draw and Show the form
-	pMainForm->Draw();
-	pMainForm->Show();
+	pMainForm_->Draw();
+	pMainForm_->Show();
 
 	return true;
 }
 
-bool geoc::OnAppTerminating(AppRegistry& appRegistry, bool forcedTermination)
+bool GeoC::OnAppTerminating(AppRegistry& appRegistry, bool forcedTermination)
 {
 	// TODO:
 	// Deallocate resources allocated by this application for termination.
@@ -67,41 +107,73 @@ bool geoc::OnAppTerminating(AppRegistry& appRegistry, bool forcedTermination)
 	return true;
 }
 
-void geoc::OnForeground(void)
+void GeoC::OnForeground(void)
 {
 	// TODO:
 	// Start or resume drawing when the application is moved to the foreground.
+
+	//resume the sensors
+	pSensorController_->Resume();
 }
 
-void geoc::OnBackground(void)
+void GeoC::OnBackground(void)
 {
 	// TODO:
 	// Stop drawing when the application is moved to the background.
+
+	//pause the sensors
+	pSensorController_->Pause();
 }
 
-void geoc::OnLowMemory(void)
+void GeoC::OnLowMemory(void)
 {
 	// TODO:
 	// Free unused resources or close the application.
+
+	//terminate app
+	Osp::App::Application::Terminate();
 }
 
-void geoc::OnBatteryLevelChanged(BatteryLevel batteryLevel)
+void GeoC::OnBatteryLevelChanged(BatteryLevel batteryLevel)
 {
 	// TODO:
 	// Handle any changes in battery level here.
 	// Stop using multimedia features(camera, mp3 etc.) if the battery level is CRITICAL.
 }
 
-void geoc::OnScreenOn (void)
+void GeoC::OnScreenOn (void)
 {
 	// TODO:
 	// Get the released resources or resume the operations that were paused or stopped in OnScreenOff().
 }
 
-void geoc::OnScreenOff (void)
+void GeoC::OnScreenOff (void)
 {
 	// TODO:
 	//  Unless there is a strong reason to do otherwise, release resources (such as 3D, media, and sensors) to allow the device to enter the sleep mode to save the battery.
 	// Invoking a lengthy asynchronous method within this listener method can be risky, because it is not guaranteed to invoke a callback before the device enters the sleep mode.
 	// Similarly, do not perform lengthy operations in this listener method. Any operation must be a quick one.
+}
+
+void GeoC::OnFormBackRequested(Osp::Ui::Controls::Form& source)
+{
+	//TODO hide current form?
+	AppLog("GeoC: BACK Button is clicked! \n");
+
+	if (&source == pOverviewForm_ || &source == pPreferencesForm_ || &source == pCachesForm_ )
+	{
+		pFrame_->SetCurrentForm(*pMainForm_);
+
+		// Draw and Show the form
+		pMainForm_->Draw();
+		pMainForm_->Show();
+	}
+	else if (&source == pCacheDetailsForm_)
+	{
+		pFrame_->SetCurrentForm(*pCachesForm_);
+
+		// Draw and Show the form
+		pCachesForm_->Draw();
+		pCachesForm_->Show();
+	}
 }

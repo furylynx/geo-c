@@ -6,15 +6,21 @@ using namespace Osp::Ui::Controls;
 
 MainForm::MainForm(void)
 {
+
 }
 
 MainForm::~MainForm(void)
 {
+
 }
 
 bool
-MainForm::Initialize()
+MainForm::Initialize(PreferencesForm* pPreferencesForm, OverviewForm* pOverviewForm, CachesForm* pCachesForm)
 {
+	pPreferencesForm_ = pPreferencesForm;
+	pOverviewForm_ = pOverviewForm;
+	pCachesForm_ = pCachesForm;
+
 	// Construct an XML form
 	Construct(L"IDF_MAINFORM");
 
@@ -63,11 +69,6 @@ void MainForm::OnActionPerformed(const Osp::Ui::Control& source, int actionId)
 {
 	switch(actionId)
 	{
-		case ID_BUTTON_OK:
-		{
-			AppLog("OK Button is clicked! \n");
-		}
-		break;
 		case SOFTKEY_0:
 		{
 			AppLog("OVERVIEW Button is clicked! \n");
@@ -76,6 +77,10 @@ void MainForm::OnActionPerformed(const Osp::Ui::Control& source, int actionId)
 		case SOFTKEY_1:
 		{
 			AppLog("CACHES Button is clicked! \n");
+
+			Osp::App::Application::GetInstance()->GetAppFrame()->GetFrame()->SetCurrentForm(*pCachesForm_);
+			pCachesForm_->Draw();
+			pCachesForm_->Show();
 		}
 		break;
 		default:

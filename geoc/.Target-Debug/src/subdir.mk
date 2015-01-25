@@ -4,15 +4,15 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../src/geoc.cpp \
+../src/GeoC.cpp \
 ../src/geocEntry.cpp 
 
 OBJS += \
-./src/geoc.o \
+./src/GeoC.o \
 ./src/geocEntry.o 
 
 CPP_DEPS += \
-./src/geoc.d \
+./src/GeoC.d \
 ./src/geocEntry.d 
 
 

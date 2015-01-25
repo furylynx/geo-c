@@ -1,0 +1,9 @@
+PC: 0x00000022 LR: 0x4004B663 Stack PTR : 0x0ADFE850 
+0x00000022 [Platform Fns]
+0x4004DF7A [Platform Fns]
+0x400928F0 [Platform Fns]
+0x40093104 [Platform Fns]
+0x4001EE82 [Platform Fns]
+0x4001EEB8 [Platform Fns]
+0x4005331C [Platform Fns]
+0x402070CC [Platform Fns]

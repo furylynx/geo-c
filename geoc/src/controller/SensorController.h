@@ -20,7 +20,8 @@
 #include <sstream>
 #include <cmath>
 
-
+namespace geo
+{
 
 class SensorController :
 	public Osp::Uix::ISensorEventListener,
@@ -46,6 +47,8 @@ public:
 
 	virtual void OnLocationUpdated(Osp::Locations::Location& location);
 
+	virtual void OnProviderStateChanged(Osp::Locations::LocProviderState  newState);
+
 
 protected:
 	virtual bool RegisterSensor(Osp::Uix::SensorType sensor_type);
@@ -59,5 +62,7 @@ private:
 	bool paused_;
 
 };
+
+}//namespace geo
 
 #endif /* SENSORCONTROLLER_H_ */

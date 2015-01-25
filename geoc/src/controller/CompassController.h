@@ -12,8 +12,10 @@
 //...
 
 //global includes
+//...
 
-
+namespace geo
+{
 
 class CompassController
 {
@@ -25,5 +27,7 @@ class CompassController
 
 		virtual float CalculateCompassDegree(float magX, float magY, float magZ, float azimuth, float pitch, float roll);
 };
+
+}//namespace geo
 
 #endif /* COMPASSCONTROLLER_H_ */

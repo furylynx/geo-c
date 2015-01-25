@@ -4,25 +4,25 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../src/view/Cachedetail.cpp \
-../src/view/Caches.cpp \
+../src/view/CacheDetailsForm.cpp \
+../src/view/CachesForm.cpp \
 ../src/view/MainForm.cpp \
-../src/view/Overview.cpp \
-../src/view/Preferences.cpp 
+../src/view/OverviewForm.cpp \
+../src/view/PreferencesForm.cpp 
 
 OBJS += \
-./src/view/Cachedetail.o \
-./src/view/Caches.o \
+./src/view/CacheDetailsForm.o \
+./src/view/CachesForm.o \
 ./src/view/MainForm.o \
-./src/view/Overview.o \
-./src/view/Preferences.o 
+./src/view/OverviewForm.o \
+./src/view/PreferencesForm.o 
 
 CPP_DEPS += \
-./src/view/Cachedetail.d \
-./src/view/Caches.d \
+./src/view/CacheDetailsForm.d \
+./src/view/CachesForm.d \
 ./src/view/MainForm.d \
-./src/view/Overview.d \
-./src/view/Preferences.d 
+./src/view/OverviewForm.d \
+./src/view/PreferencesForm.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

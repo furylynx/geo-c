@@ -38,6 +38,6 @@ private:
 
 };
 
-}
+}//namespace geo
 
 #endif /* ENTRYCONTROLLER_H_ */
