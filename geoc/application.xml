@@ -2,26 +2,26 @@
 <Application>
     <Entry>geoc</Entry>
     <Name>
-        <English>Geoc</English>
-        <eng-GB>Geoc</eng-GB>
+        <English>geo'c</English>
+        <eng-GB>geo'c</eng-GB>
     </Name>
     <Vendor/>
     <Description>geo'c - geo caching app for WVGA bada devices. </Description>
     <Icons>
-        <MainMenu>geoc_type4.png<Type1/>
+        <MainMenu>circle-small-80p.png<Type1/>
             <Type2/>
-            <Type3>geoc_type3.png</Type3>
-            <Type4>geoc_type4.png</Type4>
-            <Type5>geoc_type5.png</Type5>
+            <Type3>circle-small-50p.png</Type3>
+            <Type4>circle-small-80p.png</Type4>
+            <Type5>circle-small-50p.png</Type5>
         </MainMenu>
         <Setting/>
         <Ticker/>
         <QuickPanel/>
-        <LaunchImage>Splash_type4.png<Type1/>
+        <LaunchImage>splash-lynx-480p-titled.png<Type1/>
             <Type2/>
-            <Type3>Splash_type3.png</Type3>
-            <Type4>Splash_type4.png</Type4>
-            <Type5>Splash_type5.png</Type5>
+            <Type3>splash-lynx-320p-titled.png</Type3>
+            <Type4>splash-lynx-480p-titled.png</Type4>
+            <Type5>splash-lynx-240p-titled.png</Type5>
         </LaunchImage>
     </Icons>
     <AutoScaling>

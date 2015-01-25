@@ -26,10 +26,13 @@ public:
 
 	virtual void Construct(Osp::Base::String title, float longitude, float latitude);
 
-	virtual Osp::Base::String title() const;
+	virtual Osp::Base::String Title() const;
 
-	virtual float longitude() const;
-	virtual float latitude() const;
+	virtual float Longitude() const;
+	virtual float Latitude() const;
+
+	virtual void Export(Osp::Base::String filename) const;
+
 
 private:
 	Osp::Base::String title_;

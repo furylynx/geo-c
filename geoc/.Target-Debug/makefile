@@ -11,6 +11,7 @@ REPOSITORY_ROOT := C:/Users/John/Documents/bada_workspace/repository/geoc/Target
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include subdir.mk
+-include src/view/subdir.mk
 -include src/model/subdir.mk
 -include src/subdir.mk
 -include src/controller/subdir.mk
@@ -48,7 +49,7 @@ all: geoc.exe
 geoc.exe: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: bada C++ Linker'
-	@echo 'ldflags: -L"C:/bada/2.0.6/Model/WaveWVGA/Target" -L"C:/Users/John/Documents/git_workspace/geo-c/geoc/lib" -shared -march=armv7-a -mthumb -mthumb-interwork -mfpu=vfpv3 -mfloat-abi=hard -o"geoc.exe" ./src/model/Entry.o ./src/MainForm.o ./src/geoc.o ./src/geocEntry.o ./src/controller/CompassController.o ./src/controller/EntryController.o ./src/controller/SensorController.o '
+	@echo 'ldflags: -L"C:/bada/2.0.6/Model/WaveWVGA/Target" -L"C:/Users/John/Documents/git_workspace/geo-c/geoc/lib" -shared -march=armv7-a -mthumb -mthumb-interwork -mfpu=vfpv3 -mfloat-abi=hard -o"geoc.exe" ./src/view/Cachedetail.o ./src/view/Caches.o ./src/view/MainForm.o ./src/view/Overview.o ./src/view/Preferences.o ./src/model/Entry.o ./src/geoc.o ./src/geocEntry.o ./src/controller/CompassController.o ./src/controller/EntryController.o ./src/controller/SensorController.o '
 	arm-samsung-nucleuseabi-g++ @ldflags @ldobjs  $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '

@@ -26,19 +26,25 @@ void Entry::Construct(Osp::Base::String title, float longitude, float latitude)
 	latitude_ = latitude;
 }
 
-Osp::Base::String Entry::title() const
+Osp::Base::String Entry::Title() const
 {
 	return title_;
 }
 
-float Entry::longitude() const
+float Entry::Longitude() const
 {
 	return longitude_;
 }
 
-float Entry::latitude() const
+float Entry::Latitude() const
 {
 	return latitude_;
+}
+
+void Entry::Export(Osp::Base::String filename) const
+{
+	//TODO export to gpx file
+	//other formats?
 }
 
 }

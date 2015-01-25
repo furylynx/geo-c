@@ -142,7 +142,89 @@ src/controller/SensorController.d src/controller/SensorController.o: \
  C:/bada/2.0.6/Include/FUixSpeechToText.h \
  C:/bada/2.0.6/Include/FUixSpeechToTextCommon.h \
  C:/bada/2.0.6/Include/FUixISpeechToTextEventListener.h \
- C:/bada/2.0.6/Include/FBase.h
+ C:/bada/2.0.6/Include/FBase.h C:/bada/2.0.6/Include/FLocations.h \
+ C:/bada/2.0.6/Include/FLocCircleGeographicArea.h \
+ C:/bada/2.0.6/Include/FLocationConfig.h \
+ C:/bada/2.0.6/Include/FLocGeographicArea.h \
+ C:/bada/2.0.6/Include/FLocCoordinates.h \
+ C:/bada/2.0.6/Include/FLocRouteServicePreferences.h \
+ C:/bada/2.0.6/Include/FLocServicePreferences.h \
+ C:/bada/2.0.6/Include/FLocRectangleGeographicArea.h \
+ C:/bada/2.0.6/Include/FLocPolygonGeographicArea.h \
+ C:/bada/2.0.6/Include/FLocAddressInfo.h \
+ C:/bada/2.0.6/Include/FLocLandmark.h \
+ C:/bada/2.0.6/Include/FLocQualifiedCoordinates.h \
+ C:/bada/2.0.6/Include/FLocLandmarkFilter.h \
+ C:/bada/2.0.6/Include/FLocLandmarkPropertySelector.h \
+ C:/bada/2.0.6/Include/FLocLocation.h \
+ C:/bada/2.0.6/Include/FLocLandmarkStore.h \
+ C:/bada/2.0.6/Include/FLocILandmarkSearchListener.h \
+ C:/bada/2.0.6/Include/FLocLocationProvider.h \
+ C:/bada/2.0.6/Include/FLocIAreaListener.h \
+ C:/bada/2.0.6/Include/FLocILocationListener.h \
+ C:/bada/2.0.6/Include/FLocRemoteLocationProvider.h \
+ C:/bada/2.0.6/Include/FLocServiceInfo.h \
+ C:/bada/2.0.6/Include/FLocIRemoteLocationListener.h \
+ C:/bada/2.0.6/Include/FLocITraceServiceListener.h \
+ C:/bada/2.0.6/Include/FLocILocationReportListener.h \
+ C:/bada/2.0.6/Include/FLocRemoteLandmarkStore.h \
+ C:/bada/2.0.6/Include/FLocIRemoteLandmarkStoreListener.h \
+ C:/bada/2.0.6/Include/FLocGeocodingServicePreferences.h \
+ C:/bada/2.0.6/Include/FLocIGeocodingServiceListener.h \
+ C:/bada/2.0.6/Include/FLocIGeocodingServiceProvider.h \
+ C:/bada/2.0.6/Include/FLocIServiceProvider.h \
+ C:/bada/2.0.6/Include/FLocIMapServiceListener.h \
+ C:/bada/2.0.6/Include/FLocIMapServiceProvider.h \
+ C:/bada/2.0.6/Include/FLocIMap.h \
+ C:/bada/2.0.6/Include/FLocMapServicePreferences.h \
+ C:/bada/2.0.6/Include/FLocProviderCapabilities.h \
+ C:/bada/2.0.6/Include/FLocProviderManager.h \
+ C:/bada/2.0.6/Include/FLocRoute.h \
+ C:/bada/2.0.6/Include/FLocRouteSegment.h \
+ C:/bada/2.0.6/Include/FLocIRouteServiceProvider.h \
+ C:/bada/2.0.6/Include/FLocIRouteServiceListener.h \
+ C:/bada/2.0.6/Include/FLocDirectoryFilter.h \
+ C:/bada/2.0.6/Include/FLocDirectoryServicePreferences.h \
+ C:/bada/2.0.6/Include/FLocIDirectoryServiceProvider.h \
+ C:/bada/2.0.6/Include/FLocIDirectoryServiceListener.h \
+ C:/bada/2.0.6/Include/FLocCtrlMap.h \
+ C:/bada/2.0.6/Include/FLocationControlConfig.h \
+ C:/bada/2.0.6/Include/FUiControl.h C:/bada/2.0.6/Include/FUiConfig.h \
+ C:/bada/2.0.6/Include/FUiClassType.h \
+ C:/bada/2.0.6/Include/FUiIFocusEventListener.h \
+ C:/bada/2.0.6/Include/FUiIKeyEventListener.h \
+ C:/bada/2.0.6/Include/FUiITouchEventListener.h \
+ C:/bada/2.0.6/Include/FUiTouch.h \
+ C:/bada/2.0.6/Include/FUiIDragDropEventListener.h \
+ C:/bada/2.0.6/Include/FUiITouchModeChangedEventListener.h \
+ C:/bada/2.0.6/Include/FUiCompositeMode.h \
+ C:/bada/2.0.6/Include/FLocCoordinates.h \
+ C:/bada/2.0.6/Include/FLocRectangleGeographicArea.h \
+ C:/bada/2.0.6/Include/FLocCtrlIMapEventListener.h \
+ C:/bada/2.0.6/Include/FUiConfig.h \
+ C:/bada/2.0.6/Include/FBaseRtIEventListener.h \
+ C:/bada/2.0.6/Include/FBaseTypes.h C:/bada/2.0.6/Include/FGraphics.h \
+ C:/bada/2.0.6/Include/FLocCtrlMap.h \
+ C:/bada/2.0.6/Include/FLocCtrlIMapInfoWindowEventListener.h \
+ C:/bada/2.0.6/Include/FLocCtrlNativeMapInfoWindow.h \
+ C:/bada/2.0.6/Include/FBaseString.h \
+ C:/bada/2.0.6/Include/FLocCtrlIMapInfoWindow.h \
+ C:/bada/2.0.6/Include/FGrpDimension.h C:/bada/2.0.6/Include/FGrpPoint.h \
+ C:/bada/2.0.6/Include/FLocCtrlIMapOverlayEventListener.h \
+ C:/bada/2.0.6/Include/FLocCtrlIMapOverlay.h \
+ C:/bada/2.0.6/Include/FLocCtrlMapOverlayCircle.h \
+ C:/bada/2.0.6/Include/FLocCtrlMapOverlayShape.h \
+ C:/bada/2.0.6/Include/FLocCtrlNativeMapOverlay.h \
+ C:/bada/2.0.6/Include/FBaseObject.h \
+ C:/bada/2.0.6/Include/FLocCircleGeographicArea.h \
+ C:/bada/2.0.6/Include/FLocCtrlMapOverlayMarker.h \
+ C:/bada/2.0.6/Include/FLocCtrlMapOverlayPolygon.h \
+ C:/bada/2.0.6/Include/FLocPolygonGeographicArea.h \
+ C:/bada/2.0.6/Include/FLocCtrlMapOverlayPolyline.h \
+ C:/bada/2.0.6/Include/FGrpColor.h \
+ C:/bada/2.0.6/Include/FGrpCanvasCommon.h \
+ C:/bada/2.0.6/Include/FLocCtrlMapOverlayRectangle.h \
+ C:/bada/2.0.6/Include/FLocCtrlNativeMapInfoWindow.h
 
 ../src/controller/SensorController.h:
 
@@ -465,3 +547,175 @@ C:/bada/2.0.6/Include/FUixSpeechToTextCommon.h:
 C:/bada/2.0.6/Include/FUixISpeechToTextEventListener.h:
 
 C:/bada/2.0.6/Include/FBase.h:
+
+C:/bada/2.0.6/Include/FLocations.h:
+
+C:/bada/2.0.6/Include/FLocCircleGeographicArea.h:
+
+C:/bada/2.0.6/Include/FLocationConfig.h:
+
+C:/bada/2.0.6/Include/FLocGeographicArea.h:
+
+C:/bada/2.0.6/Include/FLocCoordinates.h:
+
+C:/bada/2.0.6/Include/FLocRouteServicePreferences.h:
+
+C:/bada/2.0.6/Include/FLocServicePreferences.h:
+
+C:/bada/2.0.6/Include/FLocRectangleGeographicArea.h:
+
+C:/bada/2.0.6/Include/FLocPolygonGeographicArea.h:
+
+C:/bada/2.0.6/Include/FLocAddressInfo.h:
+
+C:/bada/2.0.6/Include/FLocLandmark.h:
+
+C:/bada/2.0.6/Include/FLocQualifiedCoordinates.h:
+
+C:/bada/2.0.6/Include/FLocLandmarkFilter.h:
+
+C:/bada/2.0.6/Include/FLocLandmarkPropertySelector.h:
+
+C:/bada/2.0.6/Include/FLocLocation.h:
+
+C:/bada/2.0.6/Include/FLocLandmarkStore.h:
+
+C:/bada/2.0.6/Include/FLocILandmarkSearchListener.h:
+
+C:/bada/2.0.6/Include/FLocLocationProvider.h:
+
+C:/bada/2.0.6/Include/FLocIAreaListener.h:
+
+C:/bada/2.0.6/Include/FLocILocationListener.h:
+
+C:/bada/2.0.6/Include/FLocRemoteLocationProvider.h:
+
+C:/bada/2.0.6/Include/FLocServiceInfo.h:
+
+C:/bada/2.0.6/Include/FLocIRemoteLocationListener.h:
+
+C:/bada/2.0.6/Include/FLocITraceServiceListener.h:
+
+C:/bada/2.0.6/Include/FLocILocationReportListener.h:
+
+C:/bada/2.0.6/Include/FLocRemoteLandmarkStore.h:
+
+C:/bada/2.0.6/Include/FLocIRemoteLandmarkStoreListener.h:
+
+C:/bada/2.0.6/Include/FLocGeocodingServicePreferences.h:
+
+C:/bada/2.0.6/Include/FLocIGeocodingServiceListener.h:
+
+C:/bada/2.0.6/Include/FLocIGeocodingServiceProvider.h:
+
+C:/bada/2.0.6/Include/FLocIServiceProvider.h:
+
+C:/bada/2.0.6/Include/FLocIMapServiceListener.h:
+
+C:/bada/2.0.6/Include/FLocIMapServiceProvider.h:
+
+C:/bada/2.0.6/Include/FLocIMap.h:
+
+C:/bada/2.0.6/Include/FLocMapServicePreferences.h:
+
+C:/bada/2.0.6/Include/FLocProviderCapabilities.h:
+
+C:/bada/2.0.6/Include/FLocProviderManager.h:
+
+C:/bada/2.0.6/Include/FLocRoute.h:
+
+C:/bada/2.0.6/Include/FLocRouteSegment.h:
+
+C:/bada/2.0.6/Include/FLocIRouteServiceProvider.h:
+
+C:/bada/2.0.6/Include/FLocIRouteServiceListener.h:
+
+C:/bada/2.0.6/Include/FLocDirectoryFilter.h:
+
+C:/bada/2.0.6/Include/FLocDirectoryServicePreferences.h:
+
+C:/bada/2.0.6/Include/FLocIDirectoryServiceProvider.h:
+
+C:/bada/2.0.6/Include/FLocIDirectoryServiceListener.h:
+
+C:/bada/2.0.6/Include/FLocCtrlMap.h:
+
+C:/bada/2.0.6/Include/FLocationControlConfig.h:
+
+C:/bada/2.0.6/Include/FUiControl.h:
+
+C:/bada/2.0.6/Include/FUiConfig.h:
+
+C:/bada/2.0.6/Include/FUiClassType.h:
+
+C:/bada/2.0.6/Include/FUiIFocusEventListener.h:
+
+C:/bada/2.0.6/Include/FUiIKeyEventListener.h:
+
+C:/bada/2.0.6/Include/FUiITouchEventListener.h:
+
+C:/bada/2.0.6/Include/FUiTouch.h:
+
+C:/bada/2.0.6/Include/FUiIDragDropEventListener.h:
+
+C:/bada/2.0.6/Include/FUiITouchModeChangedEventListener.h:
+
+C:/bada/2.0.6/Include/FUiCompositeMode.h:
+
+C:/bada/2.0.6/Include/FLocCoordinates.h:
+
+C:/bada/2.0.6/Include/FLocRectangleGeographicArea.h:
+
+C:/bada/2.0.6/Include/FLocCtrlIMapEventListener.h:
+
+C:/bada/2.0.6/Include/FUiConfig.h:
+
+C:/bada/2.0.6/Include/FBaseRtIEventListener.h:
+
+C:/bada/2.0.6/Include/FBaseTypes.h:
+
+C:/bada/2.0.6/Include/FGraphics.h:
+
+C:/bada/2.0.6/Include/FLocCtrlMap.h:
+
+C:/bada/2.0.6/Include/FLocCtrlIMapInfoWindowEventListener.h:
+
+C:/bada/2.0.6/Include/FLocCtrlNativeMapInfoWindow.h:
+
+C:/bada/2.0.6/Include/FBaseString.h:
+
+C:/bada/2.0.6/Include/FLocCtrlIMapInfoWindow.h:
+
+C:/bada/2.0.6/Include/FGrpDimension.h:
+
+C:/bada/2.0.6/Include/FGrpPoint.h:
+
+C:/bada/2.0.6/Include/FLocCtrlIMapOverlayEventListener.h:
+
+C:/bada/2.0.6/Include/FLocCtrlIMapOverlay.h:
+
+C:/bada/2.0.6/Include/FLocCtrlMapOverlayCircle.h:
+
+C:/bada/2.0.6/Include/FLocCtrlMapOverlayShape.h:
+
+C:/bada/2.0.6/Include/FLocCtrlNativeMapOverlay.h:
+
+C:/bada/2.0.6/Include/FBaseObject.h:
+
+C:/bada/2.0.6/Include/FLocCircleGeographicArea.h:
+
+C:/bada/2.0.6/Include/FLocCtrlMapOverlayMarker.h:
+
+C:/bada/2.0.6/Include/FLocCtrlMapOverlayPolygon.h:
+
+C:/bada/2.0.6/Include/FLocPolygonGeographicArea.h:
+
+C:/bada/2.0.6/Include/FLocCtrlMapOverlayPolyline.h:
+
+C:/bada/2.0.6/Include/FGrpColor.h:
+
+C:/bada/2.0.6/Include/FGrpCanvasCommon.h:
+
+C:/bada/2.0.6/Include/FLocCtrlMapOverlayRectangle.h:
+
+C:/bada/2.0.6/Include/FLocCtrlNativeMapInfoWindow.h:

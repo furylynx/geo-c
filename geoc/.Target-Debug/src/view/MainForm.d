@@ -1,7 +1,7 @@
-src/MainForm.d src/MainForm.o: ../src/MainForm.cpp \
- C:/Users/John/Documents/git_workspace/geo-c/geoc/inc/MainForm.h \
- C:/bada/2.0.6/Include/FBase.h C:/bada/2.0.6/Include/FBaseTypes.h \
- C:/bada/2.0.6/Include/FBaseSys.h C:/bada/2.0.6/Include/FBaseConfig.h \
+src/view/MainForm.d src/view/MainForm.o: ../src/view/MainForm.cpp \
+ ../src/view/MainForm.h C:/bada/2.0.6/Include/FBase.h \
+ C:/bada/2.0.6/Include/FBaseTypes.h C:/bada/2.0.6/Include/FBaseSys.h \
+ C:/bada/2.0.6/Include/FBaseConfig.h \
  C:/bada/2.0.6/Include/FBaseDataType.h \
  C:/bada/2.0.6/Include/FBaseUtilMemory.h \
  C:/bada/2.0.6/Include/FBaseErrors.h \
@@ -253,7 +253,7 @@ src/MainForm.d src/MainForm.o: ../src/MainForm.cpp \
  C:/bada/2.0.6/Include/FUiGridLayout.h \
  C:/bada/2.0.6/Include/FUiCustomControlBase.h
 
-C:/Users/John/Documents/git_workspace/geo-c/geoc/inc/MainForm.h:
+../src/view/MainForm.h:
 
 C:/bada/2.0.6/Include/FBase.h:
 

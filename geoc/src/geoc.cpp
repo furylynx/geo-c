@@ -7,7 +7,7 @@
 
 
 #include "geoc.h"
-#include "MainForm.h"
+#include "view/MainForm.h"
 
 using namespace Osp::App;
 using namespace Osp::Base;

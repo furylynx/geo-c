@@ -1,25 +1,18 @@
-src/geoc.d src/geoc.o: ../src/geoc.cpp ../src/geoc.h \
- C:/bada/2.0.6/Include/FApp.h C:/bada/2.0.6/Include/FAppApplication.h \
- C:/bada/2.0.6/Include/FBaseObject.h C:/bada/2.0.6/Include/FBaseTypes.h \
- C:/bada/2.0.6/Include/FBaseSys.h C:/bada/2.0.6/Include/FBaseConfig.h \
+src/view/Overview.d src/view/Overview.o: ../src/view/Overview.cpp \
+ ../src/view/Overview.h C:/bada/2.0.6/Include/FBase.h \
+ C:/bada/2.0.6/Include/FBaseTypes.h C:/bada/2.0.6/Include/FBaseSys.h \
+ C:/bada/2.0.6/Include/FBaseConfig.h \
  C:/bada/2.0.6/Include/FBaseDataType.h \
  C:/bada/2.0.6/Include/FBaseUtilMemory.h \
- C:/bada/2.0.6/Include/FSysBattery.h C:/bada/2.0.6/Include/FSysConfig.h \
- C:/bada/2.0.6/Include/FSysPower.h C:/bada/2.0.6/Include/FAppConfig.h \
- C:/bada/2.0.6/Include/FAppTypes.h C:/bada/2.0.6/Include/FBaseString.h \
- C:/bada/2.0.6/Include/FAppAppManager.h \
- C:/bada/2.0.6/Include/FAppAppControl.h \
- C:/bada/2.0.6/Include/FAppIAppControlEventListener.h \
- C:/bada/2.0.6/Include/FBaseRtIEventListener.h \
- C:/bada/2.0.6/Include/FBaseResult.h C:/bada/2.0.6/Include/FBaseErrors.h \
+ C:/bada/2.0.6/Include/FBaseErrors.h \
  C:/bada/2.0.6/Include/FBaseErrorDefine.h \
- C:/bada/2.0.6/Include/FAppIPackageEventListener.h \
- C:/bada/2.0.6/Include/FAppPackageManager.h C:/bada/2.0.6/Include/FBase.h \
- C:/bada/2.0.6/Include/FBaseChar.h C:/bada/2.0.6/Include/FBaseNumber.h \
- C:/bada/2.0.6/Include/FBaseBoolean.h C:/bada/2.0.6/Include/FBaseInt8.h \
- C:/bada/2.0.6/Include/FBaseInteger.h C:/bada/2.0.6/Include/FBaseShort.h \
- C:/bada/2.0.6/Include/FBaseLong.h C:/bada/2.0.6/Include/FBaseLongLong.h \
- C:/bada/2.0.6/Include/FBaseFloat.h C:/bada/2.0.6/Include/FBaseDouble.h \
+ C:/bada/2.0.6/Include/FBaseResult.h C:/bada/2.0.6/Include/FBaseObject.h \
+ C:/bada/2.0.6/Include/FBaseChar.h C:/bada/2.0.6/Include/FBaseString.h \
+ C:/bada/2.0.6/Include/FBaseNumber.h C:/bada/2.0.6/Include/FBaseBoolean.h \
+ C:/bada/2.0.6/Include/FBaseInt8.h C:/bada/2.0.6/Include/FBaseInteger.h \
+ C:/bada/2.0.6/Include/FBaseShort.h C:/bada/2.0.6/Include/FBaseLong.h \
+ C:/bada/2.0.6/Include/FBaseLongLong.h C:/bada/2.0.6/Include/FBaseFloat.h \
+ C:/bada/2.0.6/Include/FBaseDouble.h \
  C:/bada/2.0.6/Include/FBaseInt8Comparer.h \
  C:/bada/2.0.6/Include/FBaseColIComparer.h \
  C:/bada/2.0.6/Include/FBaseIntegerComparer.h \
@@ -69,6 +62,7 @@ src/geoc.d src/geoc.o: ../src/geoc.cpp ../src/geoc.h \
  C:/bada/2.0.6/Include/FBaseColMultiHashMapT.h \
  C:/bada/2.0.6/Include/FBaseColIMultiMapT.h \
  C:/bada/2.0.6/Include/FBaseRt.h C:/bada/2.0.6/Include/FBaseRtTypes.h \
+ C:/bada/2.0.6/Include/FBaseRtIEventListener.h \
  C:/bada/2.0.6/Include/FBaseRtTimer.h \
  C:/bada/2.0.6/Include/FBaseResource.h \
  C:/bada/2.0.6/Include/FBaseRtITimerEventListener.h \
@@ -79,7 +73,8 @@ src/geoc.d src/geoc.o: ../src/geoc.cpp ../src/geoc.h \
  C:/bada/2.0.6/Include/FBaseRtThreadMonitor.h \
  C:/bada/2.0.6/Include/FBaseRtLibrary.h \
  C:/bada/2.0.6/Include/FBaseRtMemoryManager.h \
- C:/bada/2.0.6/Include/FBaseUtil.h C:/bada/2.0.6/Include/FBaseUtilMath.h \
+ C:/bada/2.0.6/Include/FBase.h C:/bada/2.0.6/Include/FBaseUtil.h \
+ C:/bada/2.0.6/Include/FBaseUtilMath.h \
  C:/bada/2.0.6/Include/FBaseUtilStringTokenizer.h \
  C:/bada/2.0.6/Include/FBaseUtilStringUtil.h \
  C:/bada/2.0.6/Include/FBaseUtilUri.h \
@@ -92,43 +87,6 @@ src/geoc.d src/geoc.o: ../src/geoc.cpp ../src/geoc.h \
  C:/bada/2.0.6/Include/FBaseUtilFileUnzipper.h \
  C:/bada/2.0.6/Include/FBaseUtilZipEntry.h \
  C:/bada/2.0.6/Include/FBaseUtilRegularExpression.h \
- C:/bada/2.0.6/Include/FAppAppRegistry.h \
- C:/bada/2.0.6/Include/FAppAppResource.h \
- C:/bada/2.0.6/Include/FGrpBitmap.h C:/bada/2.0.6/Include/FGrpConfig.h \
- C:/bada/2.0.6/Include/FGrpPoint.h C:/bada/2.0.6/Include/FGrpColor.h \
- C:/bada/2.0.6/Include/FGrpDimension.h \
- C:/bada/2.0.6/Include/FGrpRectangle.h \
- C:/bada/2.0.6/Include/FGrpBitmapCommon.h \
- C:/bada/2.0.6/Include/FGrpBufferInfo.h \
- C:/bada/2.0.6/Include/FGrpPixelFormat.h \
- C:/bada/2.0.6/Include/FAppIAppFrame.h \
- C:/bada/2.0.6/Include/FAppNotificationManager.h \
- C:/bada/2.0.6/Include/FAppPackageInfo.h \
- C:/bada/2.0.6/Include/FBaseObject.h C:/bada/2.0.6/Include/FBase.h \
- C:/bada/2.0.6/Include/FAppDownloadUIManager.h \
- C:/bada/2.0.6/Include/FAppGuestPackageManager.h \
- C:/bada/2.0.6/Include/FAppPackageManager.h \
- C:/bada/2.0.6/Include/FAppIPackageEventListener.h \
- C:/bada/2.0.6/Include/FAppIGuestPackageEventListener.h \
- C:/bada/2.0.6/Include/FAppGuestPackageInfo.h \
- C:/bada/2.0.6/Include/FAppJavaAppManager.h \
- C:/bada/2.0.6/Include/FAppJarInfo.h \
- C:/bada/2.0.6/Include/FAppIAppControlListener.h \
- C:/bada/2.0.6/Include/FSystem.h C:/bada/2.0.6/Include/FSysAlarm.h \
- C:/bada/2.0.6/Include/FSysIAlarmEventListener.h \
- C:/bada/2.0.6/Include/FSysSystemTime.h \
- C:/bada/2.0.6/Include/FSysVibrator.h \
- C:/bada/2.0.6/Include/FSysSystemInfo.h \
- C:/bada/2.0.6/Include/FSysRuntimeInfo.h \
- C:/bada/2.0.6/Include/FSysSettingInfo.h \
- C:/bada/2.0.6/Include/FSysISettingEventListener.h \
- C:/bada/2.0.6/Include/FSysIScreenEventListener.h \
- C:/bada/2.0.6/Include/FSysIChargingEventListener.h \
- C:/bada/2.0.6/Include/FSysPowerManager.h \
- C:/bada/2.0.6/Include/FSysIBatteryEventListener.h \
- C:/bada/2.0.6/Include/FSysFeatureList.h \
- C:/bada/2.0.6/Include/FSysDeviceManager.h \
- C:/bada/2.0.6/Include/FSysIDeviceEventListener.h \
  C:/bada/2.0.6/Include/FUi.h C:/bada/2.0.6/Include/FUiFocusManager.h \
  C:/bada/2.0.6/Include/FUiConfig.h C:/bada/2.0.6/Include/FUiKeyboardMap.h \
  C:/bada/2.0.6/Include/FUiIKeyEventListener.h \
@@ -142,10 +100,16 @@ src/geoc.d src/geoc.o: ../src/geoc.cpp ../src/geoc.h \
  C:/bada/2.0.6/Include/FUiIDateChangeEventListener.h \
  C:/bada/2.0.6/Include/FUiIDateTimeChangeEventListener.h \
  C:/bada/2.0.6/Include/FUiIDragDropEventListener.h \
- C:/bada/2.0.6/Include/FGraphics.h C:/bada/2.0.6/Include/FGrpFontCommon.h \
- C:/bada/2.0.6/Include/FGrpFont.h \
+ C:/bada/2.0.6/Include/FGraphics.h C:/bada/2.0.6/Include/FGrpPoint.h \
+ C:/bada/2.0.6/Include/FGrpConfig.h \
+ C:/bada/2.0.6/Include/FGrpFontCommon.h C:/bada/2.0.6/Include/FGrpFont.h \
+ C:/bada/2.0.6/Include/FGrpDimension.h \
+ C:/bada/2.0.6/Include/FGrpRectangle.h C:/bada/2.0.6/Include/FGrpColor.h \
  C:/bada/2.0.6/Include/FGrpCanvasCommon.h \
- C:/bada/2.0.6/Include/FGrpCanvas.h \
+ C:/bada/2.0.6/Include/FGrpBufferInfo.h \
+ C:/bada/2.0.6/Include/FGrpBitmapCommon.h \
+ C:/bada/2.0.6/Include/FGrpPixelFormat.h \
+ C:/bada/2.0.6/Include/FGrpCanvas.h C:/bada/2.0.6/Include/FGrpBitmap.h \
  C:/bada/2.0.6/Include/FGrpEnrichedText.h \
  C:/bada/2.0.6/Include/FBaseUtilLinkInfo.h \
  C:/bada/2.0.6/Include/FGrpTextElement.h \
@@ -160,7 +124,7 @@ src/geoc.d src/geoc.o: ../src/geoc.cpp ../src/geoc.h \
  C:/bada/2.0.6/Include/FUiITextEventListener.h \
  C:/bada/2.0.6/Include/FUiITimeChangeEventListener.h \
  C:/bada/2.0.6/Include/FUiITouchEventListener.h \
- C:/bada/2.0.6/Include/FUiTouch.h \
+ C:/bada/2.0.6/Include/FUiTouch.h C:/bada/2.0.6/Include/FSysConfig.h \
  C:/bada/2.0.6/Include/FUiIWindowEventListener.h \
  C:/bada/2.0.6/Include/FUiIClipboardPopupEventListener.h \
  C:/bada/2.0.6/Include/FUiCtrlConfig.h C:/bada/2.0.6/Include/FUiControl.h \
@@ -287,15 +251,11 @@ src/geoc.d src/geoc.o: ../src/geoc.cpp ../src/geoc.h \
  C:/bada/2.0.6/Include/FUiHorizontalBoxLayout.h \
  C:/bada/2.0.6/Include/FUiRelativeLayout.h \
  C:/bada/2.0.6/Include/FUiGridLayout.h \
- C:/bada/2.0.6/Include/FUiCustomControlBase.h ../src/view/MainForm.h
+ C:/bada/2.0.6/Include/FUiCustomControlBase.h
 
-../src/geoc.h:
+../src/view/Overview.h:
 
-C:/bada/2.0.6/Include/FApp.h:
-
-C:/bada/2.0.6/Include/FAppApplication.h:
-
-C:/bada/2.0.6/Include/FBaseObject.h:
+C:/bada/2.0.6/Include/FBase.h:
 
 C:/bada/2.0.6/Include/FBaseTypes.h:
 
@@ -307,39 +267,17 @@ C:/bada/2.0.6/Include/FBaseDataType.h:
 
 C:/bada/2.0.6/Include/FBaseUtilMemory.h:
 
-C:/bada/2.0.6/Include/FSysBattery.h:
-
-C:/bada/2.0.6/Include/FSysConfig.h:
-
-C:/bada/2.0.6/Include/FSysPower.h:
-
-C:/bada/2.0.6/Include/FAppConfig.h:
-
-C:/bada/2.0.6/Include/FAppTypes.h:
-
-C:/bada/2.0.6/Include/FBaseString.h:
-
-C:/bada/2.0.6/Include/FAppAppManager.h:
-
-C:/bada/2.0.6/Include/FAppAppControl.h:
-
-C:/bada/2.0.6/Include/FAppIAppControlEventListener.h:
-
-C:/bada/2.0.6/Include/FBaseRtIEventListener.h:
-
-C:/bada/2.0.6/Include/FBaseResult.h:
-
 C:/bada/2.0.6/Include/FBaseErrors.h:
 
 C:/bada/2.0.6/Include/FBaseErrorDefine.h:
 
-C:/bada/2.0.6/Include/FAppIPackageEventListener.h:
+C:/bada/2.0.6/Include/FBaseResult.h:
 
-C:/bada/2.0.6/Include/FAppPackageManager.h:
-
-C:/bada/2.0.6/Include/FBase.h:
+C:/bada/2.0.6/Include/FBaseObject.h:
 
 C:/bada/2.0.6/Include/FBaseChar.h:
+
+C:/bada/2.0.6/Include/FBaseString.h:
 
 C:/bada/2.0.6/Include/FBaseNumber.h:
 
@@ -461,6 +399,8 @@ C:/bada/2.0.6/Include/FBaseRt.h:
 
 C:/bada/2.0.6/Include/FBaseRtTypes.h:
 
+C:/bada/2.0.6/Include/FBaseRtIEventListener.h:
+
 C:/bada/2.0.6/Include/FBaseRtTimer.h:
 
 C:/bada/2.0.6/Include/FBaseResource.h:
@@ -480,6 +420,8 @@ C:/bada/2.0.6/Include/FBaseRtThreadMonitor.h:
 C:/bada/2.0.6/Include/FBaseRtLibrary.h:
 
 C:/bada/2.0.6/Include/FBaseRtMemoryManager.h:
+
+C:/bada/2.0.6/Include/FBase.h:
 
 C:/bada/2.0.6/Include/FBaseUtil.h:
 
@@ -508,88 +450,6 @@ C:/bada/2.0.6/Include/FBaseUtilFileUnzipper.h:
 C:/bada/2.0.6/Include/FBaseUtilZipEntry.h:
 
 C:/bada/2.0.6/Include/FBaseUtilRegularExpression.h:
-
-C:/bada/2.0.6/Include/FAppAppRegistry.h:
-
-C:/bada/2.0.6/Include/FAppAppResource.h:
-
-C:/bada/2.0.6/Include/FGrpBitmap.h:
-
-C:/bada/2.0.6/Include/FGrpConfig.h:
-
-C:/bada/2.0.6/Include/FGrpPoint.h:
-
-C:/bada/2.0.6/Include/FGrpColor.h:
-
-C:/bada/2.0.6/Include/FGrpDimension.h:
-
-C:/bada/2.0.6/Include/FGrpRectangle.h:
-
-C:/bada/2.0.6/Include/FGrpBitmapCommon.h:
-
-C:/bada/2.0.6/Include/FGrpBufferInfo.h:
-
-C:/bada/2.0.6/Include/FGrpPixelFormat.h:
-
-C:/bada/2.0.6/Include/FAppIAppFrame.h:
-
-C:/bada/2.0.6/Include/FAppNotificationManager.h:
-
-C:/bada/2.0.6/Include/FAppPackageInfo.h:
-
-C:/bada/2.0.6/Include/FBaseObject.h:
-
-C:/bada/2.0.6/Include/FBase.h:
-
-C:/bada/2.0.6/Include/FAppDownloadUIManager.h:
-
-C:/bada/2.0.6/Include/FAppGuestPackageManager.h:
-
-C:/bada/2.0.6/Include/FAppPackageManager.h:
-
-C:/bada/2.0.6/Include/FAppIPackageEventListener.h:
-
-C:/bada/2.0.6/Include/FAppIGuestPackageEventListener.h:
-
-C:/bada/2.0.6/Include/FAppGuestPackageInfo.h:
-
-C:/bada/2.0.6/Include/FAppJavaAppManager.h:
-
-C:/bada/2.0.6/Include/FAppJarInfo.h:
-
-C:/bada/2.0.6/Include/FAppIAppControlListener.h:
-
-C:/bada/2.0.6/Include/FSystem.h:
-
-C:/bada/2.0.6/Include/FSysAlarm.h:
-
-C:/bada/2.0.6/Include/FSysIAlarmEventListener.h:
-
-C:/bada/2.0.6/Include/FSysSystemTime.h:
-
-C:/bada/2.0.6/Include/FSysVibrator.h:
-
-C:/bada/2.0.6/Include/FSysSystemInfo.h:
-
-C:/bada/2.0.6/Include/FSysRuntimeInfo.h:
-
-C:/bada/2.0.6/Include/FSysSettingInfo.h:
-
-C:/bada/2.0.6/Include/FSysISettingEventListener.h:
-
-C:/bada/2.0.6/Include/FSysIScreenEventListener.h:
-
-C:/bada/2.0.6/Include/FSysIChargingEventListener.h:
-
-C:/bada/2.0.6/Include/FSysPowerManager.h:
-
-C:/bada/2.0.6/Include/FSysIBatteryEventListener.h:
-
-C:/bada/2.0.6/Include/FSysFeatureList.h:
-
-C:/bada/2.0.6/Include/FSysDeviceManager.h:
-
-C:/bada/2.0.6/Include/FSysIDeviceEventListener.h:
 
 C:/bada/2.0.6/Include/FUi.h:
 
@@ -623,13 +483,31 @@ C:/bada/2.0.6/Include/FUiIDragDropEventListener.h:
 
 C:/bada/2.0.6/Include/FGraphics.h:
 
+C:/bada/2.0.6/Include/FGrpPoint.h:
+
+C:/bada/2.0.6/Include/FGrpConfig.h:
+
 C:/bada/2.0.6/Include/FGrpFontCommon.h:
 
 C:/bada/2.0.6/Include/FGrpFont.h:
 
+C:/bada/2.0.6/Include/FGrpDimension.h:
+
+C:/bada/2.0.6/Include/FGrpRectangle.h:
+
+C:/bada/2.0.6/Include/FGrpColor.h:
+
 C:/bada/2.0.6/Include/FGrpCanvasCommon.h:
 
+C:/bada/2.0.6/Include/FGrpBufferInfo.h:
+
+C:/bada/2.0.6/Include/FGrpBitmapCommon.h:
+
+C:/bada/2.0.6/Include/FGrpPixelFormat.h:
+
 C:/bada/2.0.6/Include/FGrpCanvas.h:
+
+C:/bada/2.0.6/Include/FGrpBitmap.h:
 
 C:/bada/2.0.6/Include/FGrpEnrichedText.h:
 
@@ -660,6 +538,8 @@ C:/bada/2.0.6/Include/FUiITimeChangeEventListener.h:
 C:/bada/2.0.6/Include/FUiITouchEventListener.h:
 
 C:/bada/2.0.6/Include/FUiTouch.h:
+
+C:/bada/2.0.6/Include/FSysConfig.h:
 
 C:/bada/2.0.6/Include/FUiIWindowEventListener.h:
 
@@ -924,5 +804,3 @@ C:/bada/2.0.6/Include/FUiRelativeLayout.h:
 C:/bada/2.0.6/Include/FUiGridLayout.h:
 
 C:/bada/2.0.6/Include/FUiCustomControlBase.h:
-
-../src/view/MainForm.h:

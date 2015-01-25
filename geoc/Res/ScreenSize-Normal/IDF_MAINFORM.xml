@@ -23,4 +23,14 @@
         <layout bottomRelation="" bottomRelationType="" centerHorizontal="TRUE" centerVertical="FALSE" height="62" horizontalFitPolicy="FIT_POLICY_FIXED" leftRelation="" leftRelationType="" marginBottom="0" marginLeft="0" marginRight="0" marginTop="0" mode="Portrait" rightRelation="" rightRelationType="" topRelation="" topRelationType="" verticalFitPolicy="FIT_POLICY_FIXED" width="200" x="140" y="522"/>
         <layout bottomRelation="" bottomRelationType="" centerHorizontal="FALSE" centerVertical="FALSE" height="37" horizontalFitPolicy="FIT_POLICY_FIXED" leftRelation="" leftRelationType="" marginBottom="0" marginLeft="0" marginRight="0" marginTop="0" mode="Landscape" rightRelation="" rightRelationType="" topRelation="" topRelationType="" verticalFitPolicy="FIT_POLICY_FIXED" width="333" x="345" y="294"/>
     </Label>
+    <Label id="IDC_LABEL_LONGITUDE" parent="IDF_MAINFORM">
+        <property BGBitmapPath="" BGColor="" BGColorOpacity="0" hAlign="ALIGN_LEFT" text="A" textColor="" textSize="24" textStyle="LABEL_TEXT_STYLE_NORMAL" vAlign="ALIGN_TOP"/>
+        <layout bottomRelation="" bottomRelationType="" centerHorizontal="FALSE" centerVertical="FALSE" height="31" horizontalFitPolicy="FIT_POLICY_FIXED" leftRelation="" leftRelationType="" marginBottom="0" marginLeft="0" marginRight="0" marginTop="0" mode="Portrait" rightRelation="" rightRelationType="" topRelation="" topRelationType="" verticalFitPolicy="FIT_POLICY_FIXED" width="229" x="250" y="12"/>
+        <layout bottomRelation="" bottomRelationType="" centerHorizontal="FALSE" centerVertical="FALSE" height="37" horizontalFitPolicy="FIT_POLICY_FIXED" leftRelation="" leftRelationType="" marginBottom="0" marginLeft="0" marginRight="0" marginTop="0" mode="Landscape" rightRelation="" rightRelationType="" topRelation="" topRelationType="" verticalFitPolicy="FIT_POLICY_FIXED" width="281" x="518" y="0"/>
+    </Label>
+    <Label id="IDC_LABEL_LATITUDE" parent="IDF_MAINFORM">
+        <property BGBitmapPath="" BGColor="" BGColorOpacity="0" hAlign="ALIGN_LEFT" text="B" textColor="" textSize="24" textStyle="LABEL_TEXT_STYLE_NORMAL" vAlign="ALIGN_TOP"/>
+        <layout bottomRelation="" bottomRelationType="" centerHorizontal="FALSE" centerVertical="FALSE" height="30" horizontalFitPolicy="FIT_POLICY_FIXED" leftRelation="" leftRelationType="" marginBottom="0" marginLeft="0" marginRight="0" marginTop="0" mode="Portrait" rightRelation="" rightRelationType="" topRelation="" topRelationType="" verticalFitPolicy="FIT_POLICY_FIXED" width="229" x="250" y="43"/>
+        <layout bottomRelation="" bottomRelationType="" centerHorizontal="FALSE" centerVertical="FALSE" height="37" horizontalFitPolicy="FIT_POLICY_FIXED" leftRelation="" leftRelationType="" marginBottom="0" marginLeft="0" marginRight="0" marginTop="0" mode="Landscape" rightRelation="" rightRelationType="" topRelation="" topRelationType="" verticalFitPolicy="FIT_POLICY_FIXED" width="261" x="538" y="34"/>
+    </Label>
 </Scene>

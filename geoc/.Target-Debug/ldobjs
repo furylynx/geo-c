@@ -1,1 +1,1 @@
-./src/model/Entry.o ./src/MainForm.o ./src/geoc.o ./src/geocEntry.o ./src/controller/CompassController.o ./src/controller/EntryController.o ./src/controller/SensorController.o 
+./src/view/Cachedetail.o ./src/view/Caches.o ./src/view/MainForm.o ./src/view/Overview.o ./src/view/Preferences.o ./src/model/Entry.o ./src/geoc.o ./src/geocEntry.o ./src/controller/CompassController.o ./src/controller/EntryController.o ./src/controller/SensorController.o 

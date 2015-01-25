@@ -1,5 +1,4 @@
-src/geocEntry.d src/geocEntry.o: ../src/geocEntry.cpp \
- C:/Users/John/Documents/git_workspace/geo-c/geoc/inc/geoc.h \
+src/geocEntry.d src/geocEntry.o: ../src/geocEntry.cpp ../src/geoc.h \
  C:/bada/2.0.6/Include/FApp.h C:/bada/2.0.6/Include/FAppApplication.h \
  C:/bada/2.0.6/Include/FBaseObject.h C:/bada/2.0.6/Include/FBaseTypes.h \
  C:/bada/2.0.6/Include/FBaseSys.h C:/bada/2.0.6/Include/FBaseConfig.h \
@@ -290,7 +289,7 @@ src/geocEntry.d src/geocEntry.o: ../src/geocEntry.cpp \
  C:/bada/2.0.6/Include/FUiGridLayout.h \
  C:/bada/2.0.6/Include/FUiCustomControlBase.h
 
-C:/Users/John/Documents/git_workspace/geo-c/geoc/inc/geoc.h:
+../src/geoc.h:
 
 C:/bada/2.0.6/Include/FApp.h:
 

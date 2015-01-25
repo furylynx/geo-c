@@ -25,7 +25,10 @@ protected:
 	static const int ID_BUTTON_OK = 101;
 	Osp::Ui::Controls::Button *pButtonOk_;
 
+	Osp::Ui::Controls::Label *pLabelLatitude_;
+	Osp::Ui::Controls::Label *pLabelLongitude_;
 
+	Osp::Ui::Controls::Label *pLabelDistance_;
 
 
 public:
