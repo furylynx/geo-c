@@ -54,6 +54,9 @@ bool GeoC::OnAppInitializing(AppRegistry& appRegistry)
 	pEntryController_ = new geo::EntryController();
 	pEntryController_->Construct();
 
+	//TODO path?!
+	//pEntryController_->ImportEntries("Others/geo'c/");
+
 	// Initialize all forms
 	pCacheDetailsForm_ = new CacheDetailsForm();
 	pCacheDetailsForm_->Initialize();
@@ -87,11 +90,6 @@ bool GeoC::OnAppInitializing(AppRegistry& appRegistry)
 	pFrame_->AddControl(*pCacheDetailsForm_);
 
 
-	//intialize the sensor controller
-	pSensorController_ = new geo::SensorController();
-	pSensorController_->Construct();
-	//TODO register MainForm as SensorDataListener!
-
 
 	// Set the current form
 	pFrame_->SetCurrentForm(*pMainForm_);
@@ -117,7 +115,7 @@ void GeoC::OnForeground(void)
 	// Start or resume drawing when the application is moved to the foreground.
 
 	//resume the sensors
-	pSensorController_->Resume();
+	//pSensorController_->Resume();
 }
 
 void GeoC::OnBackground(void)
@@ -126,7 +124,7 @@ void GeoC::OnBackground(void)
 	// Stop drawing when the application is moved to the background.
 
 	//pause the sensors
-	pSensorController_->Pause();
+	//pSensorController_->Pause();
 }
 
 void GeoC::OnLowMemory(void)
@@ -135,7 +133,7 @@ void GeoC::OnLowMemory(void)
 	// Free unused resources or close the application.
 
 	//terminate app
-	Osp::App::Application::Terminate();
+	//Osp::App::Application::Terminate();
 }
 
 void GeoC::OnBatteryLevelChanged(BatteryLevel batteryLevel)

@@ -13,6 +13,8 @@
 #include <FBase.h>
 #include <FUi.h>
 
+#include <sstream>
+
 
 class MainForm :
 	public Osp::Ui::Controls::Form,
@@ -33,9 +35,15 @@ private:
 	Osp::Ui::Controls::Button *pButtonOk_;
 
 	Osp::Ui::Controls::Label *pLabelLatitude_;
+	Osp::Ui::Controls::Label *pLabelLatitudeTitle_;
 	Osp::Ui::Controls::Label *pLabelLongitude_;
+	Osp::Ui::Controls::Label *pLabelLongitudeTitle_;
+	Osp::Ui::Controls::Label *pLabelLocationState_;
+	Osp::Ui::Controls::Label *pLabelLocationStateTitle_;
 
 	Osp::Ui::Controls::Label *pLabelDistance_;
+	Osp::Ui::Controls::Label *pLabelDistanceTitle_;
+
 
 	//forms
 	PreferencesForm* pPreferencesForm_;

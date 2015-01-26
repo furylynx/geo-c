@@ -1,0 +1,21 @@
+----------------------------------------------------------------------------------
+----------------------------- Application Information ----------------------------
+----------------------------------------------------------------------------------
+ Application Name    : geo'c
+ Application ID      : 93bt1p123e
+ Application Version : 1.0.0
+ API Version         : 2.0
+ Platform Version    : 2.0.0
+ Firmware Version    : Wave-EXXKC4
+ Crashed Time        : 2015/01/26 22:43:55
+ Crashed Module      : FOsp.so
+----------------------------------------------------------------------------------
+
+
+
+----------------------------------------------------------------------------------
+----------------------------- Recent AppLog Messages -----------------------------
+----------------------------------------------------------------------------------
+[0] 0364.625,INFO,P34,T00,A142,OspMain (32) > Application started.
+[1] 0365.621,EXCEPTION,P34,T00,A146,geo::SensorController::RegisterLocationProvider (166) > Location provider is not available!
+[2] 0426.717,INFO,P34,T00,A146,MainForm::OnActionPerformed (90) > CACHES Button is clicked! 

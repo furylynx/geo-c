@@ -57,6 +57,11 @@ bool Entry::IsCustom() const
 	return custom_;
 }
 
+bool Entry::IsActive() const
+{
+	return active_;
+}
+
 
 void Entry::Export(Osp::Base::String filename) const
 {

@@ -43,6 +43,26 @@ std::vector<geo::Entry*> EntryController::GetEntries() const
 	return entries_;
 }
 
+std::vector<geo::Entry*> EntryController::GetActiveEntries() const
+{
+	std::vector<geo::Entry*> result;
+
+	for (std::size_t i = 0; i < entries_.size(); i++)
+	{
+		if (entries_.at(i)->IsActive())
+		{
+			result.push_back(entries_.at(i));
+		}
+	}
+
+	return result;
+}
+
+void EntryController::ImportEntries(Osp::Base::String path)
+{
+	//TODO read folder and parse entries
+}
+
 unsigned int EntryController::Size() const
 {
 	return entries_.size();

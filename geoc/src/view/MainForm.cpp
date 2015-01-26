@@ -43,8 +43,15 @@ MainForm::OnInitializing(void)
 //	}
 
 	pLabelLatitude_ = static_cast<Label *>(GetControl(L"IDC_LABEL_LATITUDE"));
+	pLabelLatitudeTitle_ = static_cast<Label *>(GetControl(L"IDC_LABEL_LATITUDE_TITLE"));
 	pLabelLongitude_ = static_cast<Label *>(GetControl(L"IDC_LABEL_LONGITUDE"));
+	pLabelLongitudeTitle_ = static_cast<Label *>(GetControl(L"IDC_LABEL_LONGITUDE_TITLE"));
+	pLabelLocationState_ = static_cast<Label *>(GetControl(L"IDC_LABEL_LOCATION_STATE"));
+	pLabelLocationStateTitle_ = static_cast<Label *>(GetControl(L"IDC_LABEL_LOCATION_STATE_TITLE"));
+
 	pLabelDistance_ = static_cast<Label *>(GetControl(L"IDC_LABEL_DISTANCE"));
+	pLabelDistanceTitle_ = static_cast<Label *>(GetControl(L"IDC_LABEL_DISTANCE_TITLE"));
+
 
 	AddSoftkeyActionListener(SOFTKEY_0, *this);
 	AddSoftkeyActionListener(SOFTKEY_1, *this);
@@ -138,12 +145,47 @@ void MainForm::OnTouchReleased(const Osp::Ui::Control &source, const Osp::Graphi
 
 void MainForm::OnLocationUpdate(Osp::Locations::Location& location)
 {
-	//TODO
+
+
+	if (pLabelLatitude_ != NULL)
+	{
+		std::stringstream sstrLat;
+		sstrLat << location.GetQualifiedCoordinates()->GetLatitude() << std::endl;
+
+		pLabelLatitude_->SetText(sstrLat.str().c_str());
+		pLabelLatitude_->RequestRedraw(true);
+	}
+
+	if (pLabelLongitude_ != NULL)
+	{
+		std::stringstream sstrLong;
+		sstrLong << location.GetQualifiedCoordinates()->GetLongitude() << std::endl;
+
+		pLabelLongitude_->SetText(sstrLong.str().c_str());
+		pLabelLongitude_->RequestRedraw(true);
+	}
+
 }
 
 void MainForm::OnLocatorStateChanged(Osp::Locations::LocProviderState newState)
 {
-	//TODO
+	if (pLabelLocationState_ != NULL)
+	{
+		if (newState == Osp::Locations::LOC_PROVIDER_AVAILABLE)
+		{
+			pLabelLocationState_->SetText("Available");
+		}
+		else if (newState == Osp::Locations::LOC_PROVIDER_TEMPORARILY_UNAVAILABLE)
+		{
+			pLabelLocationState_->SetText("Temp. Unavailable");
+		}
+		else if (newState == Osp::Locations::LOC_PROVIDER_OUT_OF_SERVICE)
+		{
+			pLabelLocationState_->SetText("Out of service");
+		}
+
+		pLabelLocationState_->RequestRedraw(true);
+	}
 }
 
 void MainForm::OnTiltUpdate(float azimuth, float pitch, float roll)

@@ -34,6 +34,10 @@ public:
 
 	virtual std::vector<geo::Entry*> GetEntries() const;
 
+	virtual std::vector<geo::Entry*> GetActiveEntries() const;
+
+	virtual void ImportEntries(Osp::Base::String path);
+
 	virtual unsigned int Size() const;
 
 protected:

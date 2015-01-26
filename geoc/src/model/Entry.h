@@ -34,6 +34,7 @@ public:
 	virtual float Latitude() const;
 
 	virtual bool IsCustom() const;
+	virtual bool IsActive() const;
 
 	virtual void Export(Osp::Base::String filename) const;
 
@@ -43,6 +44,8 @@ private:
 	float latitude_;
 
 	bool custom_;
+
+	bool active_;
 
 };
 

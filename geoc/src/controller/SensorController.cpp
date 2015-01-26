@@ -29,9 +29,26 @@ void SensorController::Construct()
 	result &= RegisterSensor(Osp::Uix::SENSOR_TYPE_MAGNETIC);
 
 	//TODO hybrid?
-	locationProvider_.Construct(Osp::Locations::LOC_METHOD_HYBRID);
+//	if (locationProvider_.IsLocationMethodSupported(Osp::Locations::LOC_METHOD_HYBRID))
+//	{
+////		locationProvider_ = Osp::Locations::LocationProvider();
+//		locationProvider_.Construct(Osp::Locations::LOC_METHOD_HYBRID);
+//
+//		RegisterLocationProvider();
+//	}
+//	else
+//	{
+		locationProvider_.Construct(Osp::Locations::LOC_METHOD_GPS);
 
-	RegisterLocationProvider();
+		if (locationProvider_.IsLocationMethodSupported(Osp::Locations::LOC_METHOD_GPS))
+		{
+
+			//TODO this causes a app crash - I dont know why !!
+			//locationProvider_.RequestLocationUpdates(*this, 100, false);
+
+		}
+
+//	}
 }
 
 void SensorController::OnDataReceived(Osp::Uix::SensorType sensor_type, Osp::Uix::SensorData& sensor_data, result r)
@@ -88,10 +105,10 @@ void SensorController::OnDataReceived(Osp::Uix::SensorType sensor_type, Osp::Uix
 
 void SensorController::OnLocationUpdated(Osp::Locations::Location& location)
 {
-	for (std::list<geo::ISensorUpdateListener*>::iterator it = sensorUpdateListeners_.begin(); it != sensorUpdateListeners_.end(); it++)
-	{
-		(*it)->OnLocationUpdate(location);
-	}
+//	for (std::list<geo::ISensorUpdateListener*>::iterator it = sensorUpdateListeners_.begin(); it != sensorUpdateListeners_.end(); it++)
+//	{
+//		(*it)->OnLocationUpdate(location);
+//	}
 	//location.GetQualifiedCoordinates()->GetLongitude();
 	//location.GetQualifiedCoordinates()->GetLatitude();
 	//location.GetQualifiedCoordinates()->Distance(ToPosition)
@@ -99,10 +116,10 @@ void SensorController::OnLocationUpdated(Osp::Locations::Location& location)
 
 void SensorController::OnProviderStateChanged(Osp::Locations::LocProviderState  newState)
 {
-	for (std::list<geo::ISensorUpdateListener*>::iterator it = sensorUpdateListeners_.begin(); it != sensorUpdateListeners_.end(); it++)
-	{
-		(*it)->OnLocatorStateChanged(newState);
-	}
+//	for (std::list<geo::ISensorUpdateListener*>::iterator it = sensorUpdateListeners_.begin(); it != sensorUpdateListeners_.end(); it++)
+//	{
+//		(*it)->OnLocatorStateChanged(newState);
+//	}
 }
 
 float SensorController::CalculateAngle(float f1, float f2) const
@@ -153,18 +170,19 @@ bool SensorController::RegisterSensor(Osp::Uix::SensorType sensor_type)
 bool SensorController::RegisterLocationProvider()
 {
 	//register the this class as a listener for the location data
-	unsigned long r = locationProvider_.RequestLocationUpdates(*this, 2, true);
 
-	if (!IsFailed(r))
-	{
+	unsigned long r = locationProvider_.RequestLocationUpdates(*this, 20, false);
+
+//	if (!IsFailed(r))
+//	{
 		return true;
-	}
-
-	std::stringstream sstr;
-	sstr << "Location provider is not available!" << std::endl;
-
-	AppLogException(sstr.str().c_str());
-	return false;
+//	}
+//
+//	std::stringstream sstr;
+//	sstr << "Location provider is not available!" << std::endl;
+//
+//	AppLog(sstr.str().c_str());
+//	return false;
 }
 
 void SensorController::Pause()
