@@ -59,4 +59,9 @@ void OverviewForm::OnMagneticUpdate(float degreesToNorth, float x, float y, floa
 	//TODO
 }
 
+void OverviewForm::OnGPSUpdate(float longitude, float latitude)
+{
+
+}
+
 

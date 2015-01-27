@@ -11,11 +11,14 @@
 //custom includes
 #include "../model/ISensorUpdateListener.h"
 
+//TODO remove
+#include "LocationListener.h"
 
 //global includes
 #include <FUix.h>
 #include <FBase.h>
 #include <FLocations.h>
+
 
 #include <sstream>
 #include <cmath>
@@ -73,6 +76,8 @@ private:
 
 	std::list<geo::ISensorUpdateListener*> sensorUpdateListeners_;
 
+	//TODO remove
+	LocationListener ll_;
 };
 
 }//namespace geo

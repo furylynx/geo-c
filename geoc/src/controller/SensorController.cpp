@@ -27,28 +27,31 @@ void SensorController::Construct()
 
 	bool result = RegisterSensor(Osp::Uix::SENSOR_TYPE_TILT);
 	result &= RegisterSensor(Osp::Uix::SENSOR_TYPE_MAGNETIC);
+	//result &= RegisterSensor(Osp::Uix::SENSOR_TYPE_GPS);
 
-	//TODO hybrid?
-//	if (locationProvider_.IsLocationMethodSupported(Osp::Locations::LOC_METHOD_HYBRID))
-//	{
-////		locationProvider_ = Osp::Locations::LocationProvider();
-//		locationProvider_.Construct(Osp::Locations::LOC_METHOD_HYBRID);
-//
-//		RegisterLocationProvider();
-//	}
-//	else
-//	{
-		locationProvider_.Construct(Osp::Locations::LOC_METHOD_GPS);
 
-		if (locationProvider_.IsLocationMethodSupported(Osp::Locations::LOC_METHOD_GPS))
-		{
+	locationProvider_.Construct(Osp::Locations::LOC_METHOD_GPS);
 
-			//TODO this causes a app crash - I dont know why !!
-			//locationProvider_.RequestLocationUpdates(*this, 100, false);
+	if (locationProvider_.IsLocationMethodSupported(Osp::Locations::LOC_METHOD_GPS))
+	{
+		locationProvider_.GetLastKnownLocationN();
 
-		}
+		std::stringstream sstrapploglocationmanager;
+		sstrapploglocationmanager << "LocState: " << locationProvider_.GetState();
+		AppLog(sstrapploglocationmanager.str().c_str());
 
-//	}
+//		for (std::list<geo::ISensorUpdateListener*>::iterator it = sensorUpdateListeners_.begin(); it != sensorUpdateListeners_.end(); it++)
+//		{
+//			(*it)->OnLocatorStateChanged(locationProvider_.GetState());
+//		}
+
+		//TODO this causes a app crash - I dont know why !!
+		//locationProvider_.RequestLocationUpdates(*this, 100, false);
+
+		//locationProvider_.RequestLocationUpdates(ll_, 100, false);
+	}
+
+
 }
 
 void SensorController::OnDataReceived(Osp::Uix::SensorType sensor_type, Osp::Uix::SensorData& sensor_data, result r)
@@ -93,13 +96,27 @@ void SensorController::OnDataReceived(Osp::Uix::SensorType sensor_type, Osp::Uix
 
 		//TODO calculate the degree to north direction!
 
+		AppLog(""+sensorUpdateListeners_.size());
+		int count = 0;
 		for (std::list<geo::ISensorUpdateListener*>::iterator it = sensorUpdateListeners_.begin(); it != sensorUpdateListeners_.end(); it++)
 		{
+			count++;
+			AppLog(""+count);
 			(*it)->OnMagneticUpdate(degreesToNorth, x, y, z);
 		}
 	}
+	else if (sensor_type == Osp::Uix::SENSOR_TYPE_GPS)
+	{
+		float longitude,latitude;
 
-	//TODO notify forms
+		sensor_data.GetValue((Osp::Uix::SensorDataKey)Osp::Uix::GPS_DATA_KEY_LONGITUDE, longitude);
+		sensor_data.GetValue((Osp::Uix::SensorDataKey)Osp::Uix::GPS_DATA_KEY_LATITUDE, latitude);
+
+		for (std::list<geo::ISensorUpdateListener*>::iterator it = sensorUpdateListeners_.begin(); it != sensorUpdateListeners_.end(); it++)
+		{
+			(*it)->OnGPSUpdate(longitude, latitude);
+		}
+	}
 
 }
 
@@ -237,6 +254,8 @@ float SensorController::ToRad(float angleInDegree) const
 void SensorController::RegisterSensorUpdateListener(ISensorUpdateListener* listener)
 {
 	sensorUpdateListeners_.push_back(listener);
+
+//	listener->OnLocatorStateChanged(locationProvider_.GetState());
 }
 
 }//namespace geo

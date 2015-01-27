@@ -6,16 +6,22 @@
 CPP_SRCS += \
 ../src/controller/CompassController.cpp \
 ../src/controller/EntryController.cpp \
+../src/controller/IOControllerLOC.cpp \
+../src/controller/LocationListener.cpp \
 ../src/controller/SensorController.cpp 
 
 OBJS += \
 ./src/controller/CompassController.o \
 ./src/controller/EntryController.o \
+./src/controller/IOControllerLOC.o \
+./src/controller/LocationListener.o \
 ./src/controller/SensorController.o 
 
 CPP_DEPS += \
 ./src/controller/CompassController.d \
 ./src/controller/EntryController.d \
+./src/controller/IOControllerLOC.d \
+./src/controller/LocationListener.d \
 ./src/controller/SensorController.d 
 
 

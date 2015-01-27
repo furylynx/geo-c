@@ -56,7 +56,6 @@ MainForm::OnInitializing(void)
 	AddSoftkeyActionListener(SOFTKEY_0, *this);
 	AddSoftkeyActionListener(SOFTKEY_1, *this);
 
-
 	//TODO initialize menu
 
 	return r;
@@ -190,10 +189,39 @@ void MainForm::OnLocatorStateChanged(Osp::Locations::LocProviderState newState)
 
 void MainForm::OnTiltUpdate(float azimuth, float pitch, float roll)
 {
-	//TODO
+
 }
 
 void MainForm::OnMagneticUpdate(float degreesToNorth, float x, float y, float z)
 {
-	//TODO
+
+}
+
+void MainForm::OnGPSUpdate(float longitude, float latitude)
+{
+	if (pLabelLongitude_ != NULL)
+	{
+		std::stringstream sstrLong;
+		sstrLong << longitude << std::endl;
+
+		pLabelLongitude_->SetText(sstrLong.str().c_str());
+
+		//pLabelLongitude_->RequestRedraw(true);
+
+		pLabelLongitude_->Draw();
+		pLabelLongitude_->Show();
+	}
+
+	if (pLabelLatitude_ != NULL)
+	{
+		std::stringstream sstrLat;
+		sstrLat << latitude << std::endl;
+
+		pLabelLatitude_->SetText(sstrLat.str().c_str());
+
+		//pLabelLatitude_->RequestRedraw(true);
+
+		pLabelLongitude_->Draw();
+		pLabelLongitude_->Show();
+	}
 }

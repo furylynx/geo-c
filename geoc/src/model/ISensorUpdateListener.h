@@ -26,6 +26,7 @@ public:
 	virtual void OnLocationUpdate(Osp::Locations::Location& location) = 0;
 	virtual void OnLocatorStateChanged(Osp::Locations::LocProviderState newState) = 0;
 
+	virtual void OnGPSUpdate(float longitude, float latitude) = 0;
 	virtual void OnTiltUpdate(float azimuth, float pitch, float roll) = 0;
 	virtual void OnMagneticUpdate(float degreesToNorth, float x, float y, float z) = 0;
 

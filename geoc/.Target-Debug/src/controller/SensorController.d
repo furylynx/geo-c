@@ -185,7 +185,7 @@ src/controller/SensorController.d src/controller/SensorController.o: \
  C:/bada/2.0.6/Include/FGrpCanvasCommon.h \
  C:/bada/2.0.6/Include/FLocCtrlMapOverlayRectangle.h \
  C:/bada/2.0.6/Include/FLocCtrlNativeMapInfoWindow.h \
- C:/bada/2.0.6/Include/FUix.h \
+ ../src/controller/LocationListener.h C:/bada/2.0.6/Include/FUix.h \
  C:/bada/2.0.6/Include/FUixFaceRecognitionInfo.h \
  C:/bada/2.0.6/Include/FUixConfig.h \
  C:/bada/2.0.6/Include/FUixFaceDetector.h \
@@ -638,6 +638,8 @@ C:/bada/2.0.6/Include/FGrpCanvasCommon.h:
 C:/bada/2.0.6/Include/FLocCtrlMapOverlayRectangle.h:
 
 C:/bada/2.0.6/Include/FLocCtrlNativeMapInfoWindow.h:
+
+../src/controller/LocationListener.h:
 
 C:/bada/2.0.6/Include/FUix.h:
 

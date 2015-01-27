@@ -1,11 +1,11 @@
-PC: 0x4026FA04 LR: 0x401609F3 Stack PTR : 0x0B73E628 
+PC: 0x4026FA04 LR: 0x401609F3 Stack PTR : 0x0ADBE628 
 0x4026FA04 [Platform Fns]
 0x401609F2 [Platform Fns]
 0x681662BA __Sensor_initPi
 0x6816639E _SensorCommunication_new
 0x68167502 _SensorConnection_new
 0x71D5F43A Osp::Uix::SensorManager::GetMinInterval(Osp::Uix::SensorType, long&)
-0x6819FBF8 geo::SensorController::RegisterSensor(Osp::Uix::SensorType)
+0x681A37B0 geo::SensorController::RegisterSensor(Osp::Uix::SensorType)
 0x4023BD12 [Platform Fns]
 0x4043A574 [Platform Fns]
 0x40233A36 [Platform Fns]
@@ -13,8 +13,8 @@ PC: 0x4026FA04 LR: 0x401609F3 Stack PTR : 0x0B73E628
 0x681685D6 __SensorsComponent_release
 0x67A58FDE Com_createInstanceByFactory
 0x67A59118 Com_createInstance
-0x6819F5F2 geo::SensorController::Construct()
-0x6819AFF4 GeoC::OnAppInitializing(Osp::App::AppRegistry&)
+0x681A30AA geo::SensorController::Construct()
+0x6819E5AC GeoC::OnAppInitializing(Osp::App::AppRegistry&)
 0x71DAF21E Osp::App::ApplicationEx::OnAppInitializing(Osp::App::AppRegistry&)
 0x71DB04F6 virtual thunk to Osp::App::ApplicationEx::OnAppInitializing(Osp::App::AppRegistry&)
 0x71DAD852 Osp::App::__NativeUiApplication::OnAppInitializing(Osp::App::AppRegistry&)

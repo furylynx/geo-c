@@ -59,7 +59,7 @@ void CacheDetailsForm::OnActionPerformed(const Osp::Ui::Control& source, int act
 
 
 			//TODO apply changes to the entry
-			pEntry_->SetName("Unknown");
+			pEntry_->SetTitle("Unknown");
 
 		}
 		break;

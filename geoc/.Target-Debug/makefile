@@ -49,7 +49,7 @@ all: geoc.exe
 geoc.exe: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: bada C++ Linker'
-	@echo 'ldflags: -L"C:/bada/2.0.6/Model/WaveWVGA/Target" -L"C:/Users/John/Documents/git_workspace/geo-c/geoc/lib" -shared -march=armv7-a -mthumb -mthumb-interwork -mfpu=vfpv3 -mfloat-abi=hard -o"geoc.exe" ./src/view/CacheDetailsForm.o ./src/view/CachesForm.o ./src/view/MainForm.o ./src/view/OverviewForm.o ./src/view/PreferencesForm.o ./src/model/Entry.o ./src/GeoC.o ./src/geocEntry.o ./src/controller/CompassController.o ./src/controller/EntryController.o ./src/controller/SensorController.o '
+	@echo 'ldflags: -L"C:/bada/2.0.6/Model/WaveWVGA/Target" -L"C:/Users/John/Documents/git_workspace/geo-c/geoc/lib" -shared -march=armv7-a -mthumb -mthumb-interwork -mfpu=vfpv3 -mfloat-abi=hard -o"geoc.exe" ./src/view/CacheDetailsForm.o ./src/view/CachesForm.o ./src/view/MainForm.o ./src/view/OverviewForm.o ./src/view/PreferencesForm.o ./src/model/Entry.o ./src/GeoC.o ./src/geocEntry.o ./src/controller/CompassController.o ./src/controller/EntryController.o ./src/controller/IOControllerLOC.o ./src/controller/LocationListener.o ./src/controller/SensorController.o '
 	arm-samsung-nucleuseabi-g++ @ldflags @ldobjs  $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '

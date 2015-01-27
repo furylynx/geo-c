@@ -69,6 +69,7 @@ public:
 	virtual void OnLocatorStateChanged(Osp::Locations::LocProviderState newState);
 	virtual void OnTiltUpdate(float azimuth, float pitch, float roll);
 	virtual void OnMagneticUpdate(float degreesToNorth, float x, float y, float z);
+	virtual void OnGPSUpdate(float longitude, float latitude);
 
 };
 
