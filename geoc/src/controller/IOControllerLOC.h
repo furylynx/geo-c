@@ -16,6 +16,7 @@
 #include <FXml.h>
 
 #include <sstream>
+#include <cstdlib>
 
 namespace geo
 {

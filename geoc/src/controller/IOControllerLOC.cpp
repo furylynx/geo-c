@@ -29,57 +29,118 @@ void IOControllerLOC::Construct()
 
 result IOControllerLOC::ParseLOC(Osp::Base::String path, Entry* outEntry)
 {
-	xmlDocPtr pDocument = null;
-	xmlNodePtr pRoot = null;
 
-	pDocument = xmlParseFile((const char*)path.GetPointer());
-	pRoot = xmlDocGetRootElement(pDocument);
+	xmlDocPtr pDocument = xmlParseFile((const char*)path.GetPointer());
+	xmlNodePtr pRoot = xmlDocGetRootElement(pDocument);
+	xmlXPathContextPtr context = xmlXPathNewContext(pDocument);
 
-	xmlNodeSetPtr nodeset = xmlXPathEval((xmlChar*)"//waypoint//name", pRoot)->nodesetval;
+	//search for name tag
+	xmlXPathObjectPtr nameXPath = xmlXPathEval((xmlChar*)"//loc//waypoint//name", context);
+	xmlNodeSetPtr nameNodeSet = nameXPath->nodesetval;
 
-
-	//snippet to work?!
-//	xmlXPathObjectPtr
-//		getnodeset (xmlDocPtr doc, xmlChar *xpath){
-//
-//		1xmlXPathContextPtr context;
-//		xmlXPathObjectPtr result;
-//
-//		2context = xmlXPathNewContext(doc);
-//		3result = xmlXPathEvalExpression(xpath, context);
-//		4if(xmlXPathNodeSetIsEmpty(result->nodesetval)){
-//			xmlXPathFreeObject(result);
-//	                printf("No result\n");
-//			return NULL;
-
-	if (nodeset->nodeMax > 0)
+	if (nameNodeSet->nodeMax > 0)
 	{
-		xmlNodePtr node = nodeset->nodeTab[0];
+		xmlNodePtr node = nameNodeSet->nodeTab[0];
+
+		//get the id
+		xmlChar* value = xmlGetProp(node, "id");
+
 		Osp::Base::String nameId;
-		//TODO access attribute not content!
-		Osp::Base::Utility::StringUtil::Utf8ToString((char*)node->content, &nameId);
+		Osp::Base::Utility::StringUtil::Utf8ToString((const char*) (value), nameId);
 		outEntry->SetNameId(nameId);
+
+		xmlFree(value);
+
+		if (node->children != NULL)
+		{
+			//TODO working?
+			Osp::Base::String cdata;
+			Osp::Base::Utility::StringUtil::Utf8ToString((const char*) (node->children->content), cdata);
+
+			int indexOfBy;
+			result indexOfResult = cdata.IndexOf("by", 0, indexOfBy);
+
+			if (indexOfBy > 0)
+			{
+				Osp::Base::String title;
+				Osp::Base::String author;
+				cdata.SubString(0, indexOfBy, title);
+				title.Trim();
+				cdata.SubString(indexOfBy+2, author);
+				author.Trim();
+
+				outEntry->SetTitle(title);
+				outEntry->SetAuthor(author);
+			}
+		}
 	}
 
-//	for (pCurrentElement = pRoot->children; pCurrentElement; pCurrentElement = pCurrentElement->next)
-//	{
-//		String* countryName = new String;
-//		xmlNodePtr pChildElement = null;
-//		if (pCurrentElement->type == XML_ELEMENT_NODE)
-//		{
-//			// Get <country> element from <item> element
-//			pChildElement = pCurrentElement->children->next;
-//			if (pChildElement)
-//			{
-//				// Get content from XML_TEXT_NODE
-//				Osp::Base::Utility::StringUtil::Utf8ToString((char*)
-//													  pChildElement->children
-//													  ->content, *countryName);
-//				__pItemList->Add(*countryName);
-//				AppLog("country : %S\n", (*countryName).GetPointer());
-//			}
-//		}
-//	}
+	xmlXPathFreeObject(nameXPath);
+
+
+	//search for coord tag
+	xmlXPathObjectPtr coordXPath = xmlXPathEval((xmlChar*)"//loc//waypoint//coord", context);
+	xmlNodeSetPtr coordNodeSet = coordXPath->nodesetval;
+
+	if (coordNodeSet->nodeMax > 0)
+	{
+		xmlNodePtr node = coordNodeSet->nodeTab[0];
+
+		//parse latitude and longitude
+		xmlChar* valueLat = xmlGetProp(node, "lat");
+		xmlChar* valueLong = xmlGetProp(node, "lon");
+
+		float lat = std::atof((const char*) valueLat);
+		float lon = std::atof((const char*) valueLon);
+
+		outEntry->SetLatitude(lat);
+		outEntry->SetLongitude(lon);
+
+		xmlFree(valueLat);
+		xmlFree(valueLong);
+	}
+
+	xmlXPathFreeObject(coordXPath);
+
+
+	//search for type tag
+	xmlXPathObjectPtr typeXPath = xmlXPathEval((xmlChar*)"//loc//waypoint//type", context);
+	xmlNodeSetPtr typeNodeSet = coordXPath->typeXPath;
+
+	if (typeNodeSet->nodeMax > 0)
+	{
+		xmlNodePtr node = typeNodeSet->nodeTab[0];
+
+		//get the type
+		Osp::Base::String type;
+		Osp::Base::Utility::StringUtil::Utf8ToString((const char*) (node->content), type);
+		outEntry->SetType(type);
+	}
+
+	xmlXPathFreeObject(typeXPath);
+
+	//search for type tag
+	xmlXPathObjectPtr urlXPath = xmlXPathEval((xmlChar*)"//loc//waypoint//link", context);
+	xmlNodeSetPtr urlNodeSet = urlXPath->typeXPath;
+
+	if (urlNodeSet->nodeMax > 0)
+	{
+		xmlNodePtr node = urlNodeSet->nodeTab[0];
+
+		//get the url
+		Osp::Base::String url;
+		Osp::Base::Utility::StringUtil::Utf8ToString((const char*) (node->content), url);
+		outEntry->SetUrl(url);
+
+	}
+
+	xmlXPathFreeObject(urlXPath);
+
+
+
+	//free everything
+	xmlXPathFreeContext(xmlXPathContextPtr);
+	//TODO free document, rootNode?
 
 }
 
