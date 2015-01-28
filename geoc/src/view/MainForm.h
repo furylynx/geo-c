@@ -50,6 +50,8 @@ private:
 	OverviewForm* pOverviewForm_;
 	CachesForm* pCachesForm_;
 
+	int locationCounter_;
+
 
 public:
 	virtual result OnInitializing(void);

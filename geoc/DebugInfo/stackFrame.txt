@@ -1,28 +1,19 @@
-PC: 0x4026FA04 LR: 0x401609F3 Stack PTR : 0x0ADBE628 
-0x4026FA04 [Platform Fns]
-0x401609F2 [Platform Fns]
-0x681662BA __Sensor_initPi
-0x6816639E _SensorCommunication_new
-0x68167502 _SensorConnection_new
-0x71D5F43A Osp::Uix::SensorManager::GetMinInterval(Osp::Uix::SensorType, long&)
-0x681A37B0 geo::SensorController::RegisterSensor(Osp::Uix::SensorType)
-0x4023BD12 [Platform Fns]
-0x4043A574 [Platform Fns]
-0x40233A36 [Platform Fns]
-0x68168590 _SensorsComponent_delete
-0x681685D6 __SensorsComponent_release
-0x67A58FDE Com_createInstanceByFactory
-0x67A59118 Com_createInstance
-0x681A30AA geo::SensorController::Construct()
-0x6819E5AC GeoC::OnAppInitializing(Osp::App::AppRegistry&)
-0x71DAF21E Osp::App::ApplicationEx::OnAppInitializing(Osp::App::AppRegistry&)
-0x71DB04F6 virtual thunk to Osp::App::ApplicationEx::OnAppInitializing(Osp::App::AppRegistry&)
-0x71DAD852 Osp::App::__NativeUiApplication::OnAppInitializing(Osp::App::AppRegistry&)
-0x71DAB92E Osp::App::__AppExecutable::AppInitializing()
-0x71DABA02 Osp::App::__AppExecutable::OnStart(Osp::Base::Runtime::_EventDispatcherEventArg const&)
-0x71DACFB6 virtual thunk to Osp::App::__AppExecutable::OnStart(Osp::Base::Runtime::_EventDispatcherEventArg const&)
-0x71CE5514 Osp::Base::Runtime::__EventDispatcherCore::Start()
-0x71DAA510 Osp::App::__AppExecutable::Run()
-0x71DB21A0 Osp::App::Application::Execute(Osp::App::Application* (*)(), Osp::Base::Collection::IList const*, Osp::App::AppAttributeType)
+PC: 0x6795E7B6 LR: 0x40228C8F Stack PTR : 0x09B7EA10 
+0x6795E7B6 geo::EntryController::ImportEntries(Osp::Base::String)
+0x6795E7B6 geo::EntryController::ImportEntries(Osp::Base::String)
+0x40234DAE [Platform Fns]
+0x75C6B1DE operator delete[](void*)
+0x75C535C2 Osp::Base::String::String(char const*)
+0x6795B2A4 GeoC::OnAppInitializing(Osp::App::AppRegistry&)
+0x75D2121E Osp::App::ApplicationEx::OnAppInitializing(Osp::App::AppRegistry&)
+0x75D224F6 virtual thunk to Osp::App::ApplicationEx::OnAppInitializing(Osp::App::AppRegistry&)
+0x75D1F852 Osp::App::__NativeUiApplication::OnAppInitializing(Osp::App::AppRegistry&)
+0x75D1D92E Osp::App::__AppExecutable::AppInitializing()
+0x75D1DA02 Osp::App::__AppExecutable::OnStart(Osp::Base::Runtime::_EventDispatcherEventArg const&)
+0x75D1EFB6 virtual thunk to Osp::App::__AppExecutable::OnStart(Osp::Base::Runtime::_EventDispatcherEventArg const&)
+0x75C57514 Osp::Base::Runtime::__EventDispatcherCore::Start()
+0x75D1C510 Osp::App::__AppExecutable::Run()
+0x75D241A0 Osp::App::Application::Execute(Osp::App::Application* (*)(), Osp::Base::Collection::IList const*, Osp::App::AppAttributeType)
 0x4022C474 [Platform Fns]
 0x4043ADB8 [Platform Fns]
+0x4022C474 [Platform Fns]

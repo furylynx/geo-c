@@ -21,6 +21,8 @@ MainForm::Initialize(PreferencesForm* pPreferencesForm, OverviewForm* pOverviewF
 	pOverviewForm_ = pOverviewForm;
 	pCachesForm_ = pCachesForm;
 
+	locationCounter_ = 0;
+
 	// Construct an XML form
 	Construct(L"IDF_MAINFORM");
 
@@ -55,6 +57,8 @@ MainForm::OnInitializing(void)
 
 	AddSoftkeyActionListener(SOFTKEY_0, *this);
 	AddSoftkeyActionListener(SOFTKEY_1, *this);
+
+
 
 	//TODO initialize menu
 
@@ -144,30 +148,64 @@ void MainForm::OnTouchReleased(const Osp::Ui::Control &source, const Osp::Graphi
 
 void MainForm::OnLocationUpdate(Osp::Locations::Location& location)
 {
+	AppLog("MainForm: Location update! \n");
 
-
-	if (pLabelLatitude_ != NULL)
+	if (location.GetQualifiedCoordinates() != NULL)
 	{
-		std::stringstream sstrLat;
-		sstrLat << location.GetQualifiedCoordinates()->GetLatitude() << std::endl;
 
-		pLabelLatitude_->SetText(sstrLat.str().c_str());
-		pLabelLatitude_->RequestRedraw(true);
+		if (pLabelLatitude_ != NULL)
+		{
+			std::stringstream sstrLat;
+			sstrLat << location.GetQualifiedCoordinates()->GetLatitude();
+
+			pLabelLatitude_->SetText(sstrLat.str().c_str());
+			pLabelLatitude_->Draw();
+			pLabelLatitude_->Show();
+		}
+
+		if (pLabelLongitude_ != NULL)
+		{
+			std::stringstream sstrLong;
+			sstrLong << location.GetQualifiedCoordinates()->GetLongitude();
+
+			pLabelLongitude_->SetText(sstrLong.str().c_str());
+			pLabelLongitude_->Draw();
+			pLabelLongitude_->Show();
+		}
 	}
-
-	if (pLabelLongitude_ != NULL)
+	else
 	{
-		std::stringstream sstrLong;
-		sstrLong << location.GetQualifiedCoordinates()->GetLongitude() << std::endl;
+		if (pLabelLatitude_ != NULL && pLabelLongitude_ != NULL)
+		{
+			std::stringstream sstr;
+			for (int i = 0; i < locationCounter_; i++)
+			{
+				sstr << ".";
+			}
 
-		pLabelLongitude_->SetText(sstrLong.str().c_str());
-		pLabelLongitude_->RequestRedraw(true);
+			pLabelLatitude_->SetText(sstr.str().c_str());
+			pLabelLatitude_->Draw();
+			pLabelLatitude_->Show();
+
+			pLabelLongitude_->SetText(sstr.str().c_str());
+			pLabelLongitude_->Draw();
+			pLabelLongitude_->Show();
+		}
+
+		locationCounter_++;
+
+		if (locationCounter_ > 3)
+		{
+			locationCounter_ = 0;
+		}
 	}
 
 }
 
 void MainForm::OnLocatorStateChanged(Osp::Locations::LocProviderState newState)
 {
+	AppLog("MainForm: Locator state changed! \n");
+
 	if (pLabelLocationState_ != NULL)
 	{
 		if (newState == Osp::Locations::LOC_PROVIDER_AVAILABLE)
@@ -183,7 +221,8 @@ void MainForm::OnLocatorStateChanged(Osp::Locations::LocProviderState newState)
 			pLabelLocationState_->SetText("Out of service");
 		}
 
-		pLabelLocationState_->RequestRedraw(true);
+		pLabelLocationState_->Draw();
+		pLabelLocationState_->Show();
 	}
 }
 
@@ -199,29 +238,29 @@ void MainForm::OnMagneticUpdate(float degreesToNorth, float x, float y, float z)
 
 void MainForm::OnGPSUpdate(float longitude, float latitude)
 {
-	if (pLabelLongitude_ != NULL)
-	{
-		std::stringstream sstrLong;
-		sstrLong << longitude << std::endl;
-
-		pLabelLongitude_->SetText(sstrLong.str().c_str());
-
-		//pLabelLongitude_->RequestRedraw(true);
-
-		pLabelLongitude_->Draw();
-		pLabelLongitude_->Show();
-	}
-
-	if (pLabelLatitude_ != NULL)
-	{
-		std::stringstream sstrLat;
-		sstrLat << latitude << std::endl;
-
-		pLabelLatitude_->SetText(sstrLat.str().c_str());
-
-		//pLabelLatitude_->RequestRedraw(true);
-
-		pLabelLongitude_->Draw();
-		pLabelLongitude_->Show();
-	}
+//	if (pLabelLongitude_ != NULL)
+//	{
+//		std::stringstream sstrLong;
+//		sstrLong << longitude << std::endl;
+//
+//		pLabelLongitude_->SetText(sstrLong.str().c_str());
+//
+//		//pLabelLongitude_->RequestRedraw(true);
+//
+//		pLabelLongitude_->Draw();
+//		pLabelLongitude_->Show();
+//	}
+//
+//	if (pLabelLatitude_ != NULL)
+//	{
+//		std::stringstream sstrLat;
+//		sstrLat << latitude << std::endl;
+//
+//		pLabelLatitude_->SetText(sstrLat.str().c_str());
+//
+//		//pLabelLatitude_->RequestRedraw(true);
+//
+//		pLabelLongitude_->Draw();
+//		pLabelLongitude_->Show();
+//	}
 }

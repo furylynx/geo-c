@@ -1,12 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' ?>
 <Manifest>
-	<Id>93bt1p123e</Id>
-	<Secret>9C645DDBA19C71BAD1204DA4DAA7A0B9</Secret>
-	<AppVersion>1.0.0</AppVersion>
-	<ManifestVersion>1.2</ManifestVersion>
-	<Privileges>
-	</Privileges>
-	<DeviceProfile>
-		<APIVersion>2.0</APIVersion>
-	</DeviceProfile>
+    <Id>kdp5848u2i</Id>
+    <Secret>7F3CB6DB3C13F95A2C8BDD99F54492C8</Secret>
+  <AppVersion>0.1.0</AppVersion>
+  <ManifestVersion>1.2</ManifestVersion>
+  <AppType>C++App</AppType>
+    <Privileges>
+        <Privilege>
+            <Name>LANDMARK</Name>
+        </Privilege>
+        <Privilege>
+            <Name>LOCATION</Name>
+        </Privilege>
+        <Privilege>
+            <Name>LOCATION_SERVICE</Name>
+        </Privilege>
+    </Privileges>
+    <DeviceProfile>
+        <APIVersion>2.0</APIVersion>
+    </DeviceProfile>
 </Manifest>

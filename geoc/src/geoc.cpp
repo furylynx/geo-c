@@ -90,6 +90,41 @@ bool GeoC::OnAppInitializing(AppRegistry& appRegistry)
 	pFrame_->AddControl(*pCacheDetailsForm_);
 
 
+//	if (!Osp::Io::File::IsFileExist("/Home/geoc/"))
+//	{
+//		result createDirResult = Osp::Io::Directory::Create("/Home/geoc/", false);
+//
+//		if (!IsFailed(createDirResult))
+//		{
+//			AppLog("Created the dir /Home/geoc/ ...");
+//		}
+//		else
+//		{
+//			AppLog("Failed to create /Home/geoc/ ...");
+//		}
+//	}
+
+	//check for geo'c directory
+	if (!Osp::Io::File::IsFileExist("/Storagecard/Media/Others/geo'c/"))
+	{
+
+		result createDirResult = Osp::Io::Directory::Create("/Storagecard/Media/Others/geo'c/", false);
+
+		if (!IsFailed(createDirResult))
+		{
+			AppLog("Created the dir /Media/Others/geo'c/ ...");
+		}
+		else
+		{
+			AppLog("Failed to create /Media/Others/geo'c/ ...");
+		}
+	}
+	else
+	{
+		AppLog("Parsing data from /Media/Others/geo'c/");
+		pEntryController_->ImportEntries("/Storagecard/Media/Others/");
+	}
+
 
 	// Set the current form
 	pFrame_->SetCurrentForm(*pMainForm_);

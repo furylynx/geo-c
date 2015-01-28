@@ -10,10 +10,12 @@
 
 //custom includes
 #include "../model/Entry.h"
+#include "IOControllerLOC.h"
 
 
 //global includes
 #include <FBase.h>
+#include <FIo.h>
 
 #include <vector>
 
@@ -36,7 +38,7 @@ public:
 
 	virtual std::vector<geo::Entry*> GetActiveEntries() const;
 
-	virtual void ImportEntries(Osp::Base::String path);
+	virtual bool ImportEntries(Osp::Base::String path);
 
 	virtual unsigned int Size() const;
 
@@ -44,6 +46,7 @@ protected:
 
 private:
 	std::vector<geo::Entry*> entries_;
+	IOControllerLOC ioCtrl_;
 
 };
 

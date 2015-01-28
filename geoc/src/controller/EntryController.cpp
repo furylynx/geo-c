@@ -7,6 +7,8 @@
 
 #include "EntryController.h"
 
+using namespace Osp::Io;
+
 namespace geo
 {
 
@@ -17,12 +19,16 @@ EntryController::EntryController()
 
 EntryController::~EntryController()
 {
-
+	for (std::size_t i = 0; i < entries_.size(); i++)
+	{
+		delete entries_.at(i);
+		entries_.at(i) = NULL;
+	}
 }
 
 void EntryController::Construct()
 {
-
+	ioCtrl_.Construct();
 }
 
 void EntryController::AddEntry(Osp::Base::String title, float longitude, float latitude)
@@ -58,9 +64,72 @@ std::vector<geo::Entry*> EntryController::GetActiveEntries() const
 	return result;
 }
 
-void EntryController::ImportEntries(Osp::Base::String path)
+bool EntryController::ImportEntries(Osp::Base::String path)
 {
-	//TODO read folder and parse entries
+	Directory* pDir = new Directory();
+	result r = pDir->Construct(path);
+
+	if (IsFailed(r))
+	{
+		AppLog("Failed to import entries: directory is not accessible.");
+		return false;
+	}
+
+	DirEnumerator* pDirEnum = pDir->ReadN();
+
+	while(pDirEnum->MoveNext() == E_SUCCESS)
+	{
+		DirEntry dirEntry = pDirEnum->GetCurrentDirEntry();
+
+		if (dirEntry.GetName().EndsWith(".loc"))
+		{
+			AppLog("File %S",dirEntry.GetName().GetPointer());
+
+			Entry* newEntry = new Entry();
+			newEntry->Construct();
+
+			Osp::Base::String filePath = path;
+			filePath.Append(dirEntry.GetName());
+
+			result parseResult = ioCtrl_.ParseLOC(filePath, newEntry);
+
+			if (!IsFailed(parseResult))
+			{
+				AddEntry(newEntry);
+			}
+			else
+			{
+				delete newEntry;
+			}
+		}
+		else if (dirEntry.GetName().EndsWith(".gpx"))
+		{
+
+			AppLog("File %S",dirEntry.GetName().GetPointer());
+
+			Entry* newEntry = new Entry();
+			newEntry->Construct();
+
+			Osp::Base::String filePath = path;
+			filePath.Append(dirEntry.GetName());
+
+			result parseResult = ioCtrl_.ParseGPX(filePath, newEntry);
+
+			if (!IsFailed(parseResult))
+			{
+				AddEntry(newEntry);
+			}
+			else
+			{
+				delete newEntry;
+			}
+		}
+
+
+	}
+
+
+	return true;
 }
 
 unsigned int EntryController::Size() const

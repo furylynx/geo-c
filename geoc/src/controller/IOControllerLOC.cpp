@@ -27,7 +27,7 @@ void IOControllerLOC::Construct()
 
 }
 
-result IOControllerLOC::ParseLOC(Osp::Base::String path, Entry* outEntry)
+result IOControllerLOC::ParseLOC(Osp::Base::String path, Entry* outEntry) const
 {
 
 	xmlDocPtr pDocument = xmlParseFile((const char*)path.GetPointer());
@@ -43,7 +43,7 @@ result IOControllerLOC::ParseLOC(Osp::Base::String path, Entry* outEntry)
 		xmlNodePtr node = nameNodeSet->nodeTab[0];
 
 		//get the id
-		xmlChar* value = xmlGetProp(node, "id");
+		xmlChar* value = xmlGetProp(node, (xmlChar*)"id");
 
 		Osp::Base::String nameId;
 		Osp::Base::Utility::StringUtil::Utf8ToString((const char*) (value), nameId);
@@ -87,8 +87,8 @@ result IOControllerLOC::ParseLOC(Osp::Base::String path, Entry* outEntry)
 		xmlNodePtr node = coordNodeSet->nodeTab[0];
 
 		//parse latitude and longitude
-		xmlChar* valueLat = xmlGetProp(node, "lat");
-		xmlChar* valueLong = xmlGetProp(node, "lon");
+		xmlChar* valueLat = xmlGetProp(node, (xmlChar*)"lat");
+		xmlChar* valueLon = xmlGetProp(node, (xmlChar*)"lon");
 
 		float lat = std::atof((const char*) valueLat);
 		float lon = std::atof((const char*) valueLon);
@@ -97,7 +97,7 @@ result IOControllerLOC::ParseLOC(Osp::Base::String path, Entry* outEntry)
 		outEntry->SetLongitude(lon);
 
 		xmlFree(valueLat);
-		xmlFree(valueLong);
+		xmlFree(valueLon);
 	}
 
 	xmlXPathFreeObject(coordXPath);
@@ -105,7 +105,7 @@ result IOControllerLOC::ParseLOC(Osp::Base::String path, Entry* outEntry)
 
 	//search for type tag
 	xmlXPathObjectPtr typeXPath = xmlXPathEval((xmlChar*)"//loc//waypoint//type", context);
-	xmlNodeSetPtr typeNodeSet = coordXPath->typeXPath;
+	xmlNodeSetPtr typeNodeSet = coordXPath->nodesetval;
 
 	if (typeNodeSet->nodeMax > 0)
 	{
@@ -121,7 +121,7 @@ result IOControllerLOC::ParseLOC(Osp::Base::String path, Entry* outEntry)
 
 	//search for type tag
 	xmlXPathObjectPtr urlXPath = xmlXPathEval((xmlChar*)"//loc//waypoint//link", context);
-	xmlNodeSetPtr urlNodeSet = urlXPath->typeXPath;
+	xmlNodeSetPtr urlNodeSet = urlXPath->nodesetval;
 
 	if (urlNodeSet->nodeMax > 0)
 	{
@@ -139,12 +139,12 @@ result IOControllerLOC::ParseLOC(Osp::Base::String path, Entry* outEntry)
 
 
 	//free everything
-	xmlXPathFreeContext(xmlXPathContextPtr);
+	xmlXPathFreeContext(context);
 	//TODO free document, rootNode?
 
 }
 
-result IOControllerLOC::WriteToLOC(Osp::Base::String path, geo::Entry* entry)
+result IOControllerLOC::WriteToLOC(Osp::Base::String path, geo::Entry* entry) const
 {
     int err;
     xmlTextWriterPtr writer = xmlNewTextWriterFilename((const char*)Osp::Base::Utility::StringUtil::StringToUtf8N(path), 0);
@@ -194,6 +194,21 @@ result IOControllerLOC::WriteToLOC(Osp::Base::String path, geo::Entry* entry)
 
     xmlFreeTextWriter(writer);
 
+}
+
+
+result IOControllerLOC::ParseGPX(Osp::Base::String path, geo::Entry* outEntry) const
+{
+	//TODO parse gpx file
+
+	return E_SUCCESS;
+}
+
+result IOControllerLOC::WriteToGPX(Osp::Base::String path, geo::Entry* entry) const
+{
+	//TODO write gpx file
+
+	return E_SUCCESS;
 }
 
 }//namespace geo

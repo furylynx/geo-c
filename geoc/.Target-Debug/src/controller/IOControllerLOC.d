@@ -115,7 +115,33 @@ src/controller/IOControllerLOC.d src/controller/IOControllerLOC.o: \
  C:/bada/2.0.6/Include/libxml/xmlunicode.h \
  C:/bada/2.0.6/Include/libxml/xmlwriter.h \
  C:/bada/2.0.6/Include/libxml/xmlreader.h \
- C:/bada/2.0.6/Include/libxml/xpathInternals.h
+ C:/bada/2.0.6/Include/libxml/xpathInternals.h \
+ C:/bada/2.0.6/Include/FIo.h C:/bada/2.0.6/Include/FIoDirectory.h \
+ C:/bada/2.0.6/Include/FBaseTypes.h C:/bada/2.0.6/Include/FBaseDateTime.h \
+ C:/bada/2.0.6/Include/FBaseString.h \
+ C:/bada/2.0.6/Include/FBaseResource.h \
+ C:/bada/2.0.6/Include/FBaseColArrayList.h \
+ C:/bada/2.0.6/Include/FIoConfig.h C:/bada/2.0.6/Include/FIoFile.h \
+ C:/bada/2.0.6/Include/FBaseColIList.h \
+ C:/bada/2.0.6/Include/FBaseResult.h \
+ C:/bada/2.0.6/Include/FBaseByteBuffer.h \
+ C:/bada/2.0.6/Include/FIoRegistry.h C:/bada/2.0.6/Include/FBaseUuId.h \
+ C:/bada/2.0.6/Include/FIoDbTypes.h C:/bada/2.0.6/Include/FIoDatabase.h \
+ C:/bada/2.0.6/Include/FBaseRtThreadMutex.h \
+ C:/bada/2.0.6/Include/FIoDbStatement.h \
+ C:/bada/2.0.6/Include/FIoDbTypes.h \
+ C:/bada/2.0.6/Include/FIoDbEnumerator.h \
+ C:/bada/2.0.6/Include/FIoSerialPort.h \
+ C:/bada/2.0.6/Include/FIoISerialPortEventListener.h \
+ C:/bada/2.0.6/Include/FIoChannel.h C:/bada/2.0.6/Include/FIoConfig.h \
+ C:/bada/2.0.6/Include/FIoChannelTypes.h \
+ C:/bada/2.0.6/Include/FIoChannelManager.h \
+ C:/bada/2.0.6/Include/FIoIChannelEventListener.h \
+ C:/bada/2.0.6/Include/FAppTypes.h \
+ C:/bada/2.0.6/Include/FIoClientChannel.h \
+ C:/bada/2.0.6/Include/FIoIChannelResponseEventListener.h \
+ C:/bada/2.0.6/Include/FIoServerChannel.h \
+ C:/bada/2.0.6/Include/FIoIChannelRequestEventListener.h
 
 ../src/controller/IOControllerLOC.h:
 
@@ -380,3 +406,67 @@ C:/bada/2.0.6/Include/libxml/xmlwriter.h:
 C:/bada/2.0.6/Include/libxml/xmlreader.h:
 
 C:/bada/2.0.6/Include/libxml/xpathInternals.h:
+
+C:/bada/2.0.6/Include/FIo.h:
+
+C:/bada/2.0.6/Include/FIoDirectory.h:
+
+C:/bada/2.0.6/Include/FBaseTypes.h:
+
+C:/bada/2.0.6/Include/FBaseDateTime.h:
+
+C:/bada/2.0.6/Include/FBaseString.h:
+
+C:/bada/2.0.6/Include/FBaseResource.h:
+
+C:/bada/2.0.6/Include/FBaseColArrayList.h:
+
+C:/bada/2.0.6/Include/FIoConfig.h:
+
+C:/bada/2.0.6/Include/FIoFile.h:
+
+C:/bada/2.0.6/Include/FBaseColIList.h:
+
+C:/bada/2.0.6/Include/FBaseResult.h:
+
+C:/bada/2.0.6/Include/FBaseByteBuffer.h:
+
+C:/bada/2.0.6/Include/FIoRegistry.h:
+
+C:/bada/2.0.6/Include/FBaseUuId.h:
+
+C:/bada/2.0.6/Include/FIoDbTypes.h:
+
+C:/bada/2.0.6/Include/FIoDatabase.h:
+
+C:/bada/2.0.6/Include/FBaseRtThreadMutex.h:
+
+C:/bada/2.0.6/Include/FIoDbStatement.h:
+
+C:/bada/2.0.6/Include/FIoDbTypes.h:
+
+C:/bada/2.0.6/Include/FIoDbEnumerator.h:
+
+C:/bada/2.0.6/Include/FIoSerialPort.h:
+
+C:/bada/2.0.6/Include/FIoISerialPortEventListener.h:
+
+C:/bada/2.0.6/Include/FIoChannel.h:
+
+C:/bada/2.0.6/Include/FIoConfig.h:
+
+C:/bada/2.0.6/Include/FIoChannelTypes.h:
+
+C:/bada/2.0.6/Include/FIoChannelManager.h:
+
+C:/bada/2.0.6/Include/FIoIChannelEventListener.h:
+
+C:/bada/2.0.6/Include/FAppTypes.h:
+
+C:/bada/2.0.6/Include/FIoClientChannel.h:
+
+C:/bada/2.0.6/Include/FIoIChannelResponseEventListener.h:
+
+C:/bada/2.0.6/Include/FIoServerChannel.h:
+
+C:/bada/2.0.6/Include/FIoIChannelRequestEventListener.h:

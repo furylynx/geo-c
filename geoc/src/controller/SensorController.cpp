@@ -27,15 +27,13 @@ void SensorController::Construct()
 
 	bool result = RegisterSensor(Osp::Uix::SENSOR_TYPE_TILT);
 	result &= RegisterSensor(Osp::Uix::SENSOR_TYPE_MAGNETIC);
-	//result &= RegisterSensor(Osp::Uix::SENSOR_TYPE_GPS);
+	result &= RegisterSensor(Osp::Uix::SENSOR_TYPE_GPS);
 
 
 	locationProvider_.Construct(Osp::Locations::LOC_METHOD_GPS);
 
 	if (locationProvider_.IsLocationMethodSupported(Osp::Locations::LOC_METHOD_GPS))
 	{
-		locationProvider_.GetLastKnownLocationN();
-
 		std::stringstream sstrapploglocationmanager;
 		sstrapploglocationmanager << "LocState: " << locationProvider_.GetState();
 		AppLog(sstrapploglocationmanager.str().c_str());
@@ -46,9 +44,7 @@ void SensorController::Construct()
 //		}
 
 		//TODO this causes a app crash - I dont know why !!
-		//locationProvider_.RequestLocationUpdates(*this, 100, false);
-
-		//locationProvider_.RequestLocationUpdates(ll_, 100, false);
+		locationProvider_.RequestLocationUpdates(*this, 4, false);
 	}
 
 
@@ -67,7 +63,7 @@ void SensorController::OnDataReceived(Osp::Uix::SensorType sensor_type, Osp::Uix
 		sensor_data.GetValue((Osp::Uix::SensorDataKey)Osp::Uix::TILT_DATA_KEY_ROLL, roll);
 
 		std::stringstream sstr;
-		sstr << "OnDataReceived: " << pitch << " " << azimuth << " " << roll << std::endl;
+		sstr << "OnDataReceived-TILT: " << pitch << " " << azimuth << " " << roll << std::endl;
 
 		AppLog(sstr.str().c_str());
 
@@ -88,7 +84,7 @@ void SensorController::OnDataReceived(Osp::Uix::SensorType sensor_type, Osp::Uix
 		float mag_field = Osp::Base::Utility::Math::Sqrt((Osp::Base::Utility::Math::Pow(x,2)+ Osp::Base::Utility::Math::Pow(y,2)+ Osp::Base::Utility::Math::Pow(z,2)));
 
 		std::stringstream sstr;
-		sstr << "OnDataReceived[mag_field]: " << mag_field << std::endl;
+		sstr << "OnDataReceived-MAG: " << mag_field << std::endl;
 
 		AppLog(sstr.str().c_str());
 
@@ -112,6 +108,11 @@ void SensorController::OnDataReceived(Osp::Uix::SensorType sensor_type, Osp::Uix
 		sensor_data.GetValue((Osp::Uix::SensorDataKey)Osp::Uix::GPS_DATA_KEY_LONGITUDE, longitude);
 		sensor_data.GetValue((Osp::Uix::SensorDataKey)Osp::Uix::GPS_DATA_KEY_LATITUDE, latitude);
 
+		std::stringstream sstr;
+		sstr << "OnDataReceived-GPS: " << latitude << " " << longitude << std::endl;
+
+		AppLog(sstr.str().c_str());
+
 		for (std::list<geo::ISensorUpdateListener*>::iterator it = sensorUpdateListeners_.begin(); it != sensorUpdateListeners_.end(); it++)
 		{
 			(*it)->OnGPSUpdate(longitude, latitude);
@@ -122,21 +123,18 @@ void SensorController::OnDataReceived(Osp::Uix::SensorType sensor_type, Osp::Uix
 
 void SensorController::OnLocationUpdated(Osp::Locations::Location& location)
 {
-//	for (std::list<geo::ISensorUpdateListener*>::iterator it = sensorUpdateListeners_.begin(); it != sensorUpdateListeners_.end(); it++)
-//	{
-//		(*it)->OnLocationUpdate(location);
-//	}
-	//location.GetQualifiedCoordinates()->GetLongitude();
-	//location.GetQualifiedCoordinates()->GetLatitude();
-	//location.GetQualifiedCoordinates()->Distance(ToPosition)
+	for (std::list<geo::ISensorUpdateListener*>::iterator it = sensorUpdateListeners_.begin(); it != sensorUpdateListeners_.end(); it++)
+	{
+		(*it)->OnLocationUpdate(location);
+	}
 }
 
 void SensorController::OnProviderStateChanged(Osp::Locations::LocProviderState  newState)
 {
-//	for (std::list<geo::ISensorUpdateListener*>::iterator it = sensorUpdateListeners_.begin(); it != sensorUpdateListeners_.end(); it++)
-//	{
-//		(*it)->OnLocatorStateChanged(newState);
-//	}
+	for (std::list<geo::ISensorUpdateListener*>::iterator it = sensorUpdateListeners_.begin(); it != sensorUpdateListeners_.end(); it++)
+	{
+		(*it)->OnLocatorStateChanged(newState);
+	}
 }
 
 float SensorController::CalculateAngle(float f1, float f2) const
@@ -188,18 +186,18 @@ bool SensorController::RegisterLocationProvider()
 {
 	//register the this class as a listener for the location data
 
-	unsigned long r = locationProvider_.RequestLocationUpdates(*this, 20, false);
-
+//	unsigned long r = locationProvider_.RequestLocationUpdates(*this, 20, false);
+//
 //	if (!IsFailed(r))
 //	{
-		return true;
+//		return true;
 //	}
 //
 //	std::stringstream sstr;
 //	sstr << "Location provider is not available!" << std::endl;
 //
 //	AppLog(sstr.str().c_str());
-//	return false;
+	return false;
 }
 
 void SensorController::Pause()

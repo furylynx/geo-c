@@ -17,6 +17,7 @@
 #include <FBase.h>
 #include <FSystem.h>
 #include <FUi.h>
+#include <FIo.h>
 
 /**
  * [geoc] application must inherit from Application class

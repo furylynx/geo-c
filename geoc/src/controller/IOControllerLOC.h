@@ -14,6 +14,7 @@
 //global includes
 #include <FBase.h>
 #include <FXml.h>
+#include <FIo.h>
 
 #include <sstream>
 #include <cstdlib>
@@ -29,8 +30,11 @@ public:
 
 	virtual void Construct();
 
-	virtual result ParseLOC(Osp::Base::String path, geo::Entry* outEntry);
-	virtual result WriteToLOC(Osp::Base::String path, geo::Entry* entry);
+	virtual result ParseLOC(Osp::Base::String path, geo::Entry* outEntry) const;
+	virtual result WriteToLOC(Osp::Base::String path, geo::Entry* entry) const;
+
+	virtual result ParseGPX(Osp::Base::String path, geo::Entry* outEntry) const;
+	virtual result WriteToGPX(Osp::Base::String path, geo::Entry* entry) const;
 
 };
 

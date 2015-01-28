@@ -70,4 +70,14 @@
         <layout bottomRelation="" bottomRelationType="" centerHorizontal="FALSE" centerVertical="FALSE" height="62" horizontalFitPolicy="FIT_POLICY_FIXED" leftRelation="" leftRelationType="" marginBottom="0" marginLeft="0" marginRight="0" marginTop="0" mode="Portrait" rightRelation="" rightRelationType="" topRelation="" topRelationType="" verticalFitPolicy="FIT_POLICY_FIXED" width="101" x="10" y="281"/>
         <layout bottomRelation="" bottomRelationType="" centerHorizontal="FALSE" centerVertical="FALSE" height="37" horizontalFitPolicy="FIT_POLICY_FIXED" leftRelation="" leftRelationType="" marginBottom="0" marginLeft="0" marginRight="0" marginTop="0" mode="Landscape" rightRelation="" rightRelationType="" topRelation="" topRelationType="" verticalFitPolicy="FIT_POLICY_FIXED" width="333" x="33" y="155"/>
     </Label>
+    <Panel id="IDC_PANEL1" parent="IDF_CACHEDETAIL">
+        <property BGColor="" BGColorOpacity="0" GroupStyle="GROUP_STYLE_NONE" compositeEnabled="TRUE"/>
+        <layout bottomRelation="" bottomRelationType="" centerHorizontal="FALSE" centerVertical="FALSE" height="141" horizontalFitPolicy="FIT_POLICY_FIXED" leftRelation="" leftRelationType="" marginBottom="0" marginLeft="0" marginRight="0" marginTop="0" mode="Portrait" rightRelation="" rightRelationType="" topRelation="" topRelationType="" type="NONE" verticalFitPolicy="FIT_POLICY_FIXED" width="361" x="30" y="402"/>
+        <layout bottomRelation="" bottomRelationType="" centerHorizontal="FALSE" centerVertical="FALSE" height="37" horizontalFitPolicy="FIT_POLICY_FIXED" leftRelation="" leftRelationType="" marginBottom="0" marginLeft="0" marginRight="0" marginTop="0" mode="Landscape" rightRelation="" rightRelationType="" topRelation="" topRelationType="" type="NONE" verticalFitPolicy="FIT_POLICY_FIXED" width="333" x="298" y="254"/>
+    </Panel>
+    <Label id="IDC_LABEL1" parent="IDC_PANEL1">
+        <property BGBitmapPath="" BGColor="" BGColorOpacity="0" hAlign="ALIGN_LEFT" text="" textColor="" textSize="42" textStyle="LABEL_TEXT_STYLE_NORMAL" vAlign="ALIGN_TOP"/>
+        <layout height="36" mode="Portrait" width="125" x="50" y="10"/>
+        <layout height="116" mode="Landscape" width="38" x="23" y="-79"/>
+    </Label>
 </Scene>

@@ -227,9 +227,62 @@ src/GeoC.d src/GeoC.o: ../src/GeoC.cpp ../src/GeoC.h \
  C:/bada/2.0.6/Include/FUixSpeechToTextCommon.h \
  C:/bada/2.0.6/Include/FUixISpeechToTextEventListener.h \
  C:/bada/2.0.6/Include/FBase.h ../src/controller/EntryController.h \
- ../src/controller/../model/Entry.h ../src/view/MainForm.h \
- ../src/view/PreferencesForm.h C:/bada/2.0.6/Include/FUi.h \
- C:/bada/2.0.6/Include/FUiFocusManager.h \
+ ../src/controller/../model/Entry.h ../src/controller/IOControllerLOC.h \
+ C:/bada/2.0.6/Include/FXml.h C:/bada/2.0.6/Include/libxml/parser.h \
+ C:/bada/2.0.6/Include/libxml/xmlversion.h \
+ C:/bada/2.0.6/Include/libxml/xmlexports.h \
+ C:/bada/2.0.6/Include/libxml/tree.h \
+ C:/bada/2.0.6/Include/libxml/xmlstring.h \
+ C:/bada/2.0.6/Include/libxml/xmlregexp.h \
+ C:/bada/2.0.6/Include/libxml/dict.h C:/bada/2.0.6/Include/libxml/hash.h \
+ C:/bada/2.0.6/Include/libxml/valid.h \
+ C:/bada/2.0.6/Include/libxml/xmlerror.h \
+ C:/bada/2.0.6/Include/libxml/list.h \
+ C:/bada/2.0.6/Include/libxml/xmlautomata.h \
+ C:/bada/2.0.6/Include/libxml/entities.h \
+ C:/bada/2.0.6/Include/libxml/encoding.h \
+ C:/bada/2.0.6/Include/libxml/xmlIO.h \
+ C:/bada/2.0.6/Include/libxml/globals.h \
+ C:/bada/2.0.6/Include/libxml/SAX.h C:/bada/2.0.6/Include/libxml/xlink.h \
+ C:/bada/2.0.6/Include/libxml/SAX2.h \
+ C:/bada/2.0.6/Include/libxml/xmlmemory.h \
+ C:/bada/2.0.6/Include/libxml/threads.h \
+ C:/bada/2.0.6/Include/libxml/HTMLparser.h \
+ C:/bada/2.0.6/Include/libxml/parserInternals.h \
+ C:/bada/2.0.6/Include/libxml/chvalid.h \
+ C:/bada/2.0.6/Include/libxml/xpath.h C:/bada/2.0.6/Include/libxml/uri.h \
+ C:/bada/2.0.6/Include/libxml/xmlsave.h \
+ C:/bada/2.0.6/Include/libxml/xmlunicode.h \
+ C:/bada/2.0.6/Include/libxml/xmlwriter.h \
+ C:/bada/2.0.6/Include/libxml/xmlreader.h \
+ C:/bada/2.0.6/Include/libxml/xpathInternals.h \
+ C:/bada/2.0.6/Include/FIo.h C:/bada/2.0.6/Include/FIoDirectory.h \
+ C:/bada/2.0.6/Include/FBaseDateTime.h \
+ C:/bada/2.0.6/Include/FBaseResource.h \
+ C:/bada/2.0.6/Include/FBaseColArrayList.h \
+ C:/bada/2.0.6/Include/FIoConfig.h C:/bada/2.0.6/Include/FIoFile.h \
+ C:/bada/2.0.6/Include/FBaseColIList.h \
+ C:/bada/2.0.6/Include/FBaseResult.h \
+ C:/bada/2.0.6/Include/FBaseByteBuffer.h \
+ C:/bada/2.0.6/Include/FIoRegistry.h C:/bada/2.0.6/Include/FBaseUuId.h \
+ C:/bada/2.0.6/Include/FIoDbTypes.h C:/bada/2.0.6/Include/FIoDatabase.h \
+ C:/bada/2.0.6/Include/FBaseRtThreadMutex.h \
+ C:/bada/2.0.6/Include/FIoDbStatement.h \
+ C:/bada/2.0.6/Include/FIoDbTypes.h \
+ C:/bada/2.0.6/Include/FIoDbEnumerator.h \
+ C:/bada/2.0.6/Include/FIoSerialPort.h \
+ C:/bada/2.0.6/Include/FIoISerialPortEventListener.h \
+ C:/bada/2.0.6/Include/FIoChannel.h C:/bada/2.0.6/Include/FIoConfig.h \
+ C:/bada/2.0.6/Include/FIoChannelTypes.h \
+ C:/bada/2.0.6/Include/FIoChannelManager.h \
+ C:/bada/2.0.6/Include/FIoIChannelEventListener.h \
+ C:/bada/2.0.6/Include/FAppTypes.h \
+ C:/bada/2.0.6/Include/FIoClientChannel.h \
+ C:/bada/2.0.6/Include/FIoIChannelResponseEventListener.h \
+ C:/bada/2.0.6/Include/FIoServerChannel.h \
+ C:/bada/2.0.6/Include/FIoIChannelRequestEventListener.h \
+ ../src/view/MainForm.h ../src/view/PreferencesForm.h \
+ C:/bada/2.0.6/Include/FUi.h C:/bada/2.0.6/Include/FUiFocusManager.h \
  C:/bada/2.0.6/Include/FUiKeyboardMap.h \
  C:/bada/2.0.6/Include/FUiKeyEventManager.h \
  C:/bada/2.0.6/Include/FUiIActionEventListener.h \
@@ -377,7 +430,7 @@ src/GeoC.d src/GeoC.o: ../src/GeoC.cpp ../src/GeoC.h \
  ../src/view/CacheDetailsForm.h ../src/view/../model/Entry.h \
  C:/bada/2.0.6/Include/FApp.h C:/bada/2.0.6/Include/FAppApplication.h \
  C:/bada/2.0.6/Include/FSysBattery.h C:/bada/2.0.6/Include/FSysPower.h \
- C:/bada/2.0.6/Include/FAppConfig.h C:/bada/2.0.6/Include/FAppTypes.h \
+ C:/bada/2.0.6/Include/FAppConfig.h \
  C:/bada/2.0.6/Include/FAppAppManager.h \
  C:/bada/2.0.6/Include/FAppAppControl.h \
  C:/bada/2.0.6/Include/FAppIAppControlEventListener.h \
@@ -918,6 +971,132 @@ C:/bada/2.0.6/Include/FBase.h:
 
 ../src/controller/../model/Entry.h:
 
+../src/controller/IOControllerLOC.h:
+
+C:/bada/2.0.6/Include/FXml.h:
+
+C:/bada/2.0.6/Include/libxml/parser.h:
+
+C:/bada/2.0.6/Include/libxml/xmlversion.h:
+
+C:/bada/2.0.6/Include/libxml/xmlexports.h:
+
+C:/bada/2.0.6/Include/libxml/tree.h:
+
+C:/bada/2.0.6/Include/libxml/xmlstring.h:
+
+C:/bada/2.0.6/Include/libxml/xmlregexp.h:
+
+C:/bada/2.0.6/Include/libxml/dict.h:
+
+C:/bada/2.0.6/Include/libxml/hash.h:
+
+C:/bada/2.0.6/Include/libxml/valid.h:
+
+C:/bada/2.0.6/Include/libxml/xmlerror.h:
+
+C:/bada/2.0.6/Include/libxml/list.h:
+
+C:/bada/2.0.6/Include/libxml/xmlautomata.h:
+
+C:/bada/2.0.6/Include/libxml/entities.h:
+
+C:/bada/2.0.6/Include/libxml/encoding.h:
+
+C:/bada/2.0.6/Include/libxml/xmlIO.h:
+
+C:/bada/2.0.6/Include/libxml/globals.h:
+
+C:/bada/2.0.6/Include/libxml/SAX.h:
+
+C:/bada/2.0.6/Include/libxml/xlink.h:
+
+C:/bada/2.0.6/Include/libxml/SAX2.h:
+
+C:/bada/2.0.6/Include/libxml/xmlmemory.h:
+
+C:/bada/2.0.6/Include/libxml/threads.h:
+
+C:/bada/2.0.6/Include/libxml/HTMLparser.h:
+
+C:/bada/2.0.6/Include/libxml/parserInternals.h:
+
+C:/bada/2.0.6/Include/libxml/chvalid.h:
+
+C:/bada/2.0.6/Include/libxml/xpath.h:
+
+C:/bada/2.0.6/Include/libxml/uri.h:
+
+C:/bada/2.0.6/Include/libxml/xmlsave.h:
+
+C:/bada/2.0.6/Include/libxml/xmlunicode.h:
+
+C:/bada/2.0.6/Include/libxml/xmlwriter.h:
+
+C:/bada/2.0.6/Include/libxml/xmlreader.h:
+
+C:/bada/2.0.6/Include/libxml/xpathInternals.h:
+
+C:/bada/2.0.6/Include/FIo.h:
+
+C:/bada/2.0.6/Include/FIoDirectory.h:
+
+C:/bada/2.0.6/Include/FBaseDateTime.h:
+
+C:/bada/2.0.6/Include/FBaseResource.h:
+
+C:/bada/2.0.6/Include/FBaseColArrayList.h:
+
+C:/bada/2.0.6/Include/FIoConfig.h:
+
+C:/bada/2.0.6/Include/FIoFile.h:
+
+C:/bada/2.0.6/Include/FBaseColIList.h:
+
+C:/bada/2.0.6/Include/FBaseResult.h:
+
+C:/bada/2.0.6/Include/FBaseByteBuffer.h:
+
+C:/bada/2.0.6/Include/FIoRegistry.h:
+
+C:/bada/2.0.6/Include/FBaseUuId.h:
+
+C:/bada/2.0.6/Include/FIoDbTypes.h:
+
+C:/bada/2.0.6/Include/FIoDatabase.h:
+
+C:/bada/2.0.6/Include/FBaseRtThreadMutex.h:
+
+C:/bada/2.0.6/Include/FIoDbStatement.h:
+
+C:/bada/2.0.6/Include/FIoDbTypes.h:
+
+C:/bada/2.0.6/Include/FIoDbEnumerator.h:
+
+C:/bada/2.0.6/Include/FIoSerialPort.h:
+
+C:/bada/2.0.6/Include/FIoISerialPortEventListener.h:
+
+C:/bada/2.0.6/Include/FIoChannel.h:
+
+C:/bada/2.0.6/Include/FIoConfig.h:
+
+C:/bada/2.0.6/Include/FIoChannelTypes.h:
+
+C:/bada/2.0.6/Include/FIoChannelManager.h:
+
+C:/bada/2.0.6/Include/FIoIChannelEventListener.h:
+
+C:/bada/2.0.6/Include/FAppTypes.h:
+
+C:/bada/2.0.6/Include/FIoClientChannel.h:
+
+C:/bada/2.0.6/Include/FIoIChannelResponseEventListener.h:
+
+C:/bada/2.0.6/Include/FIoServerChannel.h:
+
+C:/bada/2.0.6/Include/FIoIChannelRequestEventListener.h:
+
 ../src/view/MainForm.h:
 
 ../src/view/PreferencesForm.h:
@@ -1239,8 +1418,6 @@ C:/bada/2.0.6/Include/FSysBattery.h:
 C:/bada/2.0.6/Include/FSysPower.h:
 
 C:/bada/2.0.6/Include/FAppConfig.h:
-
-C:/bada/2.0.6/Include/FAppTypes.h:
 
 C:/bada/2.0.6/Include/FAppAppManager.h:
 
