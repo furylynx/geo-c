@@ -35,6 +35,17 @@ OspMain(int argc, char *pArgv[])
 	for (int i = 0; i < argc; i++)
 		pArgs->Add(*(new String(pArgv[i])));
 
+// String conversions !!
+//	const char* testString1 = "TestString 123";
+//	AppLog("Ein Test: %s", testString1);
+//
+//	Osp::Base::String s = Osp::Base::String("Bumm!");
+//	AppLog("Zwei Test: %s", s.GetPointer());
+//
+//	Osp::Base::ByteBuffer* buf = Osp::Base::Utility::StringUtil::StringToUtf8N(s);
+//	char* charBuf = (char*)buf->GetPointer();
+//	AppLog("Drei Test: %s", buf->GetPointer());
+
 	start_profile();
 	r = Osp::App::Application::Execute(GeoC::CreateInstance, pArgs);
 	if (IsFailed(r))
