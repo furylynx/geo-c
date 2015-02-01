@@ -31,7 +31,7 @@ result IOControllerLOC::ParseLOC(Osp::Base::String path, Entry* outEntry) const
 {
 
 	xmlDocPtr pDocument = xmlParseFile((const char*)path.GetPointer());
-	xmlNodePtr pRoot = xmlDocGetRootElement(pDocument);
+	//xmlNodePtr pRoot = xmlDocGetRootElement(pDocument);
 	xmlXPathContextPtr context = xmlXPathNewContext(pDocument);
 
 	//search for name tag
@@ -60,18 +60,26 @@ result IOControllerLOC::ParseLOC(Osp::Base::String path, Entry* outEntry) const
 			int indexOfBy;
 			result indexOfResult = cdata.IndexOf("by", 0, indexOfBy);
 
-			if (indexOfBy > 0)
+			if (!IsFailed(indexOfResult))
 			{
-				Osp::Base::String title;
-				Osp::Base::String author;
-				cdata.SubString(0, indexOfBy, title);
-				title.Trim();
-				cdata.SubString(indexOfBy+2, author);
-				author.Trim();
+				if (indexOfBy > 0)
+				{
+					Osp::Base::String title;
+					Osp::Base::String author;
+					cdata.SubString(0, indexOfBy, title);
+					title.Trim();
+					cdata.SubString(indexOfBy+2, author);
+					author.Trim();
 
-				outEntry->SetTitle(title);
-				outEntry->SetAuthor(author);
+					outEntry->SetTitle(title);
+					outEntry->SetAuthor(author);
+				}
 			}
+			else
+			{
+				return indexOfResult;
+			}
+
 		}
 	}
 
@@ -142,6 +150,8 @@ result IOControllerLOC::ParseLOC(Osp::Base::String path, Entry* outEntry) const
 	xmlXPathFreeContext(context);
 	//TODO free document, rootNode?
 
+
+	return E_SUCCESS;
 }
 
 result IOControllerLOC::WriteToLOC(Osp::Base::String path, geo::Entry* entry) const
@@ -156,11 +166,12 @@ result IOControllerLOC::WriteToLOC(Osp::Base::String path, geo::Entry* entry) co
     err = xmlTextWriterStartElement(writer, (xmlChar*)"waypoint");
 
     err = xmlTextWriterStartElement(writer, (xmlChar*)"name");
-    err = xmlTextWriterWriteAttribute(writer, (xmlChar*)"id", (xmlChar*) entry->NameId().GetPointer());
+
+    err = xmlTextWriterWriteAttribute(writer, (xmlChar*)"id", (xmlChar*) Osp::Base::Utility::StringUtil::StringToUtf8N(entry->NameId())->GetPointer());
 
     //cdata segment
     std::stringstream sstrCDATA;
-    sstrCDATA << entry->Title().GetPointer() << " by " << entry->Author().GetPointer();
+    sstrCDATA << (char*) Osp::Base::Utility::StringUtil::StringToUtf8N(entry->Title())->GetPointer() << " by " << (char*)Osp::Base::Utility::StringUtil::StringToUtf8N(entry->Author())->GetPointer();
     err = xmlTextWriterStartCDATA(writer);
     err = xmlTextWriterWriteCDATA(writer, (xmlChar*)sstrCDATA.str().c_str());
     err = xmlTextWriterEndCDATA(writer);
@@ -179,12 +190,12 @@ result IOControllerLOC::WriteToLOC(Osp::Base::String path, geo::Entry* entry) co
 
     err = xmlTextWriterEndElement(writer);
     err = xmlTextWriterStartElement(writer, (xmlChar*)"type");
-    err = xmlTextWriterWriteRaw(writer, (xmlChar*)entry->Type().GetPointer());
+    err = xmlTextWriterWriteRaw(writer, (xmlChar*) Osp::Base::Utility::StringUtil::StringToUtf8N(entry->Type())->GetPointer());
     err = xmlTextWriterEndElement(writer);
 
     err = xmlTextWriterStartElement(writer, (xmlChar*)"link");
     err = xmlTextWriterWriteAttribute(writer, (xmlChar*)"text", (xmlChar*)"Cache Details");
-    err = xmlTextWriterWriteRaw(writer, (xmlChar*)entry->Url().GetPointer());
+    err = xmlTextWriterWriteRaw(writer, (xmlChar*) Osp::Base::Utility::StringUtil::StringToUtf8N(entry->Url())->GetPointer());
     err = xmlTextWriterEndElement(writer);
 
     err = xmlTextWriterEndElement(writer);
@@ -194,6 +205,7 @@ result IOControllerLOC::WriteToLOC(Osp::Base::String path, geo::Entry* entry) co
 
     xmlFreeTextWriter(writer);
 
+   	return E_SUCCESS;
 }
 
 
