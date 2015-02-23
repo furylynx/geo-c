@@ -146,7 +146,7 @@ void MainForm::OnTouchReleased(const Osp::Ui::Control &source, const Osp::Graphi
 
 }
 
-void MainForm::OnLocationUpdate(Osp::Locations::Location& location)
+void MainForm::OnLocationUpdate(Osp::Locations::Location& location, const Osp::Locations::Location* lastKnownLocation)
 {
 	AppLog("MainForm: Location update! \n");
 
@@ -167,6 +167,28 @@ void MainForm::OnLocationUpdate(Osp::Locations::Location& location)
 		{
 			std::stringstream sstrLong;
 			sstrLong << location.GetQualifiedCoordinates()->GetLongitude();
+
+			pLabelLongitude_->SetText(sstrLong.str().c_str());
+			pLabelLongitude_->Draw();
+			pLabelLongitude_->Show();
+		}
+	}
+	else if (lastKnownLocation != NULL && lastKnownLocation->GetQualifiedCoordinates() != NULL)
+	{
+		if (pLabelLatitude_ != NULL)
+		{
+			std::stringstream sstrLat;
+			sstrLat << lastKnownLocation->GetQualifiedCoordinates()->GetLatitude();
+
+			pLabelLatitude_->SetText(sstrLat.str().c_str());
+			pLabelLatitude_->Draw();
+			pLabelLatitude_->Show();
+		}
+
+		if (pLabelLongitude_ != NULL)
+		{
+			std::stringstream sstrLong;
+			sstrLong << lastKnownLocation->GetQualifiedCoordinates()->GetLongitude();
 
 			pLabelLongitude_->SetText(sstrLong.str().c_str());
 			pLabelLongitude_->Draw();

@@ -17,7 +17,9 @@
 
 class CachesForm :
 	public Osp::Ui::Controls::Form,
-	public Osp::Ui::IActionEventListener
+	public Osp::Ui::IActionEventListener,
+    public Osp::Ui::Controls::IListViewItemEventListener,
+    public Osp::Ui::Controls::IListViewItemProvider
 {
 
 // Construction
@@ -31,12 +33,27 @@ public:
 
 	virtual result OnTerminating(void);
 
+	//Action listener
 	virtual void OnActionPerformed(const Osp::Ui::Control& source, int actionId);
 
+    //IListViewItemEventListener
+    virtual void OnListViewContextItemStateChanged(Osp::Ui::Controls::ListView &listView, int index, int elementId, Osp::Ui::Controls::ListContextItemStatus state);
+    virtual void OnListViewItemStateChanged(Osp::Ui::Controls::ListView &listView, int index, int elementId, Osp::Ui::Controls::ListItemStatus status);
+    virtual void OnListViewItemSwept(Osp::Ui::Controls::ListView &listView, int index, Osp::Ui::Controls::SweepDirection direction);
+
+    // IListViewItemProvider
+    virtual Osp::Ui::Controls::ListItemBase* CreateItem(int index, int itemWidth);
+    virtual bool DeleteItem(int index, Osp::Ui::Controls::ListItemBase* pItem, int itemWidth);
+    virtual int GetItemCount();
+
+    //custom methods
+    //...
+
 // Implementation
-protected:
+private:
 	static const int ID_FOOTER_BUTTON_ADD = 201;
 
+	Osp::Ui::Controls::ListView *pListView_;
 
 // Generated call-back functions
 public:

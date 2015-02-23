@@ -39,7 +39,7 @@ result OverviewForm::OnTerminating(void)
 	return r;
 }
 
-void OverviewForm::OnLocationUpdate(Osp::Locations::Location& location)
+void OverviewForm::OnLocationUpdate(Osp::Locations::Location& location, const Osp::Locations::Location* lastKnownLocation)
 {
 	//TODO
 }

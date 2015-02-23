@@ -55,10 +55,12 @@ public:
 	virtual void SetHint(Osp::Base::String hint);
 
 	virtual Osp::Base::String Type() const;
-	virtual Osp::Base::String SetType(Osp::Base::String type);
+	virtual void SetType(Osp::Base::String type);
 
 	virtual Osp::Base::String Url() const;
 	virtual void SetUrl(Osp::Base::String url);
+
+	virtual Osp::Base::String ToString() const;
 
 
 private:

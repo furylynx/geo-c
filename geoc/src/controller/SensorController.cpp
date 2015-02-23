@@ -38,15 +38,8 @@ void SensorController::Construct()
 		sstrapploglocationmanager << "LocState: " << locationProvider_.GetState();
 		AppLog(sstrapploglocationmanager.str().c_str());
 
-//		for (std::list<geo::ISensorUpdateListener*>::iterator it = sensorUpdateListeners_.begin(); it != sensorUpdateListeners_.end(); it++)
-//		{
-//			(*it)->OnLocatorStateChanged(locationProvider_.GetState());
-//		}
-
-		//TODO this causes a app crash - I dont know why !!
 		locationProvider_.RequestLocationUpdates(*this, 4, false);
 	}
-
 
 }
 
@@ -103,29 +96,31 @@ void SensorController::OnDataReceived(Osp::Uix::SensorType sensor_type, Osp::Uix
 	}
 	else if (sensor_type == Osp::Uix::SENSOR_TYPE_GPS)
 	{
-		float longitude,latitude;
-
-		sensor_data.GetValue((Osp::Uix::SensorDataKey)Osp::Uix::GPS_DATA_KEY_LONGITUDE, longitude);
-		sensor_data.GetValue((Osp::Uix::SensorDataKey)Osp::Uix::GPS_DATA_KEY_LATITUDE, latitude);
-
-		std::stringstream sstr;
-		sstr << "OnDataReceived-GPS: " << latitude << " " << longitude << std::endl;
-
-		AppLog(sstr.str().c_str());
-
-		for (std::list<geo::ISensorUpdateListener*>::iterator it = sensorUpdateListeners_.begin(); it != sensorUpdateListeners_.end(); it++)
-		{
-			(*it)->OnGPSUpdate(longitude, latitude);
-		}
+//		float longitude,latitude;
+//
+//		sensor_data.GetValue((Osp::Uix::SensorDataKey)Osp::Uix::GPS_DATA_KEY_LONGITUDE, longitude);
+//		sensor_data.GetValue((Osp::Uix::SensorDataKey)Osp::Uix::GPS_DATA_KEY_LATITUDE, latitude);
+//
+//		std::stringstream sstr;
+//		sstr << "OnDataReceived-GPS: " << latitude << " " << longitude << std::endl;
+//
+//		AppLog(sstr.str().c_str());
+//
+//		for (std::list<geo::ISensorUpdateListener*>::iterator it = sensorUpdateListeners_.begin(); it != sensorUpdateListeners_.end(); it++)
+//		{
+//			(*it)->OnGPSUpdate(longitude, latitude);
+//		}
 	}
 
 }
 
 void SensorController::OnLocationUpdated(Osp::Locations::Location& location)
 {
+	Osp::Locations::Location* lastKnownLocation = locationProvider_.GetLastKnownLocationN();
+
 	for (std::list<geo::ISensorUpdateListener*>::iterator it = sensorUpdateListeners_.begin(); it != sensorUpdateListeners_.end(); it++)
 	{
-		(*it)->OnLocationUpdate(location);
+		(*it)->OnLocationUpdate(location, lastKnownLocation);
 	}
 }
 

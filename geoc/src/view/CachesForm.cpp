@@ -30,6 +30,12 @@ result CachesForm::OnInitializing(void)
 
 	GetFooter()->AddActionEventListener(*this);
 
+	pListView_ = static_cast<ListView *>(GetControl(L"IDC_LISTVIEW"));
+
+	pListView_->SetItemProvider(*this);
+	pListView_->AddListViewItemEventListener(*this);
+
+	pListView_->UpdateList();
 
 	return r;
 }
@@ -59,6 +65,8 @@ void CachesForm::OnActionPerformed(const Osp::Ui::Control& source, int actionId)
 
 			pEntryController_->AddEntry(entry);
 
+			pListView_->UpdateList();
+
 			//update the details form
 			pCacheDetails_->Update(entry);
 
@@ -71,6 +79,92 @@ void CachesForm::OnActionPerformed(const Osp::Ui::Control& source, int actionId)
 		default:
 		break;
 	}
+}
+
+void CachesForm::OnListViewItemStateChanged(Osp::Ui::Controls::ListView &listView, int index, int elementId, Osp::Ui::Controls::ListItemStatus status)
+{
+    switch (elementId)
+    {
+//    case ID_FORMAT_BITMAP:
+//        // Todo:
+//        break;
+//    case ID_FORMAT_STRING:
+//        // Todo:
+//        break;
+    default:
+    	//TODO ?!
+        break;
+    }
+}
+
+void CachesForm::OnListViewItemSwept(Osp::Ui::Controls::ListView &listView, int index, Osp::Ui::Controls::SweepDirection direction)
+{
+	//allow removal here? -> new item that allow removal of the entry
+}
+
+void CachesForm::OnListViewContextItemStateChanged(Osp::Ui::Controls::ListView &listView, int index, int elementId, Osp::Ui::Controls::ListContextItemStatus state)
+{
+    switch (elementId)
+    {
+//    case ID_CONTEXT_ITEM_1:
+//        //To do
+//        break;
+//    case ID_CONTEXT_ITEM_2:
+//        //To do
+//        break;
+    default:
+    	//TODO handle item state change?!
+    	break;
+    }
+}
+
+int CachesForm::GetItemCount(void)
+{
+    return pEntryController_->Size();
+}
+
+Osp::Ui::Controls::ListItemBase* CachesForm::CreateItem(int index, int itemWidth)
+{
+    ListAnnexStyle style = LIST_ANNEX_STYLE_NORMAL;
+    CustomItem* pItem = new CustomItem();
+    pItem->Construct(Osp::Graphics::Dimension(itemWidth,100), style);
+
+    //get the entry
+    geo::Entry* entry = pEntryController_->At(index);
+
+    pItem->AddElement(Osp::Graphics::Rectangle(80, 25, 200, 50), 900+index, entry->ToString(), true);
+
+//    switch (index % 3)
+//    {
+//    case 0:
+//        pItem->AddElement(Rectangle(80, 25, 200, 50), ID_FORMAT_STRING, L"HOME", true);
+//        break;
+//    case 1:
+//        pItem->AddElement(Rectangle(80, 25, 200, 50), ID_FORMAT_STRING, L"Msg", true);
+//        break;
+//    case 2:
+//        pItem->AddElement(Rectangle(80, 25, 200, 50), ID_FORMAT_STRING, L"Alarm", true);
+//        break;
+//    default:
+//        break;
+//    }
+    //pItem->AddElement(Rectangle(290, 20, 60, 60), ID_FORMAT_CUSTOM, *(static_cast<ICustomElement *>(__pCustomListElement)));
+
+    //TODO context item...
+    ListContextItem* pItemContext = new ListContextItem();
+    pItemContext->Construct();
+    pItemContext->AddElement(101, "Test1");//TODO remove, change id, ...
+    pItemContext->AddElement(101, "Test2");//TODO remove, change id, ...
+    pItem->SetContextItem(pItemContext);
+
+    return pItem;
+}
+
+bool CachesForm::DeleteItem(int index, Osp::Ui::Controls::ListItemBase* pItem, int itemWidth)
+{
+    delete pItem;
+    pItem = null;
+    return true;
 }
 
 

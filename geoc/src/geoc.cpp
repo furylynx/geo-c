@@ -105,25 +105,25 @@ bool GeoC::OnAppInitializing(AppRegistry& appRegistry)
 //	}
 
 	//check for geo'c directory
-	if (!Osp::Io::File::IsFileExist("/Storagecard/Media/Others/geo'c/"))
-	{
-
-		result createDirResult = Osp::Io::Directory::Create("/Storagecard/Media/Others/geo'c/", false);
-
-		if (!IsFailed(createDirResult))
-		{
-			AppLog("Created the dir /Media/Others/geo'c/ ...");
-		}
-		else
-		{
-			AppLog("Failed to create /Media/Others/geo'c/ ...");
-		}
-	}
-	else
-	{
-		AppLog("Parsing data from /Media/Others/geo'c/");
-		pEntryController_->ImportEntries("/Storagecard/Media/Others/");
-	}
+//	if (!Osp::Io::File::IsFileExist("/Storagecard/Media/Others/geo'c/"))
+//	{
+//
+//		result createDirResult = Osp::Io::Directory::Create("/Storagecard/Media/Others/geo'c/", false);
+//
+//		if (!IsFailed(createDirResult))
+//		{
+//			AppLog("Created the dir /Media/Others/geo'c/ ...");
+//		}
+//		else
+//		{
+//			AppLog("Failed to create /Media/Others/geo'c/ ...");
+//		}
+//	}
+//	else
+//	{
+		AppLog("Parsing data from /Media/Others");
+		pEntryController_->ImportEntries("/Storagecard/Media");
+//	}
 
 
 	// Set the current form

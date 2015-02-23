@@ -67,7 +67,7 @@ public:
 	virtual void OnTouchReleased(const Osp::Ui::Control &source, const Osp::Graphics::Point &currentPosition, const Osp::Ui::TouchEventInfo &touchInfo);
 
 	//sensor updates
-	virtual void OnLocationUpdate(Osp::Locations::Location& location);
+	virtual void OnLocationUpdate(Osp::Locations::Location& location, const Osp::Locations::Location* lastKnownLocation);
 	virtual void OnLocatorStateChanged(Osp::Locations::LocProviderState newState);
 	virtual void OnTiltUpdate(float azimuth, float pitch, float roll);
 	virtual void OnMagneticUpdate(float degreesToNorth, float x, float y, float z);

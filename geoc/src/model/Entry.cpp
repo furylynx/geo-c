@@ -127,7 +127,7 @@ Osp::Base::String Entry::Type() const
 	return type_;
 }
 
-Osp::Base::String Entry::SetType(Osp::Base::String type)
+void Entry::SetType(Osp::Base::String type)
 {
 	type_ = type;
 }
@@ -142,6 +142,14 @@ void Entry::SetUrl(Osp::Base::String url)
 	url_ = url;
 }
 
+Osp::Base::String Entry::ToString() const
+{
+	Osp::Base::String resultString = title_;
+	resultString.Append(" by ");
+	resultString.Append(author_);
+
+	return resultString;
+}
 
 
 }

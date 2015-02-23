@@ -23,7 +23,7 @@ class ISensorUpdateListener
 public:
 	virtual ~ISensorUpdateListener(){}
 
-	virtual void OnLocationUpdate(Osp::Locations::Location& location) = 0;
+	virtual void OnLocationUpdate(Osp::Locations::Location& location, const Osp::Locations::Location* lastKnownLocation) = 0;
 	virtual void OnLocatorStateChanged(Osp::Locations::LocProviderState newState) = 0;
 
 	virtual void OnGPSUpdate(float longitude, float latitude) = 0;

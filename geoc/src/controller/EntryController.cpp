@@ -64,6 +64,11 @@ std::vector<geo::Entry*> EntryController::GetActiveEntries() const
 	return result;
 }
 
+geo::Entry* EntryController::At(std::size_t index) const
+{
+	return entries_.at(index);
+}
+
 bool EntryController::ImportEntries(Osp::Base::String path)
 {
 	Directory* pDir = new Directory();
@@ -132,7 +137,7 @@ bool EntryController::ImportEntries(Osp::Base::String path)
 	return true;
 }
 
-unsigned int EntryController::Size() const
+std::size_t EntryController::Size() const
 {
 	return entries_.size();
 }
