@@ -22,9 +22,9 @@ namespace geo
 	public:
 		virtual ~IObservable(){}
 
-		virtual void AddObserver(geo::IObserver<T> observer*) = 0;
-		virtual void RemoveObserver(geo::IObserver<T> observer*) = 0;
-		virtual void NotifyObservers() const = 0;
+		virtual void AddObserver(geo::IObserver<T>* observer) = 0;
+		virtual void RemoveObserver(geo::IObserver<T>* observer) = 0;
+		virtual void NotifyObservers(T* item) const = 0;
 	};
 
 }// namespace geo

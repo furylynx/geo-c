@@ -330,6 +330,9 @@ src/view/MainForm.d src/view/MainForm.o: ../src/view/MainForm.cpp \
  C:/bada/2.0.6/Include/FLocCtrlNativeMapInfoWindow.h \
  ../src/view/CachesForm.h ../src/view/../controller/EntryController.h \
  ../src/view/../controller/../model/Entry.h \
+ ../src/view/../controller/../model/Observable.h \
+ ../src/view/../controller/../model/IObservable.h \
+ ../src/view/../controller/../model/IObserver.h \
  ../src/view/../controller/IOControllerLOC.h C:/bada/2.0.6/Include/FXml.h \
  C:/bada/2.0.6/Include/libxml/parser.h \
  C:/bada/2.0.6/Include/libxml/xmlversion.h \
@@ -1125,6 +1128,12 @@ C:/bada/2.0.6/Include/FLocCtrlNativeMapInfoWindow.h:
 ../src/view/../controller/EntryController.h:
 
 ../src/view/../controller/../model/Entry.h:
+
+../src/view/../controller/../model/Observable.h:
+
+../src/view/../controller/../model/IObservable.h:
+
+../src/view/../controller/../model/IObserver.h:
 
 ../src/view/../controller/IOControllerLOC.h:
 

@@ -1,8 +1,11 @@
 src/controller/EntryController.d src/controller/EntryController.o: \
  ../src/controller/EntryController.cpp \
  ../src/controller/EntryController.h ../src/controller/../model/Entry.h \
- C:/bada/2.0.6/Include/FBase.h C:/bada/2.0.6/Include/FBaseTypes.h \
- C:/bada/2.0.6/Include/FBaseSys.h C:/bada/2.0.6/Include/FBaseConfig.h \
+ ../src/controller/../model/Observable.h \
+ ../src/controller/../model/IObservable.h \
+ ../src/controller/../model/IObserver.h C:/bada/2.0.6/Include/FBase.h \
+ C:/bada/2.0.6/Include/FBaseTypes.h C:/bada/2.0.6/Include/FBaseSys.h \
+ C:/bada/2.0.6/Include/FBaseConfig.h \
  C:/bada/2.0.6/Include/FBaseDataType.h \
  C:/bada/2.0.6/Include/FBaseUtilMemory.h \
  C:/bada/2.0.6/Include/FBaseErrors.h \
@@ -147,6 +150,12 @@ src/controller/EntryController.d src/controller/EntryController.o: \
 ../src/controller/EntryController.h:
 
 ../src/controller/../model/Entry.h:
+
+../src/controller/../model/Observable.h:
+
+../src/controller/../model/IObservable.h:
+
+../src/controller/../model/IObserver.h:
 
 C:/bada/2.0.6/Include/FBase.h:
 

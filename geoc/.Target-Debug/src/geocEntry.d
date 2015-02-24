@@ -227,8 +227,12 @@ src/geocEntry.d src/geocEntry.o: ../src/geocEntry.cpp ../src/GeoC.h \
  C:/bada/2.0.6/Include/FUixSpeechToTextCommon.h \
  C:/bada/2.0.6/Include/FUixISpeechToTextEventListener.h \
  C:/bada/2.0.6/Include/FBase.h ../src/controller/EntryController.h \
- ../src/controller/../model/Entry.h ../src/controller/IOControllerLOC.h \
- C:/bada/2.0.6/Include/FXml.h C:/bada/2.0.6/Include/libxml/parser.h \
+ ../src/controller/../model/Entry.h \
+ ../src/controller/../model/Observable.h \
+ ../src/controller/../model/IObservable.h \
+ ../src/controller/../model/IObserver.h \
+ ../src/controller/IOControllerLOC.h C:/bada/2.0.6/Include/FXml.h \
+ C:/bada/2.0.6/Include/libxml/parser.h \
  C:/bada/2.0.6/Include/libxml/xmlversion.h \
  C:/bada/2.0.6/Include/libxml/xmlexports.h \
  C:/bada/2.0.6/Include/libxml/tree.h \
@@ -970,6 +974,12 @@ C:/bada/2.0.6/Include/FBase.h:
 ../src/controller/EntryController.h:
 
 ../src/controller/../model/Entry.h:
+
+../src/controller/../model/Observable.h:
+
+../src/controller/../model/IObservable.h:
+
+../src/controller/../model/IObserver.h:
 
 ../src/controller/IOControllerLOC.h:
 

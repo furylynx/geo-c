@@ -13,7 +13,8 @@
 
 
 //global includes
-//...
+#include <FBase.h>
+#include <vector>
 
 namespace geo
 {
@@ -24,15 +25,16 @@ namespace geo
 	{
 		public:
 			Observable();
-			virtual ~Observer();
+			virtual ~Observable();
 
-			virtual void AddObserver(geo::IObserver<T> observer*);
-			virtual void RemoveObserver(geo::IObserver<T> observer*);
-			virtual void NotifyObservers() const;
+			virtual void AddObserver(geo::IObserver<T>* observer);
+			virtual void RemoveObserver(geo::IObserver<T>* observer);
+			virtual void NotifyObservers(T* item) const;
 
 
 		private:
-			std::vector<geo::IObserver<T> > observers_;
+			std::vector<geo::IObserver<T>* > observers_;
+			Osp::Base::Runtime::Mutex* pMutex_;
 	};
 
 } // namespace geo
@@ -47,19 +49,57 @@ namespace geo
 namespace geo
 {
 
-void Observable<typename T>::AddObserver(geo::IObserver<T> observer*)
+template<typename T>
+Observable<T>::Observable()
 {
-	//TODO implement
+	pMutex_ = new Osp::Base::Runtime::Mutex();
+	pMutex_->Create();
 }
 
-void Observable<typename T>::RemoveObserver(geo::IObserver<T> observer*)
+template<typename T>
+Observable<T>::~Observable()
 {
-	//TODO implement
+	delete pMutex_;
 }
 
-void Observable::NotifyObservers() const
+template<typename T>
+void Observable<T>::AddObserver(geo::IObserver<T>* observer)
 {
-	//TODO implement
+	pMutex_->Acquire();
+
+	observers_.push_back(observer);
+
+	pMutex_->Release();
+}
+
+template<typename T>
+void Observable<T>::RemoveObserver(geo::IObserver<T>* observer)
+{
+	pMutex_->Acquire();
+
+	for (std::size_t i = 0; i < observers_.size(); i++)
+	{
+		if (observer == observers_.at(i))
+		{
+			observers_.erase(observers_.begin() + i);
+			break;
+		}
+	}
+
+	pMutex_->Release();
+}
+
+template<typename T>
+void Observable<T>::NotifyObservers(T* item) const
+{
+	pMutex_->Acquire();
+
+	for (std::size_t i = 0; i < observers_.size(); i++)
+	{
+		observers_.at(i)->OnUpdate(item);
+	}
+
+	pMutex_->Release();
 }
 
 } // namespace geo

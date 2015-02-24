@@ -1,7 +1,8 @@
 src/model/Entry.d src/model/Entry.o: ../src/model/Entry.cpp \
- ../src/model/Entry.h C:/bada/2.0.6/Include/FBase.h \
- C:/bada/2.0.6/Include/FBaseTypes.h C:/bada/2.0.6/Include/FBaseSys.h \
- C:/bada/2.0.6/Include/FBaseConfig.h \
+ ../src/model/Entry.h ../src/model/Observable.h \
+ ../src/model/IObservable.h ../src/model/IObserver.h \
+ C:/bada/2.0.6/Include/FBase.h C:/bada/2.0.6/Include/FBaseTypes.h \
+ C:/bada/2.0.6/Include/FBaseSys.h C:/bada/2.0.6/Include/FBaseConfig.h \
  C:/bada/2.0.6/Include/FBaseDataType.h \
  C:/bada/2.0.6/Include/FBaseUtilMemory.h \
  C:/bada/2.0.6/Include/FBaseErrors.h \
@@ -89,6 +90,12 @@ src/model/Entry.d src/model/Entry.o: ../src/model/Entry.cpp \
  C:/bada/2.0.6/Include/FBaseUtilRegularExpression.h
 
 ../src/model/Entry.h:
+
+../src/model/Observable.h:
+
+../src/model/IObservable.h:
+
+../src/model/IObserver.h:
 
 C:/bada/2.0.6/Include/FBase.h:
 

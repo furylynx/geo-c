@@ -1,8 +1,11 @@
 src/view/CachesForm.d src/view/CachesForm.o: ../src/view/CachesForm.cpp \
  ../src/view/CachesForm.h ../src/view/../controller/EntryController.h \
- ../src/view/../controller/../model/Entry.h C:/bada/2.0.6/Include/FBase.h \
- C:/bada/2.0.6/Include/FBaseTypes.h C:/bada/2.0.6/Include/FBaseSys.h \
- C:/bada/2.0.6/Include/FBaseConfig.h \
+ ../src/view/../controller/../model/Entry.h \
+ ../src/view/../controller/../model/Observable.h \
+ ../src/view/../controller/../model/IObservable.h \
+ ../src/view/../controller/../model/IObserver.h \
+ C:/bada/2.0.6/Include/FBase.h C:/bada/2.0.6/Include/FBaseTypes.h \
+ C:/bada/2.0.6/Include/FBaseSys.h C:/bada/2.0.6/Include/FBaseConfig.h \
  C:/bada/2.0.6/Include/FBaseDataType.h \
  C:/bada/2.0.6/Include/FBaseUtilMemory.h \
  C:/bada/2.0.6/Include/FBaseErrors.h \
@@ -338,6 +341,12 @@ src/view/CachesForm.d src/view/CachesForm.o: ../src/view/CachesForm.cpp \
 ../src/view/../controller/EntryController.h:
 
 ../src/view/../controller/../model/Entry.h:
+
+../src/view/../controller/../model/Observable.h:
+
+../src/view/../controller/../model/IObservable.h:
+
+../src/view/../controller/../model/IObserver.h:
 
 C:/bada/2.0.6/Include/FBase.h:
 

@@ -9,7 +9,7 @@
 #define ENTRY_H_
 
 //custom includes
-//...
+#include "Observable.h"
 
 //global includes
 #include <FBase.h>
@@ -18,7 +18,7 @@
 namespace geo
 {
 
-class Entry
+class Entry : public Observable<Entry>
 {
 public:
 	Entry();
