@@ -19,7 +19,8 @@ class CachesForm :
 	public Osp::Ui::Controls::Form,
 	public Osp::Ui::IActionEventListener,
     public Osp::Ui::Controls::IListViewItemEventListener,
-    public Osp::Ui::Controls::IListViewItemProvider
+    public Osp::Ui::Controls::IListViewItemProvider,
+    public geo::IObserver<geo::Entry>
 {
 
 // Construction
@@ -45,6 +46,9 @@ public:
     virtual Osp::Ui::Controls::ListItemBase* CreateItem(int index, int itemWidth);
     virtual bool DeleteItem(int index, Osp::Ui::Controls::ListItemBase* pItem, int itemWidth);
     virtual int GetItemCount();
+
+    //IObserver
+    virtual void OnUpdate(geo::Entry* item);
 
     //custom methods
     //...

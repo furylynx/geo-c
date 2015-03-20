@@ -167,5 +167,10 @@ bool CachesForm::DeleteItem(int index, Osp::Ui::Controls::ListItemBase* pItem, i
     return true;
 }
 
+void CachesForm::OnUpdate(geo::Entry* item)
+{
+	pListView_->UpdateList();
+}
+
 
 

@@ -65,6 +65,7 @@ bool GeoC::OnAppInitializing(AppRegistry& appRegistry)
 	pCachesForm_ = new CachesForm();
 	pCachesForm_->Initialize(pCacheDetailsForm_, pEntryController_);
 	pCachesForm_->SetFormBackEventListener(this);
+	pEntryController_->AddObserver(pCachesForm_);
 
 	pPreferencesForm_ = new PreferencesForm();
 	pPreferencesForm_->Initialize();//TODO pass options controller, so that options are directly written to the controller, pass sensor controller in order to pause sensor work
@@ -88,6 +89,9 @@ bool GeoC::OnAppInitializing(AppRegistry& appRegistry)
 	pFrame_->AddControl(*pOverviewForm_);
 	pFrame_->AddControl(*pCachesForm_);
 	pFrame_->AddControl(*pCacheDetailsForm_);
+
+
+	//dummy files for the list view
 
 
 //	if (!Osp::Io::File::IsFileExist("/Home/geoc/"))

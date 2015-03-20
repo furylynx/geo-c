@@ -36,11 +36,16 @@ void EntryController::AddEntry(Osp::Base::String title, float longitude, float l
 	Entry* e = new Entry();
 	e->Construct(title, longitude, latitude);
 
-	entries_.push_back(e);
+	AddEntry(e);
 }
 
 void EntryController::AddEntry(Entry* entry)
 {
+	for (std::size_t i = 0; i < observers_.size(); i++)
+	{
+		entry->AddObserver(observers_.at(i));
+	}
+
 	entries_.push_back(entry);
 }
 
@@ -140,6 +145,16 @@ bool EntryController::ImportEntries(Osp::Base::String path)
 std::size_t EntryController::Size() const
 {
 	return entries_.size();
+}
+
+void EntryController::AddObserver(geo::IObserver<geo::Entry>* observer)
+{
+	observers_.push_back(observer);
+
+	for (std::size_t i = 0; i < entries_.size(); i++)
+	{
+		entries_.at(i)->AddObserver(observer);
+	}
 }
 
 }

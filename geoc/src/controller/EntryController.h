@@ -44,10 +44,13 @@ public:
 
 	virtual std::size_t Size() const;
 
+	virtual void AddObserver(geo::IObserver<geo::Entry>* observer);
+
 protected:
 
 private:
 	std::vector<geo::Entry*> entries_;
+	std::vector<geo::IObserver<geo::Entry>*> observers_;
 	IOControllerLOC ioCtrl_;
 
 };
