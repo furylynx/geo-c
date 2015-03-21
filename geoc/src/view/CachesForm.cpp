@@ -83,18 +83,17 @@ void CachesForm::OnActionPerformed(const Osp::Ui::Control& source, int actionId)
 
 void CachesForm::OnListViewItemStateChanged(Osp::Ui::Controls::ListView &listView, int index, int elementId, Osp::Ui::Controls::ListItemStatus status)
 {
-    switch (elementId)
-    {
-//    case ID_FORMAT_BITMAP:
-//        // Todo:
-//        break;
-//    case ID_FORMAT_STRING:
-//        // Todo:
-//        break;
-    default:
-    	//TODO ?!
-        break;
-    }
+	if (index < pEntryController_->Size())
+	{
+		//update the details form
+		pCacheDetails_->Update(pEntryController_->At(index));
+
+		//show details form
+		Osp::App::Application::GetInstance()->GetAppFrame()->GetFrame()->SetCurrentForm(*pCacheDetails_);
+		pCacheDetails_->Draw();
+		pCacheDetails_->Show();
+	}
+
 }
 
 void CachesForm::OnListViewItemSwept(Osp::Ui::Controls::ListView &listView, int index, Osp::Ui::Controls::SweepDirection direction)
@@ -106,12 +105,9 @@ void CachesForm::OnListViewContextItemStateChanged(Osp::Ui::Controls::ListView &
 {
     switch (elementId)
     {
-//    case ID_CONTEXT_ITEM_1:
-//        //To do
-//        break;
-//    case ID_CONTEXT_ITEM_2:
-//        //To do
-//        break;
+    case ID_CONTEXT_ITEM_DELETE:
+        //TODO remove item...
+        break;
     default:
     	//TODO handle item state change?!
     	break;
@@ -153,9 +149,10 @@ Osp::Ui::Controls::ListItemBase* CachesForm::CreateItem(int index, int itemWidth
     //TODO context item...
     ListContextItem* pItemContext = new ListContextItem();
     pItemContext->Construct();
-    pItemContext->AddElement(101, "Test1");//TODO remove, change id, ...
-    pItemContext->AddElement(101, "Test2");//TODO remove, change id, ...
+    pItemContext->AddElement(101, "Löschen");
+    //pItemContext->AddElement(101, "Test2");
     pItem->SetContextItem(pItemContext);
+
 
     return pItem;
 }
@@ -170,6 +167,8 @@ bool CachesForm::DeleteItem(int index, Osp::Ui::Controls::ListItemBase* pItem, i
 void CachesForm::OnUpdate(geo::Entry* item)
 {
 	pListView_->UpdateList();
+
+	//AppLog("Update Caches.");
 }
 
 

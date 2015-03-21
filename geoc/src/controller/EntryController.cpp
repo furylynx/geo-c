@@ -47,6 +47,8 @@ void EntryController::AddEntry(Entry* entry)
 	}
 
 	entries_.push_back(entry);
+
+	entry->NotifyObservers(entry);
 }
 
 std::vector<geo::Entry*> EntryController::GetEntries() const
@@ -145,6 +147,24 @@ bool EntryController::ImportEntries(Osp::Base::String path)
 std::size_t EntryController::Size() const
 {
 	return entries_.size();
+}
+void EntryController::RemoveEntry(Entry* entry)
+{
+	for (std::size_t i = 0; i < entries_.size(); i++)
+	{
+		if (entries_.at(i) == entry)
+		{
+			return RemoveEntryAt(i);
+		}
+	}
+}
+
+void EntryController::RemoveEntryAt(std::size_t index)
+{
+	geo::Entry* entry = entries_.at(index);
+	entries_.erase(entries_.begin()+index);
+	entry->NotifyObservers(entry);
+	delete entry;
 }
 
 void EntryController::AddObserver(geo::IObserver<geo::Entry>* observer)

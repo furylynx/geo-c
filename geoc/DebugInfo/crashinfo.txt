@@ -6,9 +6,9 @@
  Application Version : 0.1.0
  API Version         : 2.0
  Platform Version    : 2.0.0
- Firmware Version    : S8500XXLA1
- Crashed Time        : 2015/01/28 18:43:02
- Crashed Module      : geoc.exe
+ Firmware Version    : Wave-EXXKC4
+ Crashed Time        : 2015/03/21 23:28:25
+ Crashed Module      : FOsp.so
 ----------------------------------------------------------------------------------
 
 
@@ -16,6 +16,9 @@
 ----------------------------------------------------------------------------------
 ----------------------------- Recent AppLog Messages -----------------------------
 ----------------------------------------------------------------------------------
-[0] 37685.479,INFO,P38,T00,A223,OspMain (32) > Application started.
-[1] 37686.208,INFO,P38,T00,A228,geo::SensorController::Construct (39) > LocState: 1
-[2] 37687.806,INFO,P38,T00,A228,MainForm::OnLocationUpdate (147) > Location update! 
+[0] 0071.294,INFO,P32,T00,A121,OspMain (32) > Application started.
+[1] 0072.291,EXCEPTION,P32,T00,A125,geo::SensorController::RegisterSensor (176) > 1 sensor is not available!
+[2] 0072.518,INFO,P32,T00,A125,geo::SensorController::Construct (39) > LocState: 1
+[3] 0076.577,INFO,P32,T00,A125,GeoC::OnAppInitializing (131) > Parsing data from /Media/Others
+[4] 0076.586,INFO,P32,T00,A125,geo::EntryController::ImportEntries (86) > Failed to import entries: directory is not accessible.
+[5] 0193.605,INFO,P32,T00,A125,MainForm::OnActionPerformed (93) > CACHES Button is clicked! 

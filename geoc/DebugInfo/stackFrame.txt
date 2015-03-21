@@ -1,19 +1,30 @@
-PC: 0x6795E7B6 LR: 0x40228C8F Stack PTR : 0x09B7EA10 
-0x6795E7B6 geo::EntryController::ImportEntries(Osp::Base::String)
-0x6795E7B6 geo::EntryController::ImportEntries(Osp::Base::String)
-0x40234DAE [Platform Fns]
-0x75C6B1DE operator delete[](void*)
-0x75C535C2 Osp::Base::String::String(char const*)
-0x6795B2A4 GeoC::OnAppInitializing(Osp::App::AppRegistry&)
-0x75D2121E Osp::App::ApplicationEx::OnAppInitializing(Osp::App::AppRegistry&)
-0x75D224F6 virtual thunk to Osp::App::ApplicationEx::OnAppInitializing(Osp::App::AppRegistry&)
-0x75D1F852 Osp::App::__NativeUiApplication::OnAppInitializing(Osp::App::AppRegistry&)
-0x75D1D92E Osp::App::__AppExecutable::AppInitializing()
-0x75D1DA02 Osp::App::__AppExecutable::OnStart(Osp::Base::Runtime::_EventDispatcherEventArg const&)
-0x75D1EFB6 virtual thunk to Osp::App::__AppExecutable::OnStart(Osp::Base::Runtime::_EventDispatcherEventArg const&)
-0x75C57514 Osp::Base::Runtime::__EventDispatcherCore::Start()
-0x75D1C510 Osp::App::__AppExecutable::Run()
-0x75D241A0 Osp::App::Application::Execute(Osp::App::Application* (*)(), Osp::Base::Collection::IList const*, Osp::App::AppAttributeType)
-0x4022C474 [Platform Fns]
-0x4043ADB8 [Platform Fns]
-0x4022C474 [Platform Fns]
+PC: 0x4009246C LR: 0x400549D5 Stack PTR : 0x0AEBC738 
+0x4009246C [Platform Fns]
+0x4004DF7A [Platform Fns]
+0x4005E812 [Platform Fns]
+0x400B55B4 [Platform Fns]
+0x4004CBC6 [Platform Fns]
+0x40206A00 [Platform Fns]
+0x4047E128 [Platform Fns]
+0x4047BCFE [Platform Fns]
+0x4047BADA [Platform Fns]
+0x4047E156 [Platform Fns]
+0x4047C0A8 [Platform Fns]
+0x401A9EFA [Platform Fns]
+0x40055D26 [Platform Fns]
+0x4004D6EC [Platform Fns]
+0x4004EAA6 [Platform Fns]
+0x400B55B4 [Platform Fns]
+0x4004CBC6 [Platform Fns]
+0x400ADED4 [Platform Fns]
+0x400B55B4 [Platform Fns]
+0x4004CBC6 [Platform Fns]
+0x400468FC [Platform Fns]
+0x400B55B4 [Platform Fns]
+0x4004CBC6 [Platform Fns]
+0x40206A00 [Platform Fns]
+0x4004EA6A [Platform Fns]
+0x400B5D66 [Platform Fns]
+0x4004EAA6 [Platform Fns]
+0x69E43D80 Mem_allocEx
+0x400B5312 [Platform Fns]

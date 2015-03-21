@@ -34,6 +34,9 @@ public:
 	virtual void AddEntry(Entry* entry);
 	virtual void AddEntry(Osp::Base::String title, float longitude, float latitude);
 
+	virtual void RemoveEntry(Entry* entry);
+	virtual void RemoveEntryAt(std::size_t index);
+
 	virtual std::vector<geo::Entry*> GetEntries() const;
 
 	virtual std::vector<geo::Entry*> GetActiveEntries() const;

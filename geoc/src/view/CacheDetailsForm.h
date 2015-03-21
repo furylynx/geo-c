@@ -36,10 +36,21 @@ protected:
 
 private:
 	static const int ID_FOOTER_BUTTON_SAVE = 201;
+//	static const int ID_FOOTER_BUTTON_SAVE = 201;
+//	static const int ID_FOOTER_BUTTON_SAVE = 201;
+//	static const int ID_FOOTER_BUTTON_SAVE = 201;
+//	static const int ID_FOOTER_BUTTON_SAVE = 201;
+
 
 	geo::Entry* pEntry_;
 
 	Osp::Ui::Controls::ScrollPanel* pScrollPanel_;
+
+	Osp::Ui::Controls::EditField* pEditFieldTitle_;
+	Osp::Ui::Controls::EditField* pEditFieldAuthor_;
+	Osp::Ui::Controls::EditField* pEditFieldID_;
+	Osp::Ui::Controls::EditField* pEditFieldLongitude_;
+	Osp::Ui::Controls::EditField* pEditFieldLatitude_;
 
 };
 

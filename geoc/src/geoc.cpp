@@ -91,8 +91,11 @@ bool GeoC::OnAppInitializing(AppRegistry& appRegistry)
 	pFrame_->AddControl(*pCacheDetailsForm_);
 
 
+	//TODO remove
 	//dummy files for the list view
-
+	pEntryController_->AddEntry("Dummy1", 0,0);
+	pEntryController_->AddEntry("Dummy2", 0,0);
+	pEntryController_->AddEntry("Dummy3", 0,0);
 
 //	if (!Osp::Io::File::IsFileExist("/Home/geoc/"))
 //	{

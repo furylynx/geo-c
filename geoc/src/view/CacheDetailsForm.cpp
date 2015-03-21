@@ -25,8 +25,34 @@ void CacheDetailsForm::Update(geo::Entry* entry)
 {
 	pEntry_ = entry;
 
-	//TODO update input fields...
-	//updates are directly written to the entry, no invokation of any controller required!
+	if (pEditFieldTitle_ != NULL)
+	{
+		pEditFieldTitle_->SetText(entry->Title());
+	}
+	else
+	{
+		AppLog("edit field null!");
+	}
+
+	if (pEditFieldAuthor_ != NULL)
+	{
+		pEditFieldAuthor_->SetText(entry->Author());
+	}
+
+	if (pEditFieldID_ != NULL)
+	{
+		pEditFieldID_->SetText(entry->NameId());
+	}
+
+	if (pEditFieldLatitude_ != NULL)
+	{
+		pEditFieldLatitude_->SetText(Osp::Base::Float::ToString(entry->Latitude()));
+	}
+
+	if (pEditFieldLongitude_ != NULL)
+	{
+		pEditFieldLongitude_->SetText(Osp::Base::Float::ToString(entry->Longitude()));
+	}
 }
 
 result CacheDetailsForm::OnInitializing(void)
@@ -36,6 +62,14 @@ result CacheDetailsForm::OnInitializing(void)
 	GetFooter()->AddActionEventListener(*this);
 
 	pScrollPanel_ = static_cast<ScrollPanel *>(GetControl(L"IDC_SCROLLPANEL"));
+
+
+	AppLog("on_init editfieldtitle");
+	pEditFieldTitle_ = static_cast<EditField *>(GetControl(L"IDC_EDITFIELD_TITLE"));
+	pEditFieldAuthor_ = static_cast<EditField *>(GetControl(L"IDC_EDITFIELD_AUTHOR"));
+	pEditFieldID_ = static_cast<EditField *>(GetControl(L"IDC_EDITFIELD_ID"));
+	pEditFieldLongitude_ = static_cast<EditField *>(GetControl(L"IDC_EDITFIELD_LON"));
+	pEditFieldLatitude_ = static_cast<EditField *>(GetControl(L"IDC_EDITFIELD_LAT"));
 
 	return r;
 }
@@ -59,7 +93,17 @@ void CacheDetailsForm::OnActionPerformed(const Osp::Ui::Control& source, int act
 
 
 			//TODO apply changes to the entry
-			pEntry_->SetTitle("Unknown");
+			pEntry_->SetTitle(pEditFieldTitle_->GetText());
+			pEntry_->SetAuthor(pEditFieldAuthor_->GetText());
+			pEntry_->SetNameId(pEditFieldID_->GetText());
+
+			float fLon;
+			Float::Parse(pEditFieldLongitude_->GetText(), fLon);
+			pEntry_->SetLongitude(fLon);
+
+			float fLat;
+			Float::Parse(pEditFieldLatitude_->GetText(), fLat);
+			pEntry_->SetLatitude(fLat);
 
 		}
 		break;

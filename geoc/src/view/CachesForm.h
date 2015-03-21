@@ -56,6 +56,7 @@ public:
 // Implementation
 private:
 	static const int ID_FOOTER_BUTTON_ADD = 201;
+	static const int ID_CONTEXT_ITEM_DELETE = 301;
 
 	Osp::Ui::Controls::ListView *pListView_;
 
