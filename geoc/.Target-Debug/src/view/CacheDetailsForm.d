@@ -253,7 +253,8 @@ src/view/CacheDetailsForm.d src/view/CacheDetailsForm.o: \
  C:/bada/2.0.6/Include/FUiHorizontalBoxLayout.h \
  C:/bada/2.0.6/Include/FUiRelativeLayout.h \
  C:/bada/2.0.6/Include/FUiGridLayout.h \
- C:/bada/2.0.6/Include/FUiCustomControlBase.h
+ C:/bada/2.0.6/Include/FUiCustomControlBase.h \
+ C:/bada/2.0.6/Include/FUiControls.h
 
 ../src/view/CacheDetailsForm.h:
 
@@ -814,3 +815,5 @@ C:/bada/2.0.6/Include/FUiRelativeLayout.h:
 C:/bada/2.0.6/Include/FUiGridLayout.h:
 
 C:/bada/2.0.6/Include/FUiCustomControlBase.h:
+
+C:/bada/2.0.6/Include/FUiControls.h:

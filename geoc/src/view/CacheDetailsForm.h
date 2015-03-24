@@ -8,6 +8,7 @@
 //global includes
 #include <FBase.h>
 #include <FUi.h>
+#include <FUiControls.h>
 
 
 
@@ -51,6 +52,12 @@ private:
 	Osp::Ui::Controls::EditField* pEditFieldID_;
 	Osp::Ui::Controls::EditField* pEditFieldLongitude_;
 	Osp::Ui::Controls::EditField* pEditFieldLatitude_;
+
+	Osp::Ui::Controls::Label* pLabelTitle_;
+	Osp::Ui::Controls::Label* pLabelAuthor_;
+	Osp::Ui::Controls::Label* pLabelID_;
+	Osp::Ui::Controls::Label* pLabelLongitude_;
+	Osp::Ui::Controls::Label* pLabelLatitude_;
 
 };
 

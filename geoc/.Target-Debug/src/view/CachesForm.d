@@ -312,7 +312,8 @@ src/view/CachesForm.d src/view/CachesForm.o: ../src/view/CachesForm.cpp \
  C:/bada/2.0.6/Include/FUiRelativeLayout.h \
  C:/bada/2.0.6/Include/FUiGridLayout.h \
  C:/bada/2.0.6/Include/FUiCustomControlBase.h \
- C:/bada/2.0.6/Include/FApp.h C:/bada/2.0.6/Include/FAppApplication.h \
+ C:/bada/2.0.6/Include/FUiControls.h C:/bada/2.0.6/Include/FApp.h \
+ C:/bada/2.0.6/Include/FAppApplication.h \
  C:/bada/2.0.6/Include/FSysBattery.h C:/bada/2.0.6/Include/FSysPower.h \
  C:/bada/2.0.6/Include/FAppConfig.h \
  C:/bada/2.0.6/Include/FAppAppManager.h \
@@ -1031,6 +1032,8 @@ C:/bada/2.0.6/Include/FUiRelativeLayout.h:
 C:/bada/2.0.6/Include/FUiGridLayout.h:
 
 C:/bada/2.0.6/Include/FUiCustomControlBase.h:
+
+C:/bada/2.0.6/Include/FUiControls.h:
 
 C:/bada/2.0.6/Include/FApp.h:
 

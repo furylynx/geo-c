@@ -63,13 +63,51 @@ result CacheDetailsForm::OnInitializing(void)
 
 	pScrollPanel_ = static_cast<ScrollPanel *>(GetControl(L"IDC_SCROLLPANEL"));
 
+	// Create the input fields
+	pEditFieldTitle_ = new Osp::Ui::Controls::EditField();
+	pEditFieldTitle_->Construct(Osp::Graphics::Rectangle(130, 2, 350, 60), EDIT_FIELD_STYLE_NORMAL, INPUT_STYLE_OVERLAY, EDIT_FIELD_TITLE_STYLE_NONE);
+	pScrollPanel_->AddControl(*pEditFieldTitle_);
 
-	AppLog("on_init editfieldtitle");
-	pEditFieldTitle_ = static_cast<EditField *>(GetControl(L"IDC_EDITFIELD_TITLE"));
-	pEditFieldAuthor_ = static_cast<EditField *>(GetControl(L"IDC_EDITFIELD_AUTHOR"));
-	pEditFieldID_ = static_cast<EditField *>(GetControl(L"IDC_EDITFIELD_ID"));
-	pEditFieldLongitude_ = static_cast<EditField *>(GetControl(L"IDC_EDITFIELD_LON"));
-	pEditFieldLatitude_ = static_cast<EditField *>(GetControl(L"IDC_EDITFIELD_LAT"));
+	pLabelTitle_ = new Osp::Ui::Controls::Label();
+	pLabelTitle_->Construct(Osp::Graphics::Rectangle(10, 2, 120, 60), "Title");
+	pScrollPanel_->AddControl(*pLabelTitle_);
+
+	pEditFieldAuthor_ = new Osp::Ui::Controls::EditField();
+	pEditFieldAuthor_->Construct(Osp::Graphics::Rectangle(130, 72, 350, 60), EDIT_FIELD_STYLE_NORMAL, INPUT_STYLE_OVERLAY, EDIT_FIELD_TITLE_STYLE_NONE);
+	pScrollPanel_->AddControl(*pEditFieldAuthor_);
+
+	pLabelAuthor_ = new Osp::Ui::Controls::Label();
+	pLabelAuthor_->Construct(Osp::Graphics::Rectangle(10, 72, 120, 60), "Author");
+	pScrollPanel_->AddControl(*pLabelAuthor_);
+
+	pEditFieldID_ = new Osp::Ui::Controls::EditField();
+	pEditFieldID_->Construct(Osp::Graphics::Rectangle(130, 142, 350, 60), EDIT_FIELD_STYLE_NORMAL, INPUT_STYLE_OVERLAY, EDIT_FIELD_TITLE_STYLE_NONE);
+	pScrollPanel_->AddControl(*pEditFieldID_);
+
+	pLabelID_ = new Osp::Ui::Controls::Label();
+	pLabelID_->Construct(Osp::Graphics::Rectangle(10, 142, 120, 60), "ID");
+	pScrollPanel_->AddControl(*pLabelID_);
+
+	pEditFieldLongitude_ = new Osp::Ui::Controls::EditField();
+	pEditFieldLongitude_->Construct(Osp::Graphics::Rectangle(130, 212, 350, 60), EDIT_FIELD_STYLE_NUMBER, INPUT_STYLE_FULLSCREEN, EDIT_FIELD_TITLE_STYLE_NONE);
+	pScrollPanel_->AddControl(*pEditFieldLongitude_);
+
+	pLabelLongitude_ = new Osp::Ui::Controls::Label();
+	pLabelLongitude_->Construct(Osp::Graphics::Rectangle(10, 212, 120, 60), "Lon");
+	pScrollPanel_->AddControl(*pLabelLongitude_);
+
+	pEditFieldLatitude_ = new Osp::Ui::Controls::EditField();
+	pEditFieldLatitude_->Construct(Osp::Graphics::Rectangle(130, 282, 350, 60), EDIT_FIELD_STYLE_NUMBER, INPUT_STYLE_FULLSCREEN, EDIT_FIELD_TITLE_STYLE_NONE);
+	pScrollPanel_->AddControl(*pEditFieldLatitude_);
+
+	pLabelLatitude_ = new Osp::Ui::Controls::Label();
+	pLabelLatitude_->Construct(Osp::Graphics::Rectangle(10, 282, 120, 60), "Lat");
+	pScrollPanel_->AddControl(*pLabelLatitude_);
+
+
+//	pEditFieldID_ = static_cast<EditField *>(pScrollPanel_->GetControl(L"IDC_EDITFIELD_ID"));
+//	pEditFieldLongitude_ = static_cast<EditField *>(pScrollPanel_->GetControl(L"IDC_EDITFIELD_LON"));
+//	pEditFieldLatitude_ = static_cast<EditField *>(pScrollPanel_->GetControl(L"IDC_EDITFIELD_LAT"));
 
 	return r;
 }

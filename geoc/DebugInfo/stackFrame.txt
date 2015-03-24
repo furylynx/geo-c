@@ -1,30 +1,26 @@
-PC: 0x4009246C LR: 0x400549D5 Stack PTR : 0x0AEBC738 
-0x4009246C [Platform Fns]
+PC: 0x6A77BE7C LR: 0x6C0CB6E9 Stack PTR : 0x0A3BE7F8 
+0x6A77BE7C CacheDetailsForm::OnInitializing()
+0x6A77BE7C CacheDetailsForm::OnInitializing()
 0x4004DF7A [Platform Fns]
-0x4005E812 [Platform Fns]
-0x400B55B4 [Platform Fns]
-0x4004CBC6 [Platform Fns]
-0x40206A00 [Platform Fns]
-0x4047E128 [Platform Fns]
-0x4047BCFE [Platform Fns]
-0x4047BADA [Platform Fns]
-0x4047E156 [Platform Fns]
-0x4047C0A8 [Platform Fns]
-0x401A9EFA [Platform Fns]
-0x40055D26 [Platform Fns]
-0x4004D6EC [Platform Fns]
-0x4004EAA6 [Platform Fns]
-0x400B55B4 [Platform Fns]
-0x4004CBC6 [Platform Fns]
-0x400ADED4 [Platform Fns]
-0x400B55B4 [Platform Fns]
-0x4004CBC6 [Platform Fns]
-0x400468FC [Platform Fns]
-0x400B55B4 [Platform Fns]
-0x4004CBC6 [Platform Fns]
-0x40206A00 [Platform Fns]
-0x4004EA6A [Platform Fns]
-0x400B5D66 [Platform Fns]
-0x4004EAA6 [Platform Fns]
-0x69E43D80 Mem_allocEx
-0x400B5312 [Platform Fns]
+0x69E50E78 Mem_freeEx
+0x6C19D364 Osp::Ui::Control::AddNotify()
+0x6C19B320 Osp::Ui::Container::DrawChildControls()
+0x6C1ED860 Osp::Ui::Controls::Form::AddToParent(Osp::Ui::Container const&, int, int, int, int)
+0x6C19D320 Osp::Ui::Control::AddNotify()
+0x6C19B320 Osp::Ui::Container::DrawChildControls()
+0x6C19B56C Osp::Ui::Container::AddControl(Osp::Ui::Control const&)
+0x6C1FCEF6 Osp::Ui::Controls::Frame::AddControl(Osp::Ui::Control const&)
+0x6A782AC4 GeoC::OnAppInitializing(Osp::App::AppRegistry&)
+0x6C1071AE Osp::App::ApplicationEx::OnAppInitializing(Osp::App::AppRegistry&)
+0x6C108486 virtual thunk to Osp::App::ApplicationEx::OnAppInitializing(Osp::App::AppRegistry&)
+0x6C1057E2 Osp::App::__NativeUiApplication::OnAppInitializing(Osp::App::AppRegistry&)
+0x6C1038BE Osp::App::__AppExecutable::AppInitializing()
+0x6C103992 Osp::App::__AppExecutable::OnStart(Osp::Base::Runtime::_EventDispatcherEventArg const&)
+0x6C104F46 virtual thunk to Osp::App::__AppExecutable::OnStart(Osp::Base::Runtime::_EventDispatcherEventArg const&)
+0x6C03B684 Osp::Base::Runtime::__EventDispatcherCore::Start()
+0x6C1024A0 Osp::App::__AppExecutable::Run()
+0x6C10A130 Osp::App::Application::Execute(Osp::App::Application* (*)(), Osp::Base::Collection::IList const*, Osp::App::AppAttributeType)
+0x400538DC [Platform Fns]
+0x4006D300 [Platform Fns]
+0x402070CC [Platform Fns]
+0x00000000 [Platform Fns]

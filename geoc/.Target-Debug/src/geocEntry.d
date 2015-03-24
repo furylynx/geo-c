@@ -432,7 +432,8 @@ src/geocEntry.d src/geocEntry.o: ../src/geocEntry.cpp ../src/GeoC.h \
  ../src/view/../model/ISensorUpdateListener.h ../src/view/CachesForm.h \
  ../src/view/../controller/EntryController.h \
  ../src/view/CacheDetailsForm.h ../src/view/../model/Entry.h \
- C:/bada/2.0.6/Include/FApp.h C:/bada/2.0.6/Include/FAppApplication.h \
+ C:/bada/2.0.6/Include/FUiControls.h C:/bada/2.0.6/Include/FApp.h \
+ C:/bada/2.0.6/Include/FAppApplication.h \
  C:/bada/2.0.6/Include/FSysBattery.h C:/bada/2.0.6/Include/FSysPower.h \
  C:/bada/2.0.6/Include/FAppConfig.h \
  C:/bada/2.0.6/Include/FAppAppManager.h \
@@ -1418,6 +1419,8 @@ C:/bada/2.0.6/Include/FUiCustomControlBase.h:
 ../src/view/CacheDetailsForm.h:
 
 ../src/view/../model/Entry.h:
+
+C:/bada/2.0.6/Include/FUiControls.h:
 
 C:/bada/2.0.6/Include/FApp.h:
 

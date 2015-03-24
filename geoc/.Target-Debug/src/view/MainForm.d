@@ -388,7 +388,8 @@ src/view/MainForm.d src/view/MainForm.o: ../src/view/MainForm.cpp \
  C:/bada/2.0.6/Include/FIoServerChannel.h \
  C:/bada/2.0.6/Include/FIoIChannelRequestEventListener.h \
  ../src/view/CacheDetailsForm.h ../src/view/../model/Entry.h \
- C:/bada/2.0.6/Include/FApp.h C:/bada/2.0.6/Include/FAppApplication.h \
+ C:/bada/2.0.6/Include/FUiControls.h C:/bada/2.0.6/Include/FApp.h \
+ C:/bada/2.0.6/Include/FAppApplication.h \
  C:/bada/2.0.6/Include/FSysBattery.h C:/bada/2.0.6/Include/FSysPower.h \
  C:/bada/2.0.6/Include/FAppConfig.h \
  C:/bada/2.0.6/Include/FAppAppManager.h \
@@ -1264,6 +1265,8 @@ C:/bada/2.0.6/Include/FIoIChannelRequestEventListener.h:
 ../src/view/CacheDetailsForm.h:
 
 ../src/view/../model/Entry.h:
+
+C:/bada/2.0.6/Include/FUiControls.h:
 
 C:/bada/2.0.6/Include/FApp.h:
 

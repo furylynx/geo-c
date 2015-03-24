@@ -83,7 +83,7 @@ void CachesForm::OnActionPerformed(const Osp::Ui::Control& source, int actionId)
 
 void CachesForm::OnListViewItemStateChanged(Osp::Ui::Controls::ListView &listView, int index, int elementId, Osp::Ui::Controls::ListItemStatus status)
 {
-	if (index < pEntryController_->Size())
+	if (static_cast<std::size_t>(index) < pEntryController_->Size())
 	{
 		//update the details form
 		pCacheDetails_->Update(pEntryController_->At(index));
