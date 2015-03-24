@@ -148,6 +148,7 @@ std::size_t EntryController::Size() const
 {
 	return entries_.size();
 }
+
 void EntryController::RemoveEntry(Entry* entry)
 {
 	for (std::size_t i = 0; i < entries_.size(); i++)

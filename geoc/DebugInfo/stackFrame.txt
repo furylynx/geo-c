@@ -1,26 +1,24 @@
-PC: 0x6A77BE7C LR: 0x6C0CB6E9 Stack PTR : 0x0A3BE7F8 
-0x6A77BE7C CacheDetailsForm::OnInitializing()
-0x6A77BE7C CacheDetailsForm::OnInitializing()
+PC: 0x6C2070B0 LR: 0x6A7389B3 Stack PTR : 0x0B0BE698 
+0x6C2070B0 Osp::Ui::Controls::EditField::AddActionEventListener(Osp::Ui::IActionEventListener const&)
+0x6C2070B0 Osp::Ui::Controls::EditField::AddActionEventListener(Osp::Ui::IActionEventListener const&)
 0x4004DF7A [Platform Fns]
-0x69E50E78 Mem_freeEx
-0x6C19D364 Osp::Ui::Control::AddNotify()
-0x6C19B320 Osp::Ui::Container::DrawChildControls()
-0x6C1ED860 Osp::Ui::Controls::Form::AddToParent(Osp::Ui::Container const&, int, int, int, int)
-0x6C19D320 Osp::Ui::Control::AddNotify()
-0x6C19B320 Osp::Ui::Container::DrawChildControls()
-0x6C19B56C Osp::Ui::Container::AddControl(Osp::Ui::Control const&)
-0x6C1FCEF6 Osp::Ui::Controls::Frame::AddControl(Osp::Ui::Control const&)
-0x6A782AC4 GeoC::OnAppInitializing(Osp::App::AppRegistry&)
-0x6C1071AE Osp::App::ApplicationEx::OnAppInitializing(Osp::App::AppRegistry&)
-0x6C108486 virtual thunk to Osp::App::ApplicationEx::OnAppInitializing(Osp::App::AppRegistry&)
-0x6C1057E2 Osp::App::__NativeUiApplication::OnAppInitializing(Osp::App::AppRegistry&)
-0x6C1038BE Osp::App::__AppExecutable::AppInitializing()
-0x6C103992 Osp::App::__AppExecutable::OnStart(Osp::Base::Runtime::_EventDispatcherEventArg const&)
-0x6C104F46 virtual thunk to Osp::App::__AppExecutable::OnStart(Osp::Base::Runtime::_EventDispatcherEventArg const&)
-0x6C03B684 Osp::Base::Runtime::__EventDispatcherCore::Start()
-0x6C1024A0 Osp::App::__AppExecutable::Run()
-0x6C10A130 Osp::App::Application::Execute(Osp::App::Application* (*)(), Osp::Base::Collection::IList const*, Osp::App::AppAttributeType)
+0x6A7389B2 CacheDetailsForm::OnInitializing()
+0x6C219860 Osp::Ui::Controls::Form::AddToParent(Osp::Ui::Container const&, int, int, int, int)
+0x6C1C9320 Osp::Ui::Control::AddNotify()
+0x6C1C7320 Osp::Ui::Container::DrawChildControls()
+0x6C1C756C Osp::Ui::Container::AddControl(Osp::Ui::Control const&)
+0x6C228EF6 Osp::Ui::Controls::Frame::AddControl(Osp::Ui::Control const&)
+0x6A73FE78 GeoC::OnAppInitializing(Osp::App::AppRegistry&)
+0x6C1331AE Osp::App::ApplicationEx::OnAppInitializing(Osp::App::AppRegistry&)
+0x6C134486 virtual thunk to Osp::App::ApplicationEx::OnAppInitializing(Osp::App::AppRegistry&)
+0x6C1317E2 Osp::App::__NativeUiApplication::OnAppInitializing(Osp::App::AppRegistry&)
+0x6C12F8BE Osp::App::__AppExecutable::AppInitializing()
+0x6C12F992 Osp::App::__AppExecutable::OnStart(Osp::Base::Runtime::_EventDispatcherEventArg const&)
+0x6C130F46 virtual thunk to Osp::App::__AppExecutable::OnStart(Osp::Base::Runtime::_EventDispatcherEventArg const&)
+0x6C067684 Osp::Base::Runtime::__EventDispatcherCore::Start()
+0x6C12E4A0 Osp::App::__AppExecutable::Run()
+0x6C136130 Osp::App::Application::Execute(Osp::App::Application* (*)(), Osp::Base::Collection::IList const*, Osp::App::AppAttributeType)
 0x400538DC [Platform Fns]
-0x4006D300 [Platform Fns]
+0x40010A00 [Platform Fns]
 0x402070CC [Platform Fns]
 0x00000000 [Platform Fns]

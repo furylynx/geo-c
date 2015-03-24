@@ -106,8 +106,27 @@ void CachesForm::OnListViewContextItemStateChanged(Osp::Ui::Controls::ListView &
     switch (elementId)
     {
     case ID_CONTEXT_ITEM_DELETE:
-        //TODO remove item...
+    {
+        if (static_cast<std::size_t>(index) < pEntryController_->Size())
+        {
+        	pEntryController_->RemoveEntryAt(index);
+        }
+    }
         break;
+    case ID_CONTEXT_ITEM_EDIT:
+    {
+    	if (static_cast<std::size_t>(index) < pEntryController_->Size())
+    	{
+    		//update the details form
+    		pCacheDetails_->Update(pEntryController_->At(index));
+
+    		//show details form
+    		Osp::App::Application::GetInstance()->GetAppFrame()->GetFrame()->SetCurrentForm(*pCacheDetails_);
+    		pCacheDetails_->Draw();
+    		pCacheDetails_->Show();
+    	}
+    }
+    break;
     default:
     	//TODO handle item state change?!
     	break;
@@ -123,34 +142,20 @@ Osp::Ui::Controls::ListItemBase* CachesForm::CreateItem(int index, int itemWidth
 {
     ListAnnexStyle style = LIST_ANNEX_STYLE_NORMAL;
     CustomItem* pItem = new CustomItem();
-    pItem->Construct(Osp::Graphics::Dimension(itemWidth,100), style);
+    pItem->Construct(Osp::Graphics::Dimension(itemWidth,55), style);
 
     //get the entry
     geo::Entry* entry = pEntryController_->At(index);
 
-    pItem->AddElement(Osp::Graphics::Rectangle(80, 25, 200, 50), 900+index, entry->ToString(), true);
+    pItem->AddElement(Osp::Graphics::Rectangle(2, 2, 400, 60), 900+index*2, entry->ToString(), true);
+    //pItem->AddElement(Osp::Graphics::Rectangle(12, 55, 390, 50), 900+index*2+1, entry->Author(), true);
+    //TODO add button for active flag
 
-//    switch (index % 3)
-//    {
-//    case 0:
-//        pItem->AddElement(Rectangle(80, 25, 200, 50), ID_FORMAT_STRING, L"HOME", true);
-//        break;
-//    case 1:
-//        pItem->AddElement(Rectangle(80, 25, 200, 50), ID_FORMAT_STRING, L"Msg", true);
-//        break;
-//    case 2:
-//        pItem->AddElement(Rectangle(80, 25, 200, 50), ID_FORMAT_STRING, L"Alarm", true);
-//        break;
-//    default:
-//        break;
-//    }
-    //pItem->AddElement(Rectangle(290, 20, 60, 60), ID_FORMAT_CUSTOM, *(static_cast<ICustomElement *>(__pCustomListElement)));
-
-    //TODO context item...
+    //context item
     ListContextItem* pItemContext = new ListContextItem();
     pItemContext->Construct();
-    pItemContext->AddElement(101, "Löschen");
-    //pItemContext->AddElement(101, "Test2");
+    pItemContext->AddElement(ID_CONTEXT_ITEM_DELETE, "Delete");
+    pItemContext->AddElement(ID_CONTEXT_ITEM_EDIT, "Edit");
     pItem->SetContextItem(pItemContext);
 
 

@@ -66,42 +66,64 @@ result CacheDetailsForm::OnInitializing(void)
 	// Create the input fields
 	pEditFieldTitle_ = new Osp::Ui::Controls::EditField();
 	pEditFieldTitle_->Construct(Osp::Graphics::Rectangle(130, 2, 350, 60), EDIT_FIELD_STYLE_NORMAL, INPUT_STYLE_OVERLAY, EDIT_FIELD_TITLE_STYLE_NONE);
+	pEditFieldTitle_->SetOverlayKeypadCommandButton(COMMAND_BUTTON_POSITION_LEFT, "Ok", ID_KEYPAD_BUTTON_OK);
+	pEditFieldTitle_->SetOverlayKeypadCommandButton(COMMAND_BUTTON_POSITION_RIGHT, "Cancel", ID_KEYPAD_BUTTON_CANCEL);
+	pEditFieldTitle_->AddActionEventListener(*this);
 	pScrollPanel_->AddControl(*pEditFieldTitle_);
 
 	pLabelTitle_ = new Osp::Ui::Controls::Label();
-	pLabelTitle_->Construct(Osp::Graphics::Rectangle(10, 2, 120, 60), "Title");
+	pLabelTitle_->Construct(Osp::Graphics::Rectangle(2, 2, 128, 60), "Title");
 	pScrollPanel_->AddControl(*pLabelTitle_);
+
+
 
 	pEditFieldAuthor_ = new Osp::Ui::Controls::EditField();
 	pEditFieldAuthor_->Construct(Osp::Graphics::Rectangle(130, 72, 350, 60), EDIT_FIELD_STYLE_NORMAL, INPUT_STYLE_OVERLAY, EDIT_FIELD_TITLE_STYLE_NONE);
+	pEditFieldAuthor_->SetOverlayKeypadCommandButton(COMMAND_BUTTON_POSITION_LEFT, "Ok", ID_KEYPAD_BUTTON_OK);
+	pEditFieldAuthor_->SetOverlayKeypadCommandButton(COMMAND_BUTTON_POSITION_RIGHT, "Cancel", ID_KEYPAD_BUTTON_CANCEL);
+	pEditFieldAuthor_->AddActionEventListener(*this);
 	pScrollPanel_->AddControl(*pEditFieldAuthor_);
 
 	pLabelAuthor_ = new Osp::Ui::Controls::Label();
-	pLabelAuthor_->Construct(Osp::Graphics::Rectangle(10, 72, 120, 60), "Author");
+	pLabelAuthor_->Construct(Osp::Graphics::Rectangle(2, 72, 128, 60), "Author");
 	pScrollPanel_->AddControl(*pLabelAuthor_);
+
+
 
 	pEditFieldID_ = new Osp::Ui::Controls::EditField();
 	pEditFieldID_->Construct(Osp::Graphics::Rectangle(130, 142, 350, 60), EDIT_FIELD_STYLE_NORMAL, INPUT_STYLE_OVERLAY, EDIT_FIELD_TITLE_STYLE_NONE);
+	pEditFieldID_->SetOverlayKeypadCommandButton(COMMAND_BUTTON_POSITION_LEFT, "Ok", ID_KEYPAD_BUTTON_OK);
+	pEditFieldID_->SetOverlayKeypadCommandButton(COMMAND_BUTTON_POSITION_RIGHT, "Cancel", ID_KEYPAD_BUTTON_CANCEL);
+	pEditFieldID_->AddActionEventListener(*this);
 	pScrollPanel_->AddControl(*pEditFieldID_);
 
 	pLabelID_ = new Osp::Ui::Controls::Label();
-	pLabelID_->Construct(Osp::Graphics::Rectangle(10, 142, 120, 60), "ID");
+	pLabelID_->Construct(Osp::Graphics::Rectangle(2, 142, 128, 60), "ID");
 	pScrollPanel_->AddControl(*pLabelID_);
 
+
+
 	pEditFieldLongitude_ = new Osp::Ui::Controls::EditField();
-	pEditFieldLongitude_->Construct(Osp::Graphics::Rectangle(130, 212, 350, 60), EDIT_FIELD_STYLE_NUMBER, INPUT_STYLE_FULLSCREEN, EDIT_FIELD_TITLE_STYLE_NONE);
+	pEditFieldLongitude_->Construct(Osp::Graphics::Rectangle(130, 212, 350, 60), EDIT_FIELD_STYLE_NUMBER, INPUT_STYLE_OVERLAY, EDIT_FIELD_TITLE_STYLE_NONE);
+	pEditFieldLongitude_->SetOverlayKeypadCommandButton(COMMAND_BUTTON_POSITION_LEFT, "Ok", ID_KEYPAD_BUTTON_OK);
+	pEditFieldLongitude_->SetOverlayKeypadCommandButton(COMMAND_BUTTON_POSITION_RIGHT, "Cancel", ID_KEYPAD_BUTTON_CANCEL);
+	pEditFieldLongitude_->AddActionEventListener(*this);
 	pScrollPanel_->AddControl(*pEditFieldLongitude_);
 
 	pLabelLongitude_ = new Osp::Ui::Controls::Label();
-	pLabelLongitude_->Construct(Osp::Graphics::Rectangle(10, 212, 120, 60), "Lon");
+	pLabelLongitude_->Construct(Osp::Graphics::Rectangle(2, 212, 128, 60), "Lon");
 	pScrollPanel_->AddControl(*pLabelLongitude_);
 
+
 	pEditFieldLatitude_ = new Osp::Ui::Controls::EditField();
-	pEditFieldLatitude_->Construct(Osp::Graphics::Rectangle(130, 282, 350, 60), EDIT_FIELD_STYLE_NUMBER, INPUT_STYLE_FULLSCREEN, EDIT_FIELD_TITLE_STYLE_NONE);
+	pEditFieldLatitude_->Construct(Osp::Graphics::Rectangle(130, 282, 350, 60), EDIT_FIELD_STYLE_NUMBER, INPUT_STYLE_OVERLAY, EDIT_FIELD_TITLE_STYLE_NONE);
+	pEditFieldLatitude_->SetOverlayKeypadCommandButton(COMMAND_BUTTON_POSITION_LEFT, "Ok", ID_KEYPAD_BUTTON_OK);
+	pEditFieldLatitude_->SetOverlayKeypadCommandButton(COMMAND_BUTTON_POSITION_RIGHT, "Cancel", ID_KEYPAD_BUTTON_CANCEL);
+	pEditFieldLatitude_->AddActionEventListener(*this);
 	pScrollPanel_->AddControl(*pEditFieldLatitude_);
 
 	pLabelLatitude_ = new Osp::Ui::Controls::Label();
-	pLabelLatitude_->Construct(Osp::Graphics::Rectangle(10, 282, 120, 60), "Lat");
+	pLabelLatitude_->Construct(Osp::Graphics::Rectangle(2, 282, 128, 60), "Lat");
 	pScrollPanel_->AddControl(*pLabelLatitude_);
 
 
@@ -130,7 +152,7 @@ void CacheDetailsForm::OnActionPerformed(const Osp::Ui::Control& source, int act
 			AppLog("Save Button is clicked! \n");
 
 
-			//TODO apply changes to the entry
+			//apply changes to the entry
 			pEntry_->SetTitle(pEditFieldTitle_->GetText());
 			pEntry_->SetAuthor(pEditFieldAuthor_->GetText());
 			pEntry_->SetNameId(pEditFieldID_->GetText());
@@ -143,11 +165,64 @@ void CacheDetailsForm::OnActionPerformed(const Osp::Ui::Control& source, int act
 			Float::Parse(pEditFieldLatitude_->GetText(), fLat);
 			pEntry_->SetLatitude(fLat);
 
+			//TODO other fields (description, hints, comments, etc)
+
+			pEntry_->NotifyObservers(pEntry_);
+
+			//request back
+			for (std::size_t i = 0; i < formBackListeners_.size(); i++)
+			{
+				//TODO request back
+
+				//formBackListeners_.at(i)->OnFormBackRequested(void);
+				//formBackListeners_.at(i).OnFormBackRequested(*this);
+			}
+
+
+
+		}
+		break;
+		case ID_KEYPAD_BUTTON_OK:
+		case ID_KEYPAD_BUTTON_CANCEL:
+		{
+			pEditFieldTitle_->HideKeypad();
+            pEditFieldAuthor_->HideKeypad();
+			pEditFieldID_->HideKeypad();
+			pEditFieldLongitude_->HideKeypad();
+			pEditFieldLatitude_->HideKeypad();
 		}
 		break;
 		default:
 		break;
 	}
+}
+
+
+void CacheDetailsForm::OnKeypadActionPerformed (Osp::Ui::Control &source, Osp::Ui::KeypadAction keypadAction)
+{
+
+}
+
+void CacheDetailsForm::OnKeypadClosed (Osp::Ui::Control &source)
+{
+
+}
+
+void CacheDetailsForm::OnKeypadOpened (Osp::Ui::Control &source)
+{
+
+}
+
+void CacheDetailsForm::OnKeypadWillOpen (Osp::Ui::Control &source)
+{
+
+}
+
+void CacheDetailsForm::SetFormBackEventListener(const Osp::Ui::Controls::IFormBackEventListener* pFormBackEventListener)
+{
+	Form::SetFormBackEventListener(pFormBackEventListener);
+
+	formBackListeners_.push_back(pFormBackEventListener);
 }
 
 

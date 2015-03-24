@@ -145,8 +145,13 @@ void Entry::SetUrl(Osp::Base::String url)
 Osp::Base::String Entry::ToString() const
 {
 	Osp::Base::String resultString = title_;
-	resultString.Append(" by ");
-	resultString.Append(author_);
+
+	if (author_.GetLength() > 0)
+	{
+		resultString.Append(" [");
+		resultString.Append(author_);
+		resultString.Append("]");
+	}
 
 	return resultString;
 }

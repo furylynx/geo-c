@@ -10,11 +10,14 @@
 #include <FUi.h>
 #include <FUiControls.h>
 
+#include <vector>
+
 
 
 class CacheDetailsForm :
 	public Osp::Ui::Controls::Form,
-	public Osp::Ui::IActionEventListener
+	public Osp::Ui::IActionEventListener,
+	public Osp::Ui::IKeypadEventListener
 {
 
 // Construction
@@ -31,16 +34,26 @@ public:
 
 	virtual void OnActionPerformed(const Osp::Ui::Control& source, int actionId);
 
+	//Form back
+	virtual void SetFormBackEventListener(const Osp::Ui::Controls::IFormBackEventListener* pFormBackEventListener);
+
+
+
+
+	//keypad actions
+	virtual void OnKeypadActionPerformed (Osp::Ui::Control &source, Osp::Ui::KeypadAction keypadAction);
+	virtual void OnKeypadClosed (Osp::Ui::Control &source);
+	virtual void OnKeypadOpened (Osp::Ui::Control &source);
+	virtual void OnKeypadWillOpen (Osp::Ui::Control &source);
+
 
 protected:
 
 
 private:
 	static const int ID_FOOTER_BUTTON_SAVE = 201;
-//	static const int ID_FOOTER_BUTTON_SAVE = 201;
-//	static const int ID_FOOTER_BUTTON_SAVE = 201;
-//	static const int ID_FOOTER_BUTTON_SAVE = 201;
-//	static const int ID_FOOTER_BUTTON_SAVE = 201;
+	static const int ID_KEYPAD_BUTTON_OK = 301;
+	static const int ID_KEYPAD_BUTTON_CANCEL = 302;
 
 
 	geo::Entry* pEntry_;
@@ -58,6 +71,8 @@ private:
 	Osp::Ui::Controls::Label* pLabelID_;
 	Osp::Ui::Controls::Label* pLabelLongitude_;
 	Osp::Ui::Controls::Label* pLabelLatitude_;
+
+	std::vector<const Osp::Ui::Controls::IFormBackEventListener*> formBackListeners_;
 
 };
 
