@@ -21,13 +21,14 @@ Entry::~Entry()
 
 void Entry::Construct()
 {
-	Construct("Unnamed", 0.0f, 0.0f);
+	Construct("Unnamed", "Anonymous", 0.0f, 0.0f);
 	custom_ = true;
 }
 
-void Entry::Construct(Osp::Base::String title, float longitude, float latitude)
+void Entry::Construct(Osp::Base::String title, Osp::Base::String author, float longitude, float latitude)
 {
 	title_ = title;
+	author_ = author;
 	longitude_ = longitude;
 	latitude_ = latitude;
 }

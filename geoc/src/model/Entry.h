@@ -25,7 +25,7 @@ public:
 	virtual ~Entry();
 
 	virtual void Construct();
-	virtual void Construct(Osp::Base::String title, float longitude, float latitude);
+	virtual void Construct(Osp::Base::String title, Osp::Base::String author, float longitude, float latitude);
 
 	virtual Osp::Base::String Title() const;
 	virtual void SetTitle(Osp::Base::String title);

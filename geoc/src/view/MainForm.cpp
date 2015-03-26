@@ -15,11 +15,13 @@ MainForm::~MainForm(void)
 }
 
 bool
-MainForm::Initialize(PreferencesForm* pPreferencesForm, OverviewForm* pOverviewForm, CachesForm* pCachesForm)
+MainForm::Initialize(PreferencesForm* pPreferencesForm, OverviewForm* pOverviewForm, CachesForm* pCachesForm, geo::EntryController* pEntryController)
 {
 	pPreferencesForm_ = pPreferencesForm;
 	pOverviewForm_ = pOverviewForm;
 	pCachesForm_ = pCachesForm;
+
+	pEntryController_ = pEntryController;
 
 	locationCounter_ = 0;
 
@@ -165,12 +167,28 @@ void MainForm::OnLocationUpdate(Osp::Locations::Location& location, const Osp::L
 
 		if (pLabelLongitude_ != NULL)
 		{
-			std::stringstream sstrLong;
-			sstrLong << location.GetQualifiedCoordinates()->GetLongitude();
+			std::stringstream sstrLon;
+			sstrLon << location.GetQualifiedCoordinates()->GetLongitude();
 
-			pLabelLongitude_->SetText(sstrLong.str().c_str());
+			pLabelLongitude_->SetText(sstrLon.str().c_str());
 			pLabelLongitude_->Draw();
 			pLabelLongitude_->Show();
+		}
+
+		if (pLabelDistance_ != NULL)
+		{
+			geo::Entry* closestEntry = pEntryController_->GetClosestActiveEntry(location.GetQualifiedCoordinates());
+			Osp::Locations::QualifiedCoordinates entryCoordinates = Osp::Locations::QualifiedCoordinates();
+			entryCoordinates.Set(closestEntry->Latitude(), closestEntry->Longitude(), NAN, 0, 0);
+
+			float d = entryCoordinates.Distance(*(location.GetQualifiedCoordinates()));
+
+			std::stringstream sstrDist;
+			sstrDist << d << " m";
+
+			pLabelDistance_->SetText(sstrDist.str().c_str());
+			pLabelDistance_->Draw();
+			pLabelDistance_->Show();
 		}
 	}
 	else if (lastKnownLocation != NULL && lastKnownLocation->GetQualifiedCoordinates() != NULL)
@@ -193,6 +211,22 @@ void MainForm::OnLocationUpdate(Osp::Locations::Location& location, const Osp::L
 			pLabelLongitude_->SetText(sstrLong.str().c_str());
 			pLabelLongitude_->Draw();
 			pLabelLongitude_->Show();
+		}
+
+		if (pLabelDistance_ != NULL)
+		{
+			geo::Entry* closestEntry = pEntryController_->GetClosestActiveEntry(lastKnownLocation->GetQualifiedCoordinates());
+			Osp::Locations::QualifiedCoordinates entryCoordinates = Osp::Locations::QualifiedCoordinates();
+			entryCoordinates.Set(closestEntry->Latitude(), closestEntry->Longitude(), NAN, 0, 0);
+
+			float d = entryCoordinates.Distance(*(lastKnownLocation->GetQualifiedCoordinates()));
+
+			std::stringstream sstrDist;
+			sstrDist << d << " m";
+
+			pLabelDistance_->SetText(sstrDist.str().c_str());
+			pLabelDistance_->Draw();
+			pLabelDistance_->Show();
 		}
 	}
 	else

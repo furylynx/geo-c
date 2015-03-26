@@ -7,6 +7,7 @@
 #include "CachesForm.h"
 
 #include "../model/ISensorUpdateListener.h"
+#include "../controller/EntryController.h"
 
 //global includes
 #include <FApp.h>
@@ -14,6 +15,7 @@
 #include <FUi.h>
 
 #include <sstream>
+#include <cmath>
 
 
 class MainForm :
@@ -27,7 +29,7 @@ class MainForm :
 public:
 	MainForm(void);
 	virtual ~MainForm(void);
-	bool Initialize(PreferencesForm* pPreferencesForm, OverviewForm* pOverviewForm, CachesForm* pCachesForm);
+	bool Initialize(PreferencesForm* pPreferencesForm, OverviewForm* pOverviewForm, CachesForm* pCachesForm, geo::EntryController* pEntryController);
 
 // Implementation
 private:
@@ -49,6 +51,9 @@ private:
 	PreferencesForm* pPreferencesForm_;
 	OverviewForm* pOverviewForm_;
 	CachesForm* pCachesForm_;
+
+	//entry controller
+	geo::EntryController* pEntryController_;
 
 	int locationCounter_;
 

@@ -35,7 +35,7 @@ public:
 	virtual void OnActionPerformed(const Osp::Ui::Control& source, int actionId);
 
 	//Form back
-	virtual void SetFormBackEventListener(const Osp::Ui::Controls::IFormBackEventListener* pFormBackEventListener);
+	virtual void SetFormBackEventListener(Osp::Ui::Controls::IFormBackEventListener* pFormBackEventListener);
 
 
 
@@ -72,7 +72,7 @@ private:
 	Osp::Ui::Controls::Label* pLabelLongitude_;
 	Osp::Ui::Controls::Label* pLabelLatitude_;
 
-	std::vector<const Osp::Ui::Controls::IFormBackEventListener*> formBackListeners_;
+	std::vector<Osp::Ui::Controls::IFormBackEventListener*> formBackListeners_;
 
 };
 

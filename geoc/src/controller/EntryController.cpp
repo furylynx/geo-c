@@ -31,10 +31,10 @@ void EntryController::Construct()
 	ioCtrl_.Construct();
 }
 
-void EntryController::AddEntry(Osp::Base::String title, float longitude, float latitude)
+void EntryController::AddEntry(Osp::Base::String title, Osp::Base::String author, float longitude, float latitude)
 {
 	Entry* e = new Entry();
-	e->Construct(title, longitude, latitude);
+	e->Construct(title, author, longitude, latitude);
 
 	AddEntry(e);
 }
@@ -65,6 +65,33 @@ std::vector<geo::Entry*> EntryController::GetActiveEntries() const
 		if (entries_.at(i)->IsActive())
 		{
 			result.push_back(entries_.at(i));
+		}
+	}
+
+	return result;
+}
+
+geo::Entry* EntryController::GetClosestActiveEntry(const Osp::Locations::QualifiedCoordinates* coordinates) const
+{
+
+	geo::Entry* result = NULL;
+
+	std::vector<geo::Entry*> activeEntries = GetActiveEntries();
+	float smallestDistance = -1;
+
+	for (std::size_t i = 0; i < activeEntries.size(); i++)
+	{
+		geo::Entry* e = activeEntries.at(i);
+
+		Osp::Locations::QualifiedCoordinates entryCoordinates = Osp::Locations::QualifiedCoordinates();
+		entryCoordinates.Set(e->Latitude(), e->Longitude(), NAN, 0, 0);
+
+		float d = entryCoordinates.Distance(*coordinates);
+
+		if (smallestDistance == -1 || d < smallestDistance)
+		{
+			smallestDistance = d;
+			result = e;
 		}
 	}
 

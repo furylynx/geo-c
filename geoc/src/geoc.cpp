@@ -77,7 +77,7 @@ bool GeoC::OnAppInitializing(AppRegistry& appRegistry)
 	pSensorController_->RegisterSensorUpdateListener(pOverviewForm_);
 
 	pMainForm_ = new MainForm();
-	pMainForm_->Initialize(pPreferencesForm_, pOverviewForm_, pCachesForm_);
+	pMainForm_->Initialize(pPreferencesForm_, pOverviewForm_, pCachesForm_, pEntryController_);
 	pSensorController_->RegisterSensorUpdateListener(pMainForm_);
 
 
@@ -93,9 +93,9 @@ bool GeoC::OnAppInitializing(AppRegistry& appRegistry)
 
 	//TODO remove
 	//dummy files for the list view
-	pEntryController_->AddEntry("Dummy1", 0,0);
-	pEntryController_->AddEntry("Dummy2", 0,0);
-	pEntryController_->AddEntry("Dummy3", 0,0);
+	pEntryController_->AddEntry("Dummy1", "Anonymous", 0,0);
+	pEntryController_->AddEntry("Dummy2", "Anonymous", 0,0);
+	pEntryController_->AddEntry("Dummy3", "Anonymous", 0,0);
 
 //	if (!Osp::Io::File::IsFileExist("/Home/geoc/"))
 //	{

@@ -174,7 +174,7 @@ void CacheDetailsForm::OnActionPerformed(const Osp::Ui::Control& source, int act
 			{
 				//TODO request back
 
-				//formBackListeners_.at(i)->OnFormBackRequested(void);
+				formBackListeners_.at(i)->OnFormBackRequested(*this);
 				//formBackListeners_.at(i).OnFormBackRequested(*this);
 			}
 
@@ -218,8 +218,9 @@ void CacheDetailsForm::OnKeypadWillOpen (Osp::Ui::Control &source)
 
 }
 
-void CacheDetailsForm::SetFormBackEventListener(const Osp::Ui::Controls::IFormBackEventListener* pFormBackEventListener)
+void CacheDetailsForm::SetFormBackEventListener(Osp::Ui::Controls::IFormBackEventListener* pFormBackEventListener)
 {
+	AppLog("Set form back listener!");
 	Form::SetFormBackEventListener(pFormBackEventListener);
 
 	formBackListeners_.push_back(pFormBackEventListener);
