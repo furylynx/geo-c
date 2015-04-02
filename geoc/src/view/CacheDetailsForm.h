@@ -16,8 +16,7 @@
 
 class CacheDetailsForm :
 	public Osp::Ui::Controls::Form,
-	public Osp::Ui::IActionEventListener,
-	public Osp::Ui::IKeypadEventListener
+	public Osp::Ui::IActionEventListener
 {
 
 // Construction
@@ -26,29 +25,17 @@ public:
 	virtual ~CacheDetailsForm(void);
 	virtual bool Initialize();
 
-	virtual void Update(geo::Entry* entry);
-
 	virtual result OnInitializing(void);
-
 	virtual result OnTerminating(void);
 
+	//action listener
 	virtual void OnActionPerformed(const Osp::Ui::Control& source, int actionId);
 
 	//Form back
 	virtual void SetFormBackEventListener(Osp::Ui::Controls::IFormBackEventListener* pFormBackEventListener);
 
-
-
-
-	//keypad actions
-	virtual void OnKeypadActionPerformed (Osp::Ui::Control &source, Osp::Ui::KeypadAction keypadAction);
-	virtual void OnKeypadClosed (Osp::Ui::Control &source);
-	virtual void OnKeypadOpened (Osp::Ui::Control &source);
-	virtual void OnKeypadWillOpen (Osp::Ui::Control &source);
-
-
-protected:
-
+	//custom methods
+	virtual void Update(geo::Entry* entry);
 
 private:
 	static const int ID_FOOTER_BUTTON_SAVE = 201;

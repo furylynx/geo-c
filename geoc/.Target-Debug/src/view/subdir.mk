@@ -5,6 +5,7 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
 ../src/view/CacheDetailsForm.cpp \
+../src/view/CacheDetailsOverviewForm.cpp \
 ../src/view/CachesForm.cpp \
 ../src/view/MainForm.cpp \
 ../src/view/OverviewForm.cpp \
@@ -12,6 +13,7 @@ CPP_SRCS += \
 
 OBJS += \
 ./src/view/CacheDetailsForm.o \
+./src/view/CacheDetailsOverviewForm.o \
 ./src/view/CachesForm.o \
 ./src/view/MainForm.o \
 ./src/view/OverviewForm.o \
@@ -19,6 +21,7 @@ OBJS += \
 
 CPP_DEPS += \
 ./src/view/CacheDetailsForm.d \
+./src/view/CacheDetailsOverviewForm.d \
 ./src/view/CachesForm.d \
 ./src/view/MainForm.d \
 ./src/view/OverviewForm.d \

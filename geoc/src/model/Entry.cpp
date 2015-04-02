@@ -157,5 +157,21 @@ Osp::Base::String Entry::ToString() const
 	return resultString;
 }
 
+Osp::Base::String Entry::ToDetailedString() const
+{
+	Osp::Base::String resultString = title_;
+
+	if (author_.GetLength() > 0)
+	{
+		resultString.Append(" [");
+		resultString.Append(author_);
+		resultString.Append("]");
+	}
+
+	//TODO include all information
+
+	return resultString;
+}
+
 
 }

@@ -61,6 +61,7 @@ public:
 	virtual void SetUrl(Osp::Base::String url);
 
 	virtual Osp::Base::String ToString() const;
+	virtual Osp::Base::String ToDetailedString() const;
 
 
 private:

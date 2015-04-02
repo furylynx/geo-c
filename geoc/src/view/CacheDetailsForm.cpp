@@ -198,26 +198,6 @@ void CacheDetailsForm::OnActionPerformed(const Osp::Ui::Control& source, int act
 }
 
 
-void CacheDetailsForm::OnKeypadActionPerformed (Osp::Ui::Control &source, Osp::Ui::KeypadAction keypadAction)
-{
-
-}
-
-void CacheDetailsForm::OnKeypadClosed (Osp::Ui::Control &source)
-{
-
-}
-
-void CacheDetailsForm::OnKeypadOpened (Osp::Ui::Control &source)
-{
-
-}
-
-void CacheDetailsForm::OnKeypadWillOpen (Osp::Ui::Control &source)
-{
-
-}
-
 void CacheDetailsForm::SetFormBackEventListener(Osp::Ui::Controls::IFormBackEventListener* pFormBackEventListener)
 {
 	AppLog("Set form back listener!");

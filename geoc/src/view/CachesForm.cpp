@@ -14,9 +14,10 @@ CachesForm::~CachesForm(void)
 {
 }
 
-bool CachesForm::Initialize(CacheDetailsForm* pCacheDetails, geo::EntryController* pEntryController)
+bool CachesForm::Initialize(CacheDetailsForm* pCacheDetails, CacheDetailsOverviewForm* pCacheDetailsOverview, geo::EntryController* pEntryController)
 {
 	pCacheDetails_ = pCacheDetails;
+	pCacheDetailsOverview_ = pCacheDetailsOverview;
 	pEntryController_ = pEntryController;
 
 	Form::Construct(L"IDF_CACHES");
@@ -83,15 +84,17 @@ void CachesForm::OnActionPerformed(const Osp::Ui::Control& source, int actionId)
 
 void CachesForm::OnListViewItemStateChanged(Osp::Ui::Controls::ListView &listView, int index, int elementId, Osp::Ui::Controls::ListItemStatus status)
 {
+	//item from list is clicked
+
 	if (static_cast<std::size_t>(index) < pEntryController_->Size())
 	{
 		//update the details form
-		pCacheDetails_->Update(pEntryController_->At(index));
+		pCacheDetailsOverview_->Update(pEntryController_->At(index));
 
 		//show details form
-		Osp::App::Application::GetInstance()->GetAppFrame()->GetFrame()->SetCurrentForm(*pCacheDetails_);
-		pCacheDetails_->Draw();
-		pCacheDetails_->Show();
+		Osp::App::Application::GetInstance()->GetAppFrame()->GetFrame()->SetCurrentForm(*pCacheDetailsOverview_);
+		pCacheDetailsOverview_->Draw();
+		pCacheDetailsOverview_->Show();
 	}
 
 }

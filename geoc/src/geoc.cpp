@@ -62,8 +62,12 @@ bool GeoC::OnAppInitializing(AppRegistry& appRegistry)
 	pCacheDetailsForm_->Initialize();
 	pCacheDetailsForm_->SetFormBackEventListener(this);
 
+	pCacheDetailsOverviewForm_ = new CacheDetailsOverviewForm();
+	pCacheDetailsOverviewForm_->Initialize(pCacheDetailsForm_);
+	pCacheDetailsOverviewForm_->SetFormBackEventListener(this);
+
 	pCachesForm_ = new CachesForm();
-	pCachesForm_->Initialize(pCacheDetailsForm_, pEntryController_);
+	pCachesForm_->Initialize(pCacheDetailsForm_, pCacheDetailsOverviewForm_, pEntryController_);
 	pCachesForm_->SetFormBackEventListener(this);
 	pEntryController_->AddObserver(pCachesForm_);
 
@@ -75,6 +79,8 @@ bool GeoC::OnAppInitializing(AppRegistry& appRegistry)
 	pOverviewForm_->Initialize();
 	pOverviewForm_->SetFormBackEventListener(this);
 	pSensorController_->RegisterSensorUpdateListener(pOverviewForm_);
+
+
 
 	pMainForm_ = new MainForm();
 	pMainForm_->Initialize(pPreferencesForm_, pOverviewForm_, pCachesForm_, pEntryController_);
@@ -89,6 +95,7 @@ bool GeoC::OnAppInitializing(AppRegistry& appRegistry)
 	pFrame_->AddControl(*pOverviewForm_);
 	pFrame_->AddControl(*pCachesForm_);
 	pFrame_->AddControl(*pCacheDetailsForm_);
+	pFrame_->AddControl(*pCacheDetailsOverviewForm_);
 
 
 	//TODO remove
@@ -212,7 +219,7 @@ void GeoC::OnFormBackRequested(Osp::Ui::Controls::Form& source)
 		pMainForm_->Draw();
 		pMainForm_->Show();
 	}
-	else if (&source == pCacheDetailsForm_)
+	else if (&source == pCacheDetailsForm_ || &source == pCacheDetailsOverviewForm_)
 	{
 		pFrame_->SetCurrentForm(*pCachesForm_);
 

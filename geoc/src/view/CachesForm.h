@@ -7,6 +7,7 @@
 #include "../controller/EntryController.h"
 
 #include "CacheDetailsForm.h"
+#include "CacheDetailsOverviewForm.h"
 
 //global includes
 #include <FApp.h>
@@ -28,7 +29,7 @@ public:
 	CachesForm(void);
 	virtual ~CachesForm(void);
 
-	virtual bool Initialize(CacheDetailsForm* pCacheDetails, geo::EntryController* pEntryController);
+	virtual bool Initialize(CacheDetailsForm* pCacheDetails, CacheDetailsOverviewForm* pCacheDetailsOverview, geo::EntryController* pEntryController);
 
 	virtual result OnInitializing(void);
 
@@ -64,6 +65,7 @@ private:
 // Generated call-back functions
 public:
 	CacheDetailsForm* pCacheDetails_;
+	CacheDetailsOverviewForm* pCacheDetailsOverview_;
 
 	geo::EntryController* pEntryController_;
 

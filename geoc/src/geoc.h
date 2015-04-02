@@ -85,6 +85,7 @@ private:
 	OverviewForm* pOverviewForm_;
 	CachesForm* pCachesForm_;
 	CacheDetailsForm* pCacheDetailsForm_;
+	CacheDetailsOverviewForm* pCacheDetailsOverviewForm_;
 
 };
 
